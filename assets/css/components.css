@@ -60,7 +60,7 @@
 /* BADGE */
 .hero-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.15);
+  background: rgba(10, 49, 94, 0.267);
   padding: 8px 14px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -144,7 +144,7 @@
 }
 
 .showcase-item:nth-child(4) {
-  background: var(--accent);
+  background: #0080ff56;
 }
 .showcase-item:nth-child(4) p {
   color: var(--bg);
@@ -153,7 +153,7 @@
 
 .showcase-item {
   border-radius: 20px;
-  background-color: var(--primary);
+  background-color: #243b4d52;
   display: flex;
   flex-direction: column; /* Icona sopra, testo sotto */
   align-items: center; /* Allineamento a sinistra stile Airbnb */
