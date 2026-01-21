@@ -85,12 +85,20 @@
 
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 0.8rem;
   max-width: 650px;
+  width: 90%;
+  text-align: center;
+  margin: auto;
   color: #ecf0f1;
   margin-bottom: 26px;
   z-index: 999;
 }
+
+
+
+
+
 
 /* CTA */
 .hero-actions {
@@ -179,7 +187,7 @@
 .trust-showcase {
   padding: 20px;
   border-radius: var(--radius);
-  z-index: 1;
+  z-index: 5;
   transition: transform 0.1s linear;
 }
 
@@ -187,6 +195,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 15px;
+  z-index: 5;
+
 }
 
 .showcase-item:nth-child(4) {

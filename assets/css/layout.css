@@ -1,3 +1,4 @@
+/* Contenitore centrale con larghezza max e padding laterale */
 .container {
   width: 100%;
   max-width: 1100px;
@@ -6,14 +7,16 @@
   height: 100%;
 }
 
+/* Header fissato in alto sopra tutto il resto */
 .header {
-position: absolute;
+  position: absolute;         /* lo posiziona sopra la hero */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000;              /* sempre sopra agli altri layer */
 }
 
+/* Layout interno header con logo a sinistra e nav a destra */
 .header-inner {
   display: flex;
   justify-content: space-between;
@@ -21,126 +24,322 @@ position: absolute;
   height: 60px;
 }
 
+/* Stile del logo */
 .logo {
   font-weight: 700;
   color: var(--bg);
   font-size: 1.4rem;
 }
 
+/* Colore secondario per la parte span del logo */
 .logo span {  
   color: var(--accent);
 }
 
+/* Spaziatura tra i bottoni della navigazione */
 .nav button {
   margin-left: 16px;
   font-weight: 600;
 }
 
+/* Stato attivo per i bottoni */
 .nav button.active {
   color: var(--accent);
 }
 
+/* Padding generale delle sezioni */
 .section {
   padding: 64px 0;
 }
 
+/* HERO principale */
 .hero {
-  background: linear-gradient(220deg, var(--primary), var(--accent));
-  color: var(--white);
-  text-align: center;
-  height: 100vh;
-  padding-bottom: 100px;
-  position: relative; /* importante */
-  overflow: hidden;   /* taglia le bolle fuori dalla hero */
-
+  background: linear-gradient(220deg, var(--primary), var(--accent)); /* sfondo sfumato */
+  color: var(--white);          /* testo bianco */
+  text-align: center;           /* testo centrato */
+  height: 100vh;                /* altezza pieno schermo */
+  padding-bottom: 100px;        /* spazio per contenuti */
+  position: relative;           /* crea contesto per elementi assoluti */
+  overflow: hidden;             /* taglia elementi che escono */
+  z-index: 0;                   /* stacking context base */
 }
+
+/* Contenitore onde nella hero (se usato) */
+.hero .hero-waves {
+  position: absolute;           /* onde posizionate sopra la hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;                   /* onde sotto i contenuti */
+  pointer-events: none;         /* non blocca click */
+}
+
+/* Contenuti della hero sopra le onde */
+.hero-content,
+.trust-showcase {
+  position: relative;           /* necessario per z-index */
+  z-index: 2;                   /* contenuti sopra */
+}
+
+/* Livello bolle nella hero */
 .hero .bubbles {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 2;                   /* bolle sopra le onde */
 }
+
 /* --- FOOTER STYLING --- */
 .main-footer {
-  background-color: #041b2e; /* Grigio molto scuro, quasi nero */
-  color: #ffffff;
-  padding: 60px 20px 120px 20px; /* Padding extra sotto per la bottom-nav */
-  font-family: "Montserrat", sans-serif;
-  height: auto;
-  position: relative;
+  position: relative;           /* serve per contenuti assoluti interni */
+  background: #041b2e;          /* colore footer */
+  color: #e9f6f8;               /* testo footer */
+  padding-top: 0px;
 }
 
+/* Copre eventuale distacco tra onde e footer */
+#cover-onde {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #041b2e;
+  z-index: 3;
+}
 
+/* Posizionamento onde footer */
+.footer-waves .wave {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  top: -124px;
+  width: 100%;
+  height: 20%;
+}
+
+/* Onda posteriore (più lontana) */
+.wave-back { top: -135px; z-index: 1; }
+
+/* Onda frontale (più vicina) */
+.wave-front { top: -124px; z-index: 2; }
+
+/* Griglia principale del footer */
 .footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+  z-index: 3;                   /* sopra le onde */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  gap: 2.5rem;
+  padding: 3rem 8%;
+  grid-template-columns: 1.2fr 0.05fr 1.6fr 0.05fr 1.2fr;
+  align-items: start;
 }
 
-.footer-section h4 {
-  color: #00d4ff; /* Colore azzurro come il tuo logo */
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+/* Etichetta categoria footer */
+.footer-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #0fa3b1;
+  margin-bottom: 0.6rem;
 }
 
-.footer-section p {
-  line-height: 1.6;
-  font-size: 0.9rem;
-  color: #cccccc;
+/* Titoli nel footer */
+.footer-column h3,
+.footer-column h4 {
+  color: #ffffff;
+  margin-bottom: 0.8rem;
 }
 
-.footer-section ul {
+/* Testi generici del footer */
+.footer-column p,
+.footer-column li,
+.footer-column small {
+  color: #cfe7ef;
+  font-size: 0.95rem;
+}
+
+/* Divisore verticale tra colonne */
+.footer-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  height: 100%;
+}
+
+/* Icone social */
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* Stile dei bottoni social */
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0fa3b1;
+  color: #041b2e;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Hover social */
+.footer-social a:hover {
+  transform: scale(1.08);
+  background: #ffffff;
+}
+
+/* Bottoni tab */
+.tabs .tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Stile tab */
+.tab-btn {
+  background: transparent;
+  border: 1px solid #0fa3b1;
+  color: #cfe7ef;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+/* Tab attivo o hover */
+.tab-btn.active,
+.tab-btn:hover {
+  background: #0fa3b1;
+  color: #041b2e;
+}
+
+/* Nasconde i pannelli tab non attivi */
+.tab-panel {
+  display: none;
+}
+
+/* Mostra pannello attivo */
+.tab-panel.active {
+  display: block;
+}
+
+/* Lista del pannello tab */
+.tab-panel ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-section ul li {
-  margin-bottom: 12px;
-  font-size: 0.9rem;
-  color: #cccccc;
+/* Elementi lista tab */
+.tab-panel li {
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* Icone tab */
+.tab-panel i {
+  color: #0fa3b1;
+}
+
+/* Form newsletter */
+.newsletter-form {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+/* Campo input con icona */
+.input-wrap {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
+  background: #0f2f46;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
 }
 
-.footer-section ul li a {
-  color: #cccccc;
-  text-decoration: none;
-  transition: color 0.3s;
+/* Icona nel campo input */
+.input-wrap i {
+  color: #0fa3b1;
 }
 
-.footer-section ul li a:hover {
-  color: #00d4ff;
+/* Input email */
+.newsletter-form input {
+  border: none;
+  background: transparent;
+  color: #e9f6f8;
+  width: 100%;
+  outline: none;
 }
 
+/* Bottone invio */
+.newsletter-form button {
+  background: #0fa3b1;
+  color: #041b2e;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Hover bottone */
+.newsletter-form button:hover {
+  background: #ffffff;
+}
+
+/* Sezione finale footer */
 .footer-bottom {
-  max-width: 1200px;
-  margin: 40px auto 0 auto;
-  padding-top: 20px;
-  border-top: 1px solid #333;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #888;
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
 }
 
-.footer-bottom p {
-  margin-bottom: 5px;
+/* Link footer bottom */
+.footer-bottom-links a {
+  margin-left: 1rem;
+  color: #cfe7ef;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Hover link footer */
+.footer-bottom-links a:hover {
+  color: #0fa3b1;
+}
+
+/* Layout responsive footer */
+@media (max-width: 1024px) {
   .footer-content {
+    grid-template-columns: 1fr;
+  }
+  .footer-divider {
+    display: none;
+  }
+}
+
+/* Layout responsive bottom footer */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
     text-align: center;
   }
-  .footer-section ul li {
-    justify-content: center;
+  .footer-bottom-links a {
+    margin: 0 0.5rem;
   }
 }
-
 
 /* =========================
    LAYER BOLLE (contenitore)
@@ -149,7 +348,7 @@ position: absolute;
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1;      /* modifica se serve sopra/sotto altri layer */
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -158,49 +357,36 @@ position: absolute;
    ========================= */
 .bubble {
   position: absolute;
-  bottom: 25px;        /* punto di partenza (puoi aumentare/diminuire) */
+  bottom: 0px;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
   z-index: 1;
-
-  /* colore/effetto bolla (modifica qui per cambiare look) */
   background: radial-gradient(
     circle at 30% 30%,
     rgba(0, 0, 0, 0.089),
     rgba(14, 175, 224, 0.329)
   );
-
   opacity: var(--opacity);
-
-  /* animazioni */
   animation:
-    rise var(--duration) linear forwards,  /* salita */
-    sway var(--sway) ease-in-out infinite; /* oscillazione laterale */
-
-  filter: blur(0.2px); /* puoi aumentare per effetto più morbido */
+    rise var(--duration) linear forwards,
+    sway var(--sway) ease-in-out infinite;
+  filter: blur(0.2px);
 }
 
-/* =========================
-   ANIMAZIONE SALITA
-   -> sparisce 10px prima del top
-   ========================= */
+/* Animazione salita bolle */
 @keyframes rise {
   from { transform: translateY(0); }
-  to   { transform: translateY(calc(-140vh - 10px)); } /* <- QUI */
+  to   { transform: translateY(calc(-150vh - 10px)); }
 }
 
-/* =========================
-   ANIMAZIONE OSCILLAZIONE
-   ========================= */
+/* Oscillazione laterale bolle */
 @keyframes sway {
   0%,100% { margin-left: 0; }
-  50%     { margin-left: 25px; } /* cambia ampiezza oscillazione */
+  50%     { margin-left: 25px; }
 }
 
-/* =========================
-   ACCESSIBILITÀ
-   ========================= */
+/* Riduce animazioni per accessibilità */
 @media (prefers-reduced-motion: reduce) {
   .bubble { animation: none; }
 }
