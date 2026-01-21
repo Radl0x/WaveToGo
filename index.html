@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WaveToGo – Noleggio Gommoni Golfo Aranci</title>
+
+    <!-- SEO base -->
+    <meta
+      name="description"
+      content="Noleggio gommoni premium senza patente a Golfo Aranci. Scopri Tavolara e Molara in libertà."
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/layout.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/itinerary.css" />
+    <link rel="stylesheet" href="assets/css/checkout-template.css" />
+
+    <!-- Font -->
+     <script src="https://kit.fontawesome.com/561d3b308a.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
+        <nav class="nav">
+          <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-current" id="currentLang" data-lang="it">
+              <!-- ITALIA -->
+              <svg viewBox="0 0 3 2" class="flag">
+                <rect width="1" height="2" x="0" fill="#009246"/>
+                <rect width="1" height="2" x="1" fill="#ffffff"/>
+                <rect width="1" height="2" x="2" fill="#ce2b37"/>
+              </svg>
+            </button>
+
+            <div class="lang-dropdown">
+
+              <button data-lang="it">
+                <svg viewBox="0 0 3 2" class="flag">
+                  <rect width="1" height="2" x="0" fill="#009246"/>
+                  <rect width="1" height="2" x="1" fill="#ffffff"/>
+                  <rect width="1" height="2" x="2" fill="#ce2b37"/>
+                </svg>
+              </button>
+
+              <button data-lang="en">
+                <!-- UK -->
+                <svg viewBox="0 0 60 30" class="flag">
+                  <rect width="60" height="30" fill="#012169"/>
+                  <path d="M0 0L60 30M60 0L0 30" stroke="#ffffff" stroke-width="6"/>
+                  <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="4"/>
+                  <path d="M30 0V30M0 15H60" stroke="#ffffff" stroke-width="10"/>
+                  <path d="M30 0V30M0 15H60" stroke="#C8102E" stroke-width="6"/>
+                </svg>
+              </button>
+
+              <button data-lang="fr">
+                <!-- FRANCIA -->
+                <svg viewBox="0 0 3 2" class="flag">
+                  <rect width="1" height="2" x="0" fill="#0055A4"/>
+                  <rect width="1" height="2" x="1" fill="#ffffff"/>
+                  <rect width="1" height="2" x="2" fill="#EF4135"/>
+                </svg>
+              </button>
+
+              <button data-lang="de">
+                <!-- GERMANIA -->
+                <svg viewBox="0 0 3 2" class="flag">
+                  <rect width="3" height="2" fill="#FFCE00"/>
+                  <rect width="3" height="1.33" fill="#DD0000"/>
+                  <rect width="3" height="0.66" fill="#000000"/>
+                </svg>
+              </button>
+
+            </div>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+    
+    
+    <main>
+    <!-- HOME HERO -->
+      <section data-page="home" class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+
+          <!-- BADGE -->
+          <span class="hero-badge">
+            <i class="fas fa-anchor"></i> Senza patente • 40CV
+          </span>
+
+          <!-- TITOLO -->
+          <h1 class="hero-title">
+            Scopri la <br>
+            <span style="font-size: 3.4rem;">SARDEGNA</span>
+            <span style="font-size: 1.5rem;display: inline;">navigando</span> <span style="font-size: 1.5rem; display: inline; color: #f3f3f3;">le sue coste</span> 
+          </h1>
+
+          <!-- SOTTOTITOLO -->
+          <p class="hero-subtitle">
+            Noleggia un gommone senza patente e scopri calette
+            incontaminate, acqua cristallina e itinerari esclusivi.
+          </p>
+
+          <!-- CTA -->
+          <div class="hero-actions">
+            <button class="cta primary" id="heroPrenota">
+              <i class="fas fa-calendar-check"></i> Prenota ora
+            </button>
+            <button class="cta secondary" data-tab-open="itinerari">
+              <i class="fas fa-route"></i> Itinerari
+            </button>
+          </div>
+
+          <!-- TRUST BAR -->
+          <section class="trust-showcase showcase" id="trustShowcase">
+            <div class="showcase-grid">
+              <div class="showcase-item">
+                <div class="icon-circle"><i class="fas fa-users"></i></div>
+                <div class="text-group">
+                  <h4>Senza Patente</h4>
+                  <p>Adatto a tutti</p>
+                </div>
+              </div>
+
+              <div class="showcase-item">
+                <div class="icon-circle"><i class="fas fa-gas-pump"></i></div>
+                <div class="text-group">
+                  <h4>Eco-Friendly</h4>
+                  <p>Bassi consumi</p>
+                </div>
+              </div>
+
+              <div class="showcase-item">
+                <div class="icon-circle"><i class="fas fa-life-ring"></i></div>
+                <div class="text-group">
+                  <h4>Safe Sea</h4>
+                  <p>Assistenza H24</p>
+                </div>
+              </div>
+              
+              <div class="showcase-item">
+                <div class="icon-circle"><i class="fas fa-video"></i></div>
+                <div class="text-group">
+                  <h4>Social Ready</h4>
+                  <p>Noleggio GoPro</p>
+                </div>
+              </div>
+
+              <div class="showcase-item">
+                <div class="icon-circle"><i class="fas fa-calendar-alt"></i></div>
+                <div class="text-group">
+                  <h4>Cancellazione</h4>
+                  <p> entro le 48h</p>
+                </div>
+              </div>
+
+
+              <div class="showcase-item">
+                <div class="icon-circle"><i class="fas fa-water"></i></div>
+                <div class="text-group">
+                  <h4>Fun Pack</h4>
+                  <p>Giochi gonfiabili</p>
+                </div>
+              </div>
+            </div>
+          </section>        
+          
+    </main>
+
+      <div class="main-footer">
+        <div class="footer-content">
+          <div class="footer-section brand-info">
+            <div class="logo-container">
+              <span class="logo-wave">Wave</span><span class="logo-to">To</span
+              ><span class="logo-go">Go</span>
+            </div>
+            <p>
+              Noleggio gommoni d'eccellenza. Esplora le coste più belle con il
+              massimo comfort e sicurezza.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h4>Contatti</h4>
+            <ul>
+              <li>
+                <i class="fas fa-location-dot"></i> Porto di [Inserisci Nome
+                Porto]
+              </li>
+              <li><i class="fas fa-phone"></i> +39 324 683 0501</li>
+              <li><i class="fas fa-envelope"></i> info@wavetogo.it</li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Legale</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Termini e Condizioni</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 WaveToGo - Tutti i diritti riservati.</p>
+          <p>P.IVA 01234567890 | [Inserisci Ragione Sociale]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./assets/js/state.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/templates.js"></script>
+    <script src="./assets/js/booking.js"></script>
+    <script src="./assets/js/checkout-templates.js"></script>
+    <script src="./assets/js/navigation.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/translate.js"></script>
+  </body>
+</html>
