@@ -74,6 +74,7 @@
   line-height: 1.1;
   margin-bottom: 16px;
   z-index: 999;
+  
 }
 
 .hero-title span {
@@ -83,14 +84,16 @@
   z-index: 999;
 }
 
-
+.span-white {
+  color: var(--bg);
+}
 .hero-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   max-width: 650px;
   width: 90%;
   text-align: center;
   margin: auto;
-  color: #ecf0f1;
+  color: #ecf0f1ad;
   margin-bottom: 26px;
   z-index: 999;
 }
