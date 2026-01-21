@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaveToGo – Noleggio Gommoni Golfo Aranci</title>
+    <title data-i18n="meta.title">WaveToGo – Noleggio Gommoni Golfo Aranci</title>
 
     <!-- SEO base -->
     <meta
       name="description"
+      data-i18n-attr="content"
+      data-i18n="meta.description"
       content="Noleggio gommoni premium senza patente a Golfo Aranci. Scopri Tavolara e Molara in libertà."
     />
 
@@ -153,30 +155,35 @@
         <div class="container hero-content" style="position: relative; z-index: 2;">
           <!-- BADGE -->
           <span class="hero-badge">
-            <i class="fas fa-anchor"></i> Marina di Golfo Aranci
+            <i class="fas fa-anchor"></i>
+            <span data-i18n="hero.badge">Marina di Golfo Aranci</span>
           </span>
 
           <!-- TITOLO -->
           <h1 class="hero-title">
-            Scopri la <br />
-            <span style="font-size: 3.4rem">SARDEGNA</span>
-            <span style="font-size: 1.5rem; display: inline">navigando</span>
-            <span style="font-size: 1.5rem; display: inline; color: #f3f3f3"
-              >nelle sue coste</span
-            >
+            <span data-i18n="hero.title.line1">Scopri la</span> 
+            <span style="font-size: 3.4rem" data-i18n="hero.title.line2">SARDEGNA</span>
+            <span style="font-size: 1.5rem; display: inline" data-i18n="hero.title.line3">dal mare</span>
+            <span style="font-size: 1.5rem; display: inline; color: #f3f3f3" data-i18n="hero.title.line4">in libertà</span>
           </h1>
 
           <!-- SOTTOTITOLO -->
-          <p class="hero-subtitle">
-            Noleggia un gommone senza patente e scopri calette incontaminate,
-            acqua cristallina e itinerari esclusivi.
+          <p class="hero-subtitle" data-i18n-html="hero.subtitle">
+            Non noleggiamo gommoni. <br>
+            Regaliamo il momento in cui spegni il telefono,
+            guardi il mare e capisci che stai vivendo davvero.<br>
+            Calette segrete, acqua cristallina,
+            ricordi che restano quando l’estate finisce.
+            <br>
+            <br>
           </p>
 
           <!-- CTA -->
           <div class="hero-actions">
             <div class="cta-wrap">
               <button class="cta primary" id="heroPrenota">
-                <i class="fas fa-calendar-check"></i> Prenota ora
+                <i class="fas fa-calendar-check"></i>
+                <span data-i18n="hero.cta.primary">Prenota ora</span>
               </button>
 
               <svg
@@ -197,7 +204,8 @@
               </svg>
             </div>
             <button class="cta secondary" data-tab-open="itinerari">
-              <i class="fas fa-route"></i> Itinerari
+              <i class="fas fa-route"></i>
+              <span data-i18n="hero.cta.secondary">Itinerari</span>
             </button>
           </div>
 
@@ -207,40 +215,40 @@
               <div class="showcase-item reveal from-left">
                 <div class="icon-circle"><i class="fas fa-users"></i></div>
                 <div class="text-group">
-                  <h4>Senza Patente</h4>
-                  <p>Adatto a tutti</p>
+                  <h4 data-i18n="trust.item1.title">Senza Patente</h4>
+                  <p data-i18n="trust.item1.text">Adatto a tutti</p>
                 </div>
               </div>
 
               <div class="showcase-item reveal from-right">
                 <div class="icon-circle"><i class="fas fa-water"></i></div>
                 <div class="text-group">
-                  <h4>Fun Pack</h4>
-                  <p>Giochi gonfiabili</p>
+                  <h4 data-i18n="trust.item2.title">Fun Pack</h4>
+                  <p data-i18n="trust.item2.text">Giochi gonfiabili</p>
                 </div>
               </div>
 
               <div class="showcase-item reveal from-left">
                 <div class="icon-circle"><i class="fas fa-mask"></i></div>
                 <div class="text-group">
-                  <h4>Full immersion</h4>
-                  <p>Set snorkeling</p>
+                  <h4 data-i18n="trust.item3.title">Full immersion</h4>
+                  <p data-i18n="trust.item3.text">Set snorkeling</p>
                 </div>
               </div>
 
               <div class="showcase-item reveal from-left">
                 <div class="icon-circle"><i class="fas fa-video"></i></div>
                 <div class="text-group">
-                  <h4>Social Ready</h4>
-                  <p>Noleggio GoPro</p>
+                  <h4 data-i18n="trust.item4.title">Social Ready</h4>
+                  <p data-i18n="trust.item4.text">Noleggio GoPro</p>
                 </div>
               </div>
 
               <div class="showcase-item reveal from-right">
                 <div class="icon-circle"><i class="fas fa-life-ring"></i></div>
                 <div class="text-group">
-                  <h4>Safe Sea</h4>
-                  <p>GPS satellitare</p>
+                  <h4 data-i18n="trust.item5.title">Safe Sea</h4>
+                  <p data-i18n="trust.item5.text">GPS satellitare</p>
                 </div>
               </div>
 
@@ -249,8 +257,8 @@
                   <i class="fas fa-calendar-alt"></i>
                 </div>
                 <div class="text-group">
-                  <h4>Cancellazione</h4>
-                  <p>entro le 48h</p>
+                  <h4 data-i18n="trust.item6.title">Cancellazione</h4>
+                  <p data-i18n="trust.item6.text">entro le 48h</p>
                 </div>
               </div>
             </div>
@@ -259,7 +267,7 @@
         <div class="bubbles" aria-hidden="true"></div>
       </section>
     </main>
-
+    
     <!-- FOOTER -->
     <div class="main-footer">
         <div id="cover-onde"></div>
@@ -286,9 +294,9 @@
       <!-- contenuto footer -->
       <div class="footer-content">
         <div class="footer-column brand">
-          <div class="footer-label">Brand</div>
+          <div class="footer-label" data-i18n="footer.location">Golfo Aranci</div>
           <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
-          <p>Esperienze nautiche premium, prenotazioni rapide e assistenza dedicata.</p>
+          <p data-i18n="footer.brand.text">Esperienze nautiche premium, prenotazioni rapide e assistenza dedicata.</p>
 
           <div class="footer-social">
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -301,38 +309,37 @@
         <div class="footer-divider"></div>
 
         <div class="footer-column tabs">
-          <div class="footer-label">Sezioni</div>
+          <div class="footer-label" data-i18n="footer.sections.label">Sezioni</div>
 
           <div class="tab-buttons">
-            <button class="tab-btn active" data-tab="tab-servizi">Servizi</button>
-            <button class="tab-btn" data-tab="tab-supporto">Supporto</button>
-            <button class="tab-btn" data-tab="tab-contatti">Contatti</button>
+            <button class="tab-btn active" data-tab="tab-servizi" data-i18n="footer.tabs.services">Servizi</button>
+            <button class="tab-btn" data-tab="tab-supporto" data-i18n="footer.tabs.support">Supporto</button>
+            <button class="tab-btn" data-tab="tab-contatti" data-i18n="footer.tabs.contacts">Contatti</button>
           </div>
 
           <div class="tab-panel active" id="tab-servizi">
             <ul>
-              <li><i class="fa-solid fa-ship"></i> Noleggio barche</li>
-              <li><i class="fa-solid fa-water"></i> Tour privati</li>
-              <li><i class="fa-solid fa-briefcase"></i> Eventi aziendali</li>
-              <li><i class="fa-solid fa-gift"></i> Gift card</li>
+              <li><i class="fa-solid fa-ship"></i> <span data-i18n="footer.services.item1">Noleggio barche</span></li>
+              <li><i class="fa-solid fa-water"></i> <span data-i18n="footer.services.item2">Tour privati</span></li>
+              <li><i class="fa-solid fa-gift"></i> <span data-i18n="footer.services.item4">Gift card</span></li>
             </ul>
           </div>
 
           <div class="tab-panel" id="tab-supporto">
             <ul>
-              <li><i class="fa-solid fa-circle-question"></i> FAQ</li>
-              <li><i class="fa-solid fa-headset"></i> Assistenza clienti</li>
-              <li><i class="fa-solid fa-file-contract"></i> Termini & condizioni</li>
-              <li><i class="fa-solid fa-user-shield"></i> Privacy policy</li>
+              <li><i class="fa-solid fa-circle-question"></i> <span data-i18n="footer.support.item1">FAQ</span></li>
+              <li><i class="fa-solid fa-headset"></i> <span data-i18n="footer.support.item2">Assistenza clienti</span></li>
+              <li><i class="fa-solid fa-file-contract"></i> <span data-i18n="footer.support.item3">Termini & condizioni</span></li>
+              <li><i class="fa-solid fa-user-shield"></i> <span data-i18n="footer.support.item4">Privacy policy</span></li>
             </ul>
           </div>
 
           <div class="tab-panel" id="tab-contatti">
             <ul>
-              <li><i class="fa-solid fa-location-dot"></i> Via del Porto 24, Napoli</li>
-              <li><i class="fa-solid fa-phone"></i> +39 081 123 4567</li>
-              <li><i class="fa-solid fa-envelope"></i> support@wavetogo.it</li>
-              <li><i class="fa-solid fa-clock"></i> Lun–Sab 09:00–19:00</li>
+              <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.contacts.item1">Via del Porto 24, Napoli</span></li>
+              <li><i class="fa-solid fa-phone"></i> <span data-i18n="footer.contacts.item2">+39 081 123 4567</span></li>
+              <li><i class="fa-solid fa-envelope"></i> <span data-i18n="footer.contacts.item3">support@wavetogo.it</span></li>
+              <li><i class="fa-solid fa-clock"></i> <span data-i18n="footer.contacts.item4">Lun–Dom 09:00–19:00</span></li>
             </ul>
           </div>
         </div>
@@ -340,28 +347,29 @@
         <div class="footer-divider"></div>
 
         <div class="footer-column newsletter">
-          <div class="footer-label">Newsletter</div>
-          <h4>Resta aggiornato</h4>
-          <p>Offerte esclusive, nuove rotte e promozioni private.</p>
+          <div class="footer-label" data-i18n="footer.newsletter.label">Newsletter</div>
+          <h4 data-i18n="footer.newsletter.title">Resta aggiornato</h4>
+          <p data-i18n="footer.newsletter.text">Offerte esclusive, nuove rotte e promozioni private.</p>
           <form class="newsletter-form">
             <div class="input-wrap">
               <i class="fa-solid fa-envelope"></i>
-              <input type="email" placeholder="La tua email" required />
+              <input type="email" placeholder="La tua email" data-i18n-placeholder="footer.newsletter.placeholder" required />
             </div>
             <button type="submit">
-              <i class="fa-solid fa-paper-plane"></i> Iscriviti
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="footer.newsletter.button">Iscriviti</span>
             </button>
           </form>
-          <small>Puoi disiscriverti quando vuoi.</small>
+          <small data-i18n="footer.newsletter.note">Puoi disiscriverti quando vuoi.</small>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 WaveToGo. Tutti i diritti riservati.</span>
+        <span data-i18n="footer.bottom.copy">© 2026 WaveToGo. Tutti i diritti riservati.</span>
         <div class="footer-bottom-links">
-          <a href="#">Cookie</a>
-          <a href="#">Sicurezza</a>
-          <a href="#">Accessibilità</a>
+          <a href="#" data-i18n="footer.bottom.cookie">Cookie</a>
+          <a href="#" data-i18n="footer.bottom.security">Sicurezza</a>
+          <a href="#" data-i18n="footer.bottom.accessibility">Accessibilità</a>
         </div>
       </div>
     </div>
@@ -372,10 +380,6 @@
     <script src="./assets/js/templates.js"></script>
     <script src="./assets/js/navigation.js"></script>
     <script src="./assets/js/translate.js"></script>
-    <script src="./assets/js/calendar.js"></script>
-    <script src="./assets/js/booking.js"></script>
-    <script src="./assets/js/checkout-template.js"></script>
-    <script src="./assets/js/itinerary.js"></script>
     <script src="./assets/js/effect.js"></script>
     <script src="./assets/js/app.js"></script>
   </body>
