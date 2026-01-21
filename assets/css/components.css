@@ -79,9 +79,10 @@
 .hero-title span {
   display: block;
   font-size: 0.85em;
-  color: #74b9ff;
+  color: var(--accent);
   z-index: 999;
 }
+
 
 .hero-subtitle {
   font-size: 1.05rem;
@@ -114,7 +115,7 @@
 }
 
 .cta.primary {
-  background: #0984e3;
+  background: var(--accent);
   color: #fff;
 }
 
@@ -126,6 +127,51 @@
   background: rgba(255,255,255,0.15);
   color: #fff;
   backdrop-filter: blur(6px);
+}
+
+/* =========================
+   OUTLINE SVG ANIMATO
+   ========================= */
+.cta-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+#heroPrenota {
+  position: relative;
+  z-index: 1;
+}
+
+/* SVG overlay */
+.cta-outline {
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: calc(100% + 21px);
+  height: calc(100% + 1px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* linea perimetro */
+/* linea perimetro (loop continuo, senza bagliore) */
+.cta-outline rect {
+  fill: none;
+  stroke: rgba(15, 163, 177, 0.95);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+
+  /* segmento che gira senza "tagli" */
+  stroke-dasharray: 0.22 0.78;  /* lunghezza segmento + vuoto */
+  stroke-dashoffset: 0;
+
+  animation: outline-run 2.4s linear infinite;
+}
+
+/* loop continuo */
+@keyframes outline-run {
+  to { stroke-dashoffset: -1; }
 }
 
 /* TRUST */
@@ -144,7 +190,7 @@
 }
 
 .showcase-item:nth-child(4) {
-  background: #0080ff52;
+  background: #00e1ff52;
 }
 .showcase-item:nth-child(4) p {
   color: var(--bg);
@@ -228,3 +274,5 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+

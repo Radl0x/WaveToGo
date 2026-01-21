@@ -1,29 +1,43 @@
-const layer = document.querySelector('.bubbles');
+// =========================
+// SELETTORE LAYER
+// =========================
+// Seleziona solo le bolle dentro la hero
+const layer = document.querySelector('.hero .bubbles');
 
+// =========================
+// CREA UNA BOLLA SINGOLA
+// =========================
 function spawnBubble() {
   const b = document.createElement('span');
   b.className = 'bubble';
 
-  const size = Math.random() * 10 + 6;
-  const duration = Math.random() * 6 + 8;
-  const sway = Math.random() * 3 + 2;
-  const opacity = (Math.random() * 0.4 + 0.25).toFixed(2);
+  // ---------- PARAMETRI MODIFICABILI ----------
+  const size = Math.random() * 10 + 6;    // dimensione bolla
+  const duration = Math.random() * 6 + 8; // durata salita
+  const sway = Math.random() * 3 + 2;     // oscillazione laterale
+  const opacity = (Math.random() * 0.4 + 0.25).toFixed(2); // trasparenza
+  // -------------------------------------------
 
   b.style.setProperty('--size', `${size}px`);
   b.style.setProperty('--duration', `${duration}s`);
   b.style.setProperty('--sway', `${sway}s`);
   b.style.setProperty('--opacity', opacity);
+
+  // posizione orizzontale casuale
   b.style.left = `${Math.random() * 100}%`;
 
   layer.appendChild(b);
 
-  // rimuovi quando finisce l’animazione
+  // rimuove la bolla quando finisce la salita
   b.addEventListener('animationend', () => b.remove());
 }
 
-// spawn sporadico: intervallo random tra 250–900ms
+// =========================
+// GENERAZIONE SPORADICA
+// (più naturale, non tutte insieme)
+// =========================
 (function loop() {
   spawnBubble();
-  const next = Math.random() * 650 + 250;
+  const next = Math.random() * 650 + 250; // intervallo in ms (modifica qui)
   setTimeout(loop, next);
 })();
