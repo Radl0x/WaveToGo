@@ -57,6 +57,7 @@ position: absolute;
   color: #ffffff;
   padding: 60px 20px 120px 20px; /* Padding extra sotto per la bottom-nav */
   font-family: "Montserrat", sans-serif;
+  height: auto;
 }
 
 .footer-content {
