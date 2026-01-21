@@ -130,3 +130,41 @@ position: absolute;
     justify-content: center;
   }
 }
+
+
+
+.bubbles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -60px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(5, 9, 27, 0.85), rgba(0, 225, 255, 0.253));
+  opacity: var(--opacity);
+  animation:
+    rise var(--duration) linear forwards,
+    sway var(--sway) ease-in-out infinite;
+  filter: blur(0.2px);
+}
+
+@keyframes rise {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-120vh); }
+}
+
+@keyframes sway {
+  0%,100% { margin-left: 0; }
+  50%     { margin-left: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble { animation: none; }
+}
