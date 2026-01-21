@@ -70,15 +70,6 @@ position: absolute;
   position: relative;
 }
 
-.wave-divider {
-  display: block;
-  width: 200%;
-  height: 120px; /* altezza onda */
-  position: absolute;
-  top: -100px;
-  left: -50%;
-  z-index: 99;
-}
 
 .footer-content {
   max-width: 1200px;
@@ -167,7 +158,7 @@ position: absolute;
    ========================= */
 .bubble {
   position: absolute;
-  bottom: 0px;        /* punto di partenza (puoi aumentare/diminuire) */
+  bottom: 25px;        /* punto di partenza (puoi aumentare/diminuire) */
   width: var(--size);
   height: var(--size);
   border-radius: 50%;

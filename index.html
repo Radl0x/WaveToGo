@@ -148,10 +148,9 @@
               </button>
 
               <svg class="cta-outline" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true">
-                <rect x="2.5" y="2.5" width="95" height="35" rx="10" ry="10" pathLength="1"
-                      fill="none" stroke="#0fa3b1" stroke-width="2.5" />
-              </svg>           
-              </div>
+                <rect x="2.5" y="2.5" width="95" height="35" rx="10" ry="10"  pathLength="1" />
+              </svg>
+            </div>
             <button class="cta secondary" data-tab-open="itinerari">
               <i class="fas fa-route"></i> Itinerari
             </button>
@@ -219,18 +218,50 @@
     
     <!-- FOOTER -->
       <div class="main-footer">
-<svg class="wave-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
-  <!-- onda sopra (accent) -->
-  <path fill="#0fa3b1" opacity="0.8" d="M0,95 C100,120 220,120 340,95 C460,70 580,70 700,95 C820,120 940,120 1060,95 C1180,70 1300,70 1440,95 L1440,180 L0,180 Z">
-    <animateTransform attributeName="transform" type="translate" dur="6s" repeatCount="indefinite" values="0 0; 240 0; 0 0" />
-  </path>
-  <!-- onda sotto (primary) -->
-  <path fill="#041b2e" d="M0,120 C120,150 240,150 360,120 C480,90 600,90 720,120 C840,150 960,150 1080,120 C1200,90 1320,90 1440,120 L1440,180 L0,180 Z">
-    <animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" values="0 0; -360 0; 0 0" />
-  </path>
-</svg>
+        
 
-</svg>
+<div style="position:absolute;left:0;top:0;width:100%;height:220px;z-index:2;">
+  <!-- onda dietro -->
+  <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg"
+       style="position:absolute;left:0;top:-140px;width:100%;height:100%;z-index:1;">
+    <path fill="#0fa3b1" d="
+      M0,135 C100,165 200,175 300,150
+      C400,125 500,115 600,140
+      C700,165 800,175 900,150
+      C1000,125 1100,115 1200,140
+      C1300,165 1400,175 1500,150
+      C1600,125 1700,115 1800,140
+      C1900,165 2000,175 2100,150
+      C2200,125 2300,115 2400,140
+      L2400,220 L0,220 Z">
+      <animateTransform attributeName="transform" type="translate"
+        dur="10s" repeatCount="indefinite"
+        values="0 0; -1200 0" />
+    </path>
+  </svg>
+
+  <!-- onda davanti -->
+  <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg"
+       style="position:absolute;left:0;top:-140px;width:100%;height:100%;z-index:2;">
+    <path fill="#041b2e" d="
+      M0,150 C90,185 180,195 270,165
+      C360,135 450,125 540,150
+      C630,175 720,185 810,165
+      C900,145 990,130 1080,150
+      C1170,175 1260,185 1350,165
+      C1440,145 1530,130 1620,150
+      C1710,175 1800,185 1890,165
+      C1980,145 2070,130 2160,150
+      C2250,175 2340,185 2430,165
+      L2430,220 L0,220 Z">
+      <animateTransform attributeName="transform" type="translate"
+        dur="14s" repeatCount="indefinite"
+        values="0 0; -1200 0" />
+    </path>
+  </svg>
+</div>
+
+        
         <div class="footer-content">
           <div class="footer-section brand-info">
             <div class="logo-container">
