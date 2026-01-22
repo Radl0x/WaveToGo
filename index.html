@@ -8,16 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="--primary" />
     <link rel="icon" href="./assets/images/favicon.ico" />
-    
+
     <!-- ========================= -->
     <!-- SEO -->
     <!-- ========================= -->
-    <title data-i18n="meta.title">WaveToGo – Noleggio Gommoni Golfo Aranci</title>
+    <title data-i18n="meta.title">
+      WaveToGo – Noleggio Gommoni Golfo Aranci
+    </title>
     <meta
-    name="description"
-    data-i18n-attr="content"
-    data-i18n="meta.description"
-    content="Noleggio gommoni premium senza patente a Golfo Aranci. Scopri Tavolara e Molara in libertà."
+      name="description"
+      data-i18n-attr="content"
+      data-i18n="meta.description"
+      content="Noleggio gommoni premium senza patente a Golfo Aranci. Scopri Tavolara e Molara in libertà."
     />
 
     <!-- ========================= -->
@@ -31,12 +33,19 @@
     <link rel="stylesheet" href="./assets/css/booking.css" />
     <link rel="stylesheet" href="./assets/css/popup.css" />
 
-
     <!-- ========================= -->
     <!-- FONT / ICONS -->
     <!-- ========================= -->
 
-    <script src="https://kit.fontawesome.com/561d3b308a.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/561d3b308a.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -52,32 +61,38 @@
         <!-- LOGO -->
         <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
 
-        <!-- NAVIGAZIONE -->
-        <nav class="nav">
-          <!-- SWITCH LINGUA -->
+        <nav class="nav" aria-label="Main navigation">
           <div class="lang-switcher" id="langSwitcher">
-            <button class="lang-current" id="currentLang" data-lang="it">
-              <!-- ITALIA -->
-              <svg viewBox="0 0 3 2" class="flag">
+            <button
+              class="lang-current"
+              id="currentLang"
+              data-lang="it"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="langDropdown"
+              type="button"
+              title="Seleziona lingua"
+            >
+              <!-- ITALIAN FLAG (SVG) -->
+              <svg viewBox="0 0 3 2" class="flag" aria-hidden="true" width="20" height="14">
                 <rect width="1" height="2" x="0" fill="#009246" />
                 <rect width="1" height="2" x="1" fill="#ffffff" />
                 <rect width="1" height="2" x="2" fill="#ce2b37" />
               </svg>
             </button>
 
-            <!-- DROPDOWN LINGUE -->
-            <div class="lang-dropdown">
-              <button data-lang="it">
-                <svg viewBox="0 0 3 2" class="flag">
+            <div class="lang-dropdown" id="langDropdown" role="menu" aria-hidden="true">
+              <button data-lang="it" role="menuitem" type="button" aria-label="Italiano">
+                <svg viewBox="0 0 3 2" class="flag" width="20" height="14" aria-hidden="true">
                   <rect width="1" height="2" x="0" fill="#009246" />
                   <rect width="1" height="2" x="1" fill="#ffffff" />
                   <rect width="1" height="2" x="2" fill="#ce2b37" />
                 </svg>
               </button>
 
-              <button data-lang="en">
+              <button data-lang="en" role="menuitem" type="button" aria-label="English">
                 <!-- UK -->
-                <svg viewBox="0 0 60 30" class="flag">
+                <svg viewBox="0 0 60 30" class="flag" width="24" height="14" aria-hidden="true">
                   <rect width="60" height="30" fill="#012169" />
                   <path d="M0 0L60 30M60 0L0 30" stroke="#ffffff" stroke-width="6" />
                   <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="4" />
@@ -86,18 +101,18 @@
                 </svg>
               </button>
 
-              <button data-lang="fr">
-                <!-- FRANCIA -->
-                <svg viewBox="0 0 3 2" class="flag">
+              <button data-lang="fr" role="menuitem" type="button" aria-label="Français">
+                <!-- FRANCE -->
+                <svg viewBox="0 0 3 2" class="flag" width="20" height="14" aria-hidden="true">
                   <rect width="1" height="2" x="0" fill="#0055A4" />
                   <rect width="1" height="2" x="1" fill="#ffffff" />
                   <rect width="1" height="2" x="2" fill="#EF4135" />
                 </svg>
               </button>
 
-              <button data-lang="de">
-                <!-- GERMANIA -->
-                <svg viewBox="0 0 3 2" class="flag">
+              <button data-lang="de" role="menuitem" type="button" aria-label="Deutsch">
+                <!-- GERMANY -->
+                <svg viewBox="0 0 3 2" class="flag" width="20" height="14" aria-hidden="true">
                   <rect width="3" height="2" fill="#FFCE00" />
                   <rect width="3" height="1.33" fill="#DD0000" />
                   <rect width="3" height="0.66" fill="#000000" />
@@ -109,14 +124,10 @@
       </div>
     </header>
 
-    <!-- ========================= -->
     <!-- MAIN -->
-    <!-- ========================= -->
     <main>
-      <!-- ========================= -->
       <!-- HERO HOME -->
-      <!-- ========================= -->
-      <section data-page="home" class="hero" style="position: relative;">
+      <section data-page="home" class="hero" id="section1" style="position: relative">
         <!-- ONDE BACKGROUND -->
         <svg
           viewBox="0 0 1200 200"
@@ -132,6 +143,7 @@
             width: 100%;
             height: auto;
           "
+          aria-hidden="true"
         >
           <path fill="#0a1e3b">
             <animate
@@ -161,19 +173,244 @@
         </svg>
 
         <!-- OVERLAY SCURO PER CONTRASTO -->
-        <div class="hero-overlay" style="z-index: 1;"></div>
+        <div class="hero-overlay" style="z-index: 1" aria-hidden="true"></div>
+
+        <!-- EFFETTO BOLLE -->
+        <div class="bubbles" aria-hidden="true"></div>
 
         <!-- CONTENUTO HERO -->
-        <div class="container hero-content" style="position: relative; z-index: 2;">
+        <div class="container hero-content" style="position: relative; z-index: 2">
+
+
+          
+
+          <!-- SECTION 2 HERO -->
+          
+            <div class="booking-section section2">
+              <div class="two-content" id="page1">
+                <div class="carousel-viewport" id="boat-carousel">
+                  <div class="carousel-item">
+                    <div class="boat-card" data-index="0">
+                      <div class="boat-image-placeholder">
+                        <img src="./image.png" alt="Gommone" />
+                      </div>
+                      <div class="boat-info-row">
+                        <div class="boat-details">
+                          <h3>2Bar 62 Luxury</h3>
+                          <p class="boat-price">
+                            <span class="txt-from">Da</span>
+                            <strong class="price-display">€150</strong>
+                            <span class="txt-perday">/gg</span>
+                          </p>
+                        </div>
+                        <div class="boat-icons-row" style="display: flex; gap: 8px">
+                          <div class="icon-box icon-refresh" onclick="resetExtrasOnly(0)">
+                            <i class="fas fa-sync-alt"></i>
+                          </div>
+                          <div
+                            class="icon-box icon-marker"
+                            onclick="toggleDetailsAndReset(0)"
+                          >
+                            <span><i class="fa-solid fa-list"></i></span>
+                            <i class="fas fa-arrow-down arrow-toggle"></i>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="boat-details-extended">
+                        <div class="details-grid">
+                          <div class="detail-item">
+                            <i class="fas fa-tachometer-alt"></i
+                            ><span class="det-txt">Motore: 40cv</span>
+                          </div>
+                          <div class="detail-item">
+                            <i class="fas fa-users"></i
+                            ><span class="det-txt">Portata: 8</span>
+                          </div>
+                          <div class="detail-item">
+                            <i class="fas fa-music"></i
+                            ><span class="det-txt">Stereo </span>
+                          </div>
+                          <div class="detail-item">
+                            <i class="fas fa-shower"></i
+                            ><span class="det-txt">Doccetta</span>
+                          </div>
+                          <div class="detail-item">
+                            <i class="fas fa-umbrella-beach"></i
+                            ><span class="det-txt">Tendalino</span>
+                          </div>
+                          <div class="detail-item">
+                            <i class="fas fa-charging-station"></i
+                            ><span class="det-txt">Prese USB</span>
+                          </div>
+                        </div>
+
+                        <div class="extras-container">
+                          <div class="extras-title">Personalizza il tuo viaggio</div>
+
+                          <div class="extra-row">
+                            <div class="extra-label">
+                              <i class="fas fa-gas-pump"></i>
+                              <span class="extra-txt">Benzina extra ( Tanica* )</span>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                              <span class="extra-price-tag">+€30</span>
+                              <input
+                                type="checkbox"
+                                class="extra-checkbox"
+                                data-price="30"
+                                data-name="Benzina"
+                                onchange="calculateTotalWithExtras(0)"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="extra-row">
+                            <div class="extra-label">
+                              <i class="fas fa-box"></i>
+                              <span class="extra-txt">Ghiacciaia *</span>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                              <span class="extra-price-tag">+€15</span>
+                              <input
+                                type="checkbox"
+                                class="extra-checkbox"
+                                data-price="15"
+                                data-name="Ghiacciaia"
+                                onchange="calculateTotalWithExtras(0)"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="extra-row disabled">
+                            <div class="extra-label">
+                              <i class="fas fa-sun"></i>
+                              <span class="extra-txt">Telo e crema solare</span>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                              <span class="extra-price-tag">+€20</span>
+                              <input
+                                type="checkbox"
+                                class="extra-checkbox"
+                                data-price="20"
+                                data-name="Telo e crema solare"
+                                onchange="calculateTotalWithExtras(0)"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="extra-row">
+                            <div class="extra-label">
+                              <i class="fas fa-mask"></i>
+                              <span class="extra-txt">Kit snorkeling *</span>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                              <span class="extra-price-tag">+€10</span>
+                              <input
+                                type="checkbox"
+                                class="extra-checkbox"
+                                data-price="10"
+                                data-name="Kit snorkeling"
+                                onchange="calculateTotalWithExtras(0)"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="extra-row">
+                            <div class="extra-label">
+                              <i class="fa-solid fa-life-ring"></i>
+                              <span class="extra-txt">Giochi gonfiabili *</span>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                              <span class="extra-price-tag">+€25</span>
+                              <input
+                                type="checkbox"
+                                class="extra-checkbox"
+                                data-price="25"
+                                data-name="Giochi gonfiabili"
+                                onchange="calculateTotalWithExtras(0)"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="extra-row">
+                            <div class="extra-label">
+                              <i class="fas fa-camera-retro"></i>
+                              <span class="extra-txt">Set GoPro *</span>
+                            </div>
+                            <div style="display: flex; align-items: center">
+                              <span class="extra-price-tag">+€100</span>
+                              <input
+                                type="checkbox"
+                                class="extra-checkbox"
+                                data-price="100"
+                                data-name="Set GoPro"
+                                onchange="calculateTotalWithExtras(0)"
+                              />
+                            </div>
+                          </div>
+
+                          <br />
+                          <p class="note">
+                            <strong>NOTA BENE (*):</strong> Gli accessori contrassegnati
+                            sono forniti a noleggio. Ti preghiamo di averne cura e
+                            riconsegnarli integri a fine giornata: eventuali danni o
+                            smarrimenti verranno detratti dal deposito cauzionale.
+                          </p>
+                        </div>
+                      </div>
+
+                      <br />
+
+                      <div class="booking-widget" id="booking-widget">
+                        <div class="widget-header">
+                          <div class="arrow-btn" onclick="changeMonth(-1, 0)">
+                            <i class="fas fa-chevron-left"></i>
+                          </div>
+                          <h4 class="month-year-display">Maggio 2027</h4>
+                          <div class="arrow-btn" onclick="changeMonth(1, 0)">
+                            <i class="fas fa-chevron-right"></i>
+                          </div>
+                        </div>
+                        <div class="weekdays-grid">
+                          <div>Lun</div>
+                          <div>Mar</div>
+                          <div>Mer</div>
+                          <div>Gio</div>
+                          <div>Ven</div>
+                          <div>Sab</div>
+                          <div>Dom</div>
+                        </div>
+                        <div class="calendar-grid"></div>
+                        <div class="widget-footer">
+                          <p class="selected-date-msg">
+                            Seleziona una data per vedere disponibilità
+                          </p>
+                        </div>
+                      </div>
+                      <p id="alert">
+                        <i class="fa-solid fa-triangle-exclamation"></i> seleziona una
+                        data per procedere.
+                      </p>
+                      <button class="btn-prenota-large" onclick="prenota(0)">
+                        PRENOTA ORA
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>          
+
+        
           <!-- BADGE -->
           <span class="hero-badge">
-            <i class="fas fa-anchor"></i>
+            <i class="fas fa-anchor" aria-hidden="true"></i>
             <span data-i18n="hero.badge">Marina di Golfo Aranci</span>
           </span>
 
           <!-- TITOLO -->
           <h1 class="hero-title">
-            <span data-i18n="hero.title.line1" style="color: #f3f3f3;">Scopri la</span> 
+            <span data-i18n="hero.title.line1" style="color: #f3f3f3">Scopri la</span>
             <span style="font-size: 3.4rem" data-i18n="hero.title.line2">SARDEGNA</span>
             <span style="font-size: 1.5rem; display: inline; color: #f3f3f3" data-i18n="hero.title.line4">in libertà</span>
             <span style="font-size: 1.5rem; display: inline" data-i18n="hero.title.line3">dal mare</span>
@@ -181,23 +418,22 @@
 
           <!-- SOTTOTITOLO -->
           <p class="hero-subtitle" data-i18n-html="hero.subtitle">
-            Non sono semplici gommoni. <br>
-            Ti regaliamo il momento in cui spegni il telefono,
-            guardi il mare e capisci che stai vivendo davvero.<br>
-            Calette segrete, acqua cristallina,
-            ricordi che restano quando l’estate finisce.
-            <br>
-            <br>
+            Non sono semplici gommoni. <br />
+            Ti regaliamo il momento in cui spegni il telefono, guardi il mare e
+            capisci che stai vivendo davvero.<br />
+            Calette segrete, acqua cristallina, ricordi che restano quando
+            l’estate finisce.
+            <br /><br />
           </p>
 
           <!-- CTA -->
           <div class="hero-actions">
             <div class="cta-wrap">
               <!-- BOTTONE PRENOTA -->
-              <button class="cta primary" id="heroPrenota">
-                <i class="fas fa-calendar-check"></i>
+              <a class="cta primary" id="heroPrenota" href="#">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
                 <span data-i18n="hero.cta.primary">Prenota ora</span>
-              </button>
+              </a>
 
               <svg
                 class="cta-outline"
@@ -205,30 +441,22 @@
                 preserveAspectRatio="none"
                 aria-hidden="true"
               >
-                <rect
-                  x="2.2"
-                  y="2.2"
-                  width="95"
-                  height="35"
-                  rx="10"
-                  ry="10"
-                  pathLength="1"
-                />
+                <rect x="2.2" y="2.2" width="95" height="35" rx="10" ry="10" pathLength="1" />
               </svg>
             </div>
 
             <!-- CTA SECONDARIA -->
-            <button class="cta secondary" data-tab-open="itinerari">
-              <i class="fas fa-route"></i>
+            <button class="cta secondary" data-tab-open="itinerari" id="heroItinerari" type="button">
+              <i class="fas fa-route" aria-hidden="true"></i>
               <span data-i18n="hero.cta.secondary">Itinerari</span>
             </button>
           </div>
 
           <!-- TRUST BAR -->
-          <section class="trust-showcase showcase" id="trustShowcase" style="position: relative; z-index: 3;">
+          <section class="trust-showcase showcase" id="trustShowcase" style="position: relative; z-index: 3">
             <div class="showcase-grid">
               <div class="showcase-item reveal from-left">
-                <div class="icon-circle"><i class="fas fa-users"></i></div>
+                <div class="icon-circle"><i class="fas fa-users" aria-hidden="true"></i></div>
                 <div class="text-group">
                   <h4>Senza Patente</h4>
                   <p>Adatto a tutti</p>
@@ -236,7 +464,7 @@
               </div>
 
               <div class="showcase-item reveal from-right">
-                <div class="icon-circle"><i class="fas fa-water"></i></div>
+                <div class="icon-circle"><i class="fas fa-water" aria-hidden="true"></i></div>
                 <div class="text-group">
                   <h4>Fun Pack</h4>
                   <p>Giochi gonfiabili</p>
@@ -244,7 +472,7 @@
               </div>
 
               <div class="showcase-item reveal from-left">
-                <div class="icon-circle"><i class="fas fa-mask"></i></div>
+                <div class="icon-circle"><i class="fas fa-mask" aria-hidden="true"></i></div>
                 <div class="text-group">
                   <h4>Full immersion</h4>
                   <p>Set snorkeling</p>
@@ -252,7 +480,7 @@
               </div>
 
               <div class="showcase-item reveal from-left">
-                <div class="icon-circle"><i class="fas fa-video"></i></div>
+                <div class="icon-circle"><i class="fas fa-video" aria-hidden="true"></i></div>
                 <div class="text-group">
                   <h4>Social Ready</h4>
                   <p>Noleggio GoPro</p>
@@ -260,7 +488,7 @@
               </div>
 
               <div class="showcase-item reveal from-right">
-                <div class="icon-circle"><i class="fas fa-life-ring"></i></div>
+                <div class="icon-circle"><i class="fas fa-life-ring" aria-hidden="true"></i></div>
                 <div class="text-group">
                   <h4>Safe Sea</h4>
                   <p>GPS satellitare</p>
@@ -268,9 +496,7 @@
               </div>
 
               <div class="showcase-item reveal from-right">
-                <div class="icon-circle">
-                  <i class="fas fa-calendar-alt"></i>
-                </div>
+                <div class="icon-circle"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
                 <div class="text-group">
                   <h4>Cancellazione</h4>
                   <p>entro le 48h</p>
@@ -279,9 +505,6 @@
             </div>
           </section>
         </div>
-
-        <!-- EFFETTO BOLLE -->
-        <div class="bubbles" aria-hidden="true"></div>
       </section>
     </main>
 
@@ -293,21 +516,15 @@
 
       <!-- ONDE FOOTER -->
       <div class="footer-waves">
-        <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" class="wave wave-back" style="z-index: 1;">
-          <path
-            fill="#0fa3b175"
-            d="M0,135 C100,165 200,175 300,150 C400,125 500,115 600,140 C700,165 800,175 900,150 C1000,125 1100,115 1200,140 C1300,165 1400,175 1500,150 C1600,125 1700,115 1800,140 C1900,165 2000,175 2100,150 C2200,125 2300,115 2400,140 L2400,220 L0,220 Z"
-          >
-            <animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" values="-1200 0; 0 0" />
+        <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" class="wave wave-back" style="z-index: 1" aria-hidden="true">
+          <path fill="#0fa3b175" d="M0,135 C100,165 200,175 300,150 C400,125 500,115 600,140 C700,165 800,175 900,150 C1000,125 1100,115 1200,140 C1300,165 1400,175 1500,150 C1600,125 1700,115 1800,140 C1900,165 2000,175 2100,150 C2200,125 2300,115 2400,140 L2400,220 L0,220 Z">
+            <animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" values="-1200 0; 0 0"/>
           </path>
         </svg>
 
-        <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" class="wave wave-front" style="z-index: 2;">
-          <path
-            fill="#041b2e"
-            d="M0,150 C90,185 180,195 270,165 C360,135 450,125 540,150 C630,175 720,185 810,165 C900,145 990,130 1080,150 C1170,175 1260,185 1350,165 C1440,145 1530,130 1620,150 C1710,175 1800,185 1890,165 C1980,145 2070,130 2160,150 C2250,175 2340,185 2430,165 L2430,220 L0,220 Z"
-          >
-            <animateTransform attributeName="transform" type="translate" dur="14s" repeatCount="indefinite" values="0 0; -1200 0" />
+        <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" class="wave wave-front" style="z-index: 2" aria-hidden="true">
+          <path fill="#041b2e" d="M0,150 C90,185 180,195 270,165 C360,135 450,125 540,150 C630,175 720,185 810,165 C900,145 990,130 1080,150 C1170,175 1260,185 1350,165 C1440,145 1530,130 1620,150 C1710,175 1800,185 1890,165 C1980,145 2070,130 2160,150 C2250,175 2340,185 2430,165 L2430,220 L0,220 Z">
+            <animateTransform attributeName="transform" type="translate" dur="14s" repeatCount="indefinite" values="0 0; -1200 0"/>
           </path>
         </svg>
       </div>
@@ -316,15 +533,17 @@
       <div class="footer-content">
         <!-- COLONNA BRAND -->
         <div class="footer-column brand">
-          <div class="footer-label" data-i18n="footer.location">Golfo Aranci</div>
+          <div class="footer-label" data-i18n="footer.location">Noleggio</div>
           <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
-          <p data-i18n="footer.brand.text">Esperienze nautiche premium, prenotazioni rapide e assistenza dedicata.</p>
+          <p data-i18n="footer.brand.text">
+            Esperienze nautiche premium, prenotazioni rapide e assistenza dedicata.
+          </p>
 
           <div class="footer-social">
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
           </div>
         </div>
 
@@ -342,27 +561,27 @@
 
           <div class="tab-panel active" id="tab-servizi">
             <ul>
-              <li><i class="fa-solid fa-ship"></i> <span data-i18n="footer.services.item1">Noleggio barche</span></li>
-              <li><i class="fa-solid fa-water"></i> <span data-i18n="footer.services.item2">Tour privati</span></li>
-              <li><i class="fa-solid fa-gift"></i> <span data-i18n="footer.services.item4">Gift card</span></li>
+              <li><i class="fa-solid fa-ship" aria-hidden="true"></i> <span data-i18n="footer.services.item1">Noleggio barche</span></li>
+              <li><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="footer.services.item2">Tour privati</span></li>
+              <li><i class="fa-solid fa-gift" aria-hidden="true"></i> <span data-i18n="footer.services.item4">Gift card</span></li>
             </ul>
           </div>
 
           <div class="tab-panel" id="tab-supporto">
             <ul>
-              <li><i class="fa-solid fa-circle-question"></i> <span data-i18n="footer.support.item1">FAQ</span></li>
-              <li><i class="fa-solid fa-headset"></i> <span data-i18n="footer.support.item2">Assistenza clienti</span></li>
-              <li><i class="fa-solid fa-file-contract"></i> <span data-i18n="footer.support.item3">Termini & condizioni</span></li>
-              <li><i class="fa-solid fa-user-shield"></i> <span data-i18n="footer.support.item4">Privacy policy</span></li>
+              <li><i class="fa-solid fa-circle-question" aria-hidden="true"></i> <span data-i18n="footer.support.item1">FAQ</span></li>
+              <li><i class="fa-solid fa-headset" aria-hidden="true"></i> <span data-i18n="footer.support.item2">Assistenza clienti</span></li>
+              <li><i class="fa-solid fa-file-contract" aria-hidden="true"></i> <span data-i18n="footer.support.item3">Termini & condizioni</span></li>
+              <li><i class="fa-solid fa-user-shield" aria-hidden="true"></i> <span data-i18n="footer.support.item4">Privacy policy</span></li>
             </ul>
           </div>
 
           <div class="tab-panel" id="tab-contatti">
             <ul>
-              <li><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer.contacts.item1">Via del Porto 24, Napoli</span></li>
-              <li><i class="fa-solid fa-phone"></i> <span data-i18n="footer.contacts.item2">+39 081 123 4567</span></li>
-              <li><i class="fa-solid fa-envelope"></i> <span data-i18n="footer.contacts.item3">support@wavetogo.it</span></li>
-              <li><i class="fa-solid fa-clock"></i> <span data-i18n="footer.contacts.item4">Lun–Dom 09:00–19:00</span></li>
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="footer.contacts.item1">Via del Porto 24, Napoli</span></li>
+              <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <span data-i18n="footer.contacts.item2">+39 081 123 4567</span></li>
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span data-i18n="footer.contacts.item3">support@wavetogo.it</span></li>
+              <li><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="footer.contacts.item4">Lun–Dom 09:00–19:00</span></li>
             </ul>
           </div>
         </div>
@@ -374,15 +593,12 @@
           <div class="footer-label" data-i18n="footer.newsletter.label">Newsletter</div>
           <h4 data-i18n="footer.newsletter.title">Resta aggiornato</h4>
           <p data-i18n="footer.newsletter.text">Offerte esclusive, nuove rotte e promozioni private.</p>
-          <form class="newsletter-form">
+          <form class="newsletter-form" action="#" method="post">
             <div class="input-wrap">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" placeholder="La tua email" data-i18n-placeholder="footer.newsletter.placeholder" required />
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <input type="email" name="email" placeholder="La tua email" data-i18n-placeholder="footer.newsletter.placeholder" required />
             </div>
-            <button type="submit">
-              <i class="fa-solid fa-paper-plane"></i>
-              <span data-i18n="footer.newsletter.button">Iscriviti</span>
-            </button>
+            <button type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <span data-i18n="footer.newsletter.button">Iscriviti</span></button>
           </form>
           <small data-i18n="footer.newsletter.note">Puoi disiscriverti quando vuoi.</small>
         </div>
@@ -399,109 +615,17 @@
       </div>
     </div>
 
-      
-    <!-- POPUP DI PRENOTAZIONE -->
-    <div class="booking-popup" id="bookingPopup" aria-hidden="true">
+    <!-- ========================= -->
+    <!-- JS BASE -->
+    <!-- ========================= -->
+    <script src="./assets/js/data.js" defer></script>
+    <script src="./assets/js/state.js" defer></script>
+    <script src="./assets/js/templates.js" defer></script>
+    <script src="./assets/js/navigation.js" defer></script>
+    <script src="./assets/js/translate.js" defer></script>
+    <script src="./assets/js/effect.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
+    <script src="./assets/js/booking.js" defer></script>
 
-      <!-- OVERLAY -->
-      <div class="booking-popup-overlay" id="bookingPopupOverlay"></div>
-
-      <!-- CONTENUTO POPUP -->
-      <div class="booking-popup-content" role="dialog" aria-modal="true">
-
-            <header class="header">
-      <div class="container header-inner">
-        <!-- LOGO -->
-        <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
-
-      </div>
-    </header>
-
-
-      <section data-page="home" class="hero" style="position: relative;">
-        <!-- ONDE BACKGROUND -->
-        <svg
-          viewBox="0 0 1200 200"
-          xmlns="http://www.w3.org/2000/svg"
-          style="
-            background: transparent;
-            position: absolute;
-            transform: rotate(180deg);
-            opacity: 0.6;
-            top: 0px;
-            left: 0;
-            z-index: 0;
-            width: 100%;
-            height: auto;
-          "
-        >
-          <path fill="#0a1e3b">
-            <animate
-              attributeName="d"
-              dur="6s"
-              repeatCount="indefinite"
-              values="
-            M0,100 C150,130 350,70 600,100 C850,130 1050,70 1200,100 L1200,200 L0,200 Z;
-            M0,90 C150,60 350,140 600,90 C850,40 1050,120 1200,90 L1200,200 L0,200 Z;
-            M0,100 C150,130 350,70 600,100 C850,130 1050,70 1200,100 L1200,200 L0,200 Z
-          "
-            />
-          </path>
-
-          <path fill="#0fa3b1" opacity="0.65">
-            <animate
-              attributeName="d"
-              dur="4s"
-              repeatCount="indefinite"
-              values="
-            M0,120 C200,150 400,90 600,120 C800,150 1000,90 1200,120 L1200,200 L0,200 Z;
-            M0,110 C200,80 400,160 600,110 C800,60 1000,140 1200,110 L1200,200 L0,200 Z;
-            M0,120 C200,150 400,90 600,120 C800,150 1000,90 1200,120 L1200,200 L0,200 Z
-          "
-            />
-          </path>
-        </svg>
-
-        <!-- OVERLAY SCURO PER CONTRASTO -->
-        <div class="hero-overlay" style="z-index: 1;"></div>
-
-        <!-- CONTENUTO HERO -->
-        <div class="container hero-content" style="position: relative; z-index: 2;">
-        </div>
-
-        <!-- EFFETTO BOLLE -->
-        <div class="bubbles" aria-hidden="true"></div>
-      </section>
-        
-        <!-- CHIUSURA -->
-        <button
-          class="booking-popup-close"
-          id="bookingPopupClose"
-          aria-label="Close Booking Popup"
-        >
-          ✕
-        </button>
-
-        <!-- APP DI PRENOTAZIONE -->
-        <div id="bookingApp">
-          <!-- qui dentro caricherai il booking engine -->
-        </div>
-
-      </div>
-    </div>
-
-    
-
-  <!-- ========================= -->
-  <!-- JS BASE -->
-  <!-- ========================= -->
-  <script src="./assets/js/data.js"></script>
-  <script src="./assets/js/state.js"></script>
-  <script src="./assets/js/templates.js"></script>
-  <script src="./assets/js/navigation.js"></script>
-  <script src="./assets/js/translate.js"></script>
-  <script src="./assets/js/effect.js"></script>
-  <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/booking.js" defer></script>
   </body>
 </html>
