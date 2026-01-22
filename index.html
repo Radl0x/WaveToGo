@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./assets/css/checkout-template.css" />
     <link rel="stylesheet" href="./assets/css/itinerary.css" />
     <link rel="stylesheet" href="./assets/css/booking.css" />
+    <link rel="stylesheet" href="./assets/css/popup.css" />
 
 
     <!-- ========================= -->
@@ -397,6 +398,98 @@
     </div>
 
       
+    <!-- POPUP DI PRENOTAZIONE -->
+    <div class="booking-popup" id="bookingPopup" aria-hidden="true">
+
+      <!-- OVERLAY -->
+      <div class="booking-popup-overlay" id="bookingPopupOverlay"></div>
+
+      <!-- CONTENUTO POPUP -->
+      <div class="booking-popup-content" role="dialog" aria-modal="true">
+
+            <header class="header">
+      <div class="container header-inner">
+        <!-- LOGO -->
+        <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
+
+      </div>
+    </header>
+
+
+      <section data-page="home" class="hero" style="position: relative;">
+        <!-- ONDE BACKGROUND -->
+        <svg
+          viewBox="0 0 1200 200"
+          xmlns="http://www.w3.org/2000/svg"
+          style="
+            background: transparent;
+            position: absolute;
+            transform: rotate(180deg);
+            opacity: 0.6;
+            top: 0px;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: auto;
+          "
+        >
+          <path fill="#0a1e3b">
+            <animate
+              attributeName="d"
+              dur="6s"
+              repeatCount="indefinite"
+              values="
+            M0,100 C150,130 350,70 600,100 C850,130 1050,70 1200,100 L1200,200 L0,200 Z;
+            M0,90 C150,60 350,140 600,90 C850,40 1050,120 1200,90 L1200,200 L0,200 Z;
+            M0,100 C150,130 350,70 600,100 C850,130 1050,70 1200,100 L1200,200 L0,200 Z
+          "
+            />
+          </path>
+
+          <path fill="#0fa3b1" opacity="0.65">
+            <animate
+              attributeName="d"
+              dur="4s"
+              repeatCount="indefinite"
+              values="
+            M0,120 C200,150 400,90 600,120 C800,150 1000,90 1200,120 L1200,200 L0,200 Z;
+            M0,110 C200,80 400,160 600,110 C800,60 1000,140 1200,110 L1200,200 L0,200 Z;
+            M0,120 C200,150 400,90 600,120 C800,150 1000,90 1200,120 L1200,200 L0,200 Z
+          "
+            />
+          </path>
+        </svg>
+
+        <!-- OVERLAY SCURO PER CONTRASTO -->
+        <div class="hero-overlay" style="z-index: 1;"></div>
+
+        <!-- CONTENUTO HERO -->
+        <div class="container hero-content" style="position: relative; z-index: 2;">
+        </div>
+
+        <!-- EFFETTO BOLLE -->
+        <div class="bubbles" aria-hidden="true"></div>
+      </section>
+        
+        <!-- CHIUSURA -->
+        <button
+          class="booking-popup-close"
+          id="bookingPopupClose"
+          aria-label="Close Booking Popup"
+        >
+          ✕
+        </button>
+
+        <!-- APP DI PRENOTAZIONE -->
+        <div id="bookingApp">
+          <!-- qui dentro caricherai il booking engine -->
+        </div>
+
+      </div>
+    </div>
+
+    
+
   <!-- ========================= -->
   <!-- JS BASE -->
   <!-- ========================= -->
