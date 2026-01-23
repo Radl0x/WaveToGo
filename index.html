@@ -263,53 +263,77 @@
 
           <div class="booking-section section2">
             <div class="close-box">
+              <!-- Cartoonish animated double-left arrow — color #0fa3b1
+                  - Playful, bouncy animation and "draw" stroke effect.
+                  - Single color: #0fa3b1
+                  - Accessible: includes <title> and role.
+                  - Paste inline into HTML where needed.
+              -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="160"
+                height="72"
+                viewBox="0 0 160 72"
+                role="img"
+                aria-labelledby="cartoonBackTitle"
+                class="icon-interactive"
+              >
+                <title id="cartoonBackTitle">Freccia indietro animata</title>
 
+                <defs>
+                  <filter
+                    id="shadow"
+                    x="-40%"
+                    y="-40%"
+                    width="180%"
+                    height="180%"
+                  >
+                    <feDropShadow
+                      dx="0"
+                      dy="6"
+                      stdDeviation="8"
+                      flood-color="#0fa3b1"
+                      flood-opacity="0.12"
+                    />
+                  </filter>
+                </defs>
 
-<!-- Cartoonish animated double-left arrow — color #0fa3b1
-     - Playful, bouncy animation and "draw" stroke effect.
-     - Single color: #0fa3b1
-     - Accessible: includes <title> and role.
-     - Paste inline into HTML where needed.
--->
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="160" height="72" viewBox="0 0 160 72"
-     role="img" aria-labelledby="cartoonBackTitle"
-     class="icon-interactive">
-  <title id="cartoonBackTitle">Freccia indietro animata</title>
+                <!-- Group scaled down slightly for a more compact look -->
+                <g class="group" transform="translate(12,6) scale(0.85)">
+                  <!-- Right (rear) arrow shape (behind) -->
+                  <g class="arrow-right" transform="translate(44,0)">
+                    <path
+                      class="arrow-fill"
+                      d="M72 12 L44 36 L72 60 C76 56 76 16 72 12 Z"
+                    />
+                    <path
+                      class="arrow-stroke stroke-draw"
+                      d="M72 12 L44 36 L72 60"
+                    />
+                    <ellipse class="shine" cx="56" cy="36" rx="8" ry="3" />
+                  </g>
 
-  <defs>
-    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0fa3b1" flood-opacity="0.12"/>
-    </filter>
-  </defs>
+                  <!-- Front arrow shape (in front) -->
+                  <g class="arrow-left" transform="translate(0,0)">
+                    <path
+                      class="arrow-fill"
+                      d="M52 12 L24 36 L52 60 C55.2 57 55.2 15 52 12 Z"
+                    />
+                    <path
+                      class="arrow-stroke stroke-draw"
+                      d="M52 12 L24 36 L52 60"
+                    />
+                    <ellipse class="shine" cx="36" cy="36" rx="6" ry="2.5" />
+                  </g>
 
-  <!-- Group scaled down slightly for a more compact look -->
-  <g class="group" transform="translate(12,6) scale(0.85)">
-
-    <!-- Right (rear) arrow shape (behind) -->
-    <g class="arrow-right" transform="translate(44,0)">
-      <path class="arrow-fill" d="M72 12 L44 36 L72 60 C76 56 76 16 72 12 Z" />
-      <path class="arrow-stroke stroke-draw" d="M72 12 L44 36 L72 60" />
-      <ellipse class="shine" cx="56" cy="36" rx="8" ry="3" />
-    </g>
-
-    <!-- Front arrow shape (in front) -->
-    <g class="arrow-left" transform="translate(0,0)">
-      <path class="arrow-fill" d="M52 12 L24 36 L52 60 C55.2 57 55.2 15 52 12 Z" />
-      <path class="arrow-stroke stroke-draw" d="M52 12 L24 36 L52 60" />
-      <ellipse class="shine" cx="36" cy="36" rx="6" ry="2.5" />
-    </g>
-
-    <!-- playful sparkles near arrow tips -->
-    <g transform="translate(4,4)">
-      <circle class="spark s1" cx="6" cy="8" r="3" />
-      <circle class="spark s2" cx="12" cy="24" r="2.4" />
-      <circle class="spark s3" cx="10" cy="44" r="2.8" />
-    </g>
-  </g>
-</svg>
-
-
+                  <!-- playful sparkles near arrow tips -->
+                  <g transform="translate(4,4)">
+                    <circle class="spark s1" cx="6" cy="8" r="3" />
+                    <circle class="spark s2" cx="12" cy="24" r="2.4" />
+                    <circle class="spark s3" cx="10" cy="44" r="2.8" />
+                  </g>
+                </g>
+              </svg>
             </div>
             <div class="booking-container">
               <div class="booking-widget-column">
@@ -369,18 +393,14 @@
                         opacity: 0.8;
                         letter-spacing: 1px;
                       "
-                    >
-                      Stai prenotando
-                    </div>
+                    ></div>
                     <div
                       style="
                         font-weight: 700;
                         font-size: 1.1rem;
                         margin-top: 5px;
                       "
-                    >
-                      Yacht "Mediterraneo Blu"
-                    </div>
+                    ></div>
                   </div>
                   <button
                     onclick="closeModal()"

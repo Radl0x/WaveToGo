@@ -1,8 +1,7 @@
 // =========================
 // SELETTORE LAYER
 // =========================
-// Seleziona solo le bolle dentro la hero
-const layer = document.querySelector('.hero .bubbles');
+const layer = document.querySelector('.hero .bubbles'); // layer dove generare le bolle
 
 // =========================
 // CREA UNA BOLLA SINGOLA
@@ -12,32 +11,52 @@ function spawnBubble() {
   b.className = 'bubble';
 
   // ---------- PARAMETRI MODIFICABILI ----------
-  const size = Math.random() * 10 + 6;    // dimensione bolla
-  const duration = Math.random() * 6 + 8; // durata salita
-  const sway = Math.random() * 3 + 2;     // oscillazione laterale
-  const opacity = (Math.random() * 0.4 + 0.25).toFixed(2); // trasparenza
+  const size = Math.random() * 10 + 6;       // dimensione della bolla in px (modifica qui)
+  const duration = Math.random() * 6 + 8;    // durata salita in secondi (modifica qui)
+  const sway = Math.random() * 3 + 2;        // oscillazione laterale in secondi (modifica qui)
+  const opacity = (Math.random() * 0.4 + 0.25).toFixed(2); // trasparenza (modifica qui)
+  const stopFromTop = 60;                     // distanza dal top in px alla quale la bolla sparisce (modifica qui)
   // -------------------------------------------
 
+  // Applica parametri come variabili CSS
   b.style.setProperty('--size', `${size}px`);
   b.style.setProperty('--duration', `${duration}s`);
   b.style.setProperty('--sway', `${sway}s`);
   b.style.setProperty('--opacity', opacity);
 
   // posizione orizzontale casuale
-  b.style.left = `${Math.random() * 100}%`;
+  b.style.left = `${Math.random() * 100}%`; // posizione orizzontale casuale (modifica qui se vuoi range diverso)
 
+  // inizio dal fondo del layer
+  b.style.bottom = '0px';
+
+  // aggiunge la bolla al layer
   layer.appendChild(b);
 
-  // rimuove la bolla quando finisce la salita
-  b.addEventListener('animationend', () => b.remove());
+  // ---------- ANIMAZIONE MANUALE ----------
+  const moveInterval = 16; // intervallo aggiornamento posizione in ms (~60fps) (modifica qui se vuoi più lento/veloce)
+  const speed = (layer.offsetHeight - stopFromTop) / (duration * 1000 / moveInterval); 
+  // calcola di quanto spostare la bolla ad ogni frame per raggiungere "stopFromTop" in "duration" secondi
+
+  let currentBottom = 0;
+
+  const anim = setInterval(() => {
+    currentBottom += speed;           // incremento posizione ad ogni frame (modifica qui se vuoi accelerare)
+    b.style.bottom = `${currentBottom}px`;
+
+    // quando raggiunge stopFromTop dal top, rimuovila
+    if (currentBottom >= layer.offsetHeight - stopFromTop) {
+      clearInterval(anim);
+      b.remove();
+    }
+  }, moveInterval);
 }
 
 // =========================
 // GENERAZIONE SPORADICA
-// (più naturale, non tutte insieme)
 // =========================
 (function loop() {
   spawnBubble();
-  const next = Math.random() * 650 + 250; // intervallo in ms (modifica qui)
+  const next = Math.random() * 650 + 50; // intervallo tra le bolle in ms (modifica qui)
   setTimeout(loop, next);
 })();

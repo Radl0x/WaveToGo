@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;              /* sempre sopra agli altri layer */
+  z-index: 1000;              /* sempre sopra agli altri layer */
 }
 
 /* Layout interno header con logo a sinistra e nav a destra */

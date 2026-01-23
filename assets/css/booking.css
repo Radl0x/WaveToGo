@@ -12,6 +12,16 @@
   --success: #276749;
 }
 
+
+/* =====================================
+   NASCONDE LOGO + SVG HEADER (DISPLAY NONE)
+   ===================================== */
+
+body.modal-open .header svg {
+  display: none !important;
+}
+
+
 /* Stili del Widget (Code B) */
 .close-box {
   position: absolute;
@@ -19,7 +29,7 @@
   border-radius: 5px  50% 0 5px;
   top: -60px;
   left: -38px;
-  z-index: -1;
+  z-index: 10;
 }
 
 
@@ -33,6 +43,8 @@
 .booking-container {
   display: flex;
   justify-content: center;
+    z-index: 1001;
+
 }
 .booking-widget-column {
   width: 100%;
@@ -153,7 +165,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 9990;
+  z-index:999;
   backdrop-filter: blur(4px);
 }
 
@@ -186,7 +198,7 @@
   padding: 15px 20px 0 20px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .header-top {

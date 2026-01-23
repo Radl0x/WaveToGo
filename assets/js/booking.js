@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (showcase) showcase.style.display = "";
   }
 
+
+  
   function showBooking() {
     if (bookingCont) bookingCont.style.display = "block";
   }
@@ -117,48 +119,63 @@ document.addEventListener("DOMContentLoaded", function () {
     widgetTotalDisplay.innerText = `€${price}`;
   }
 
-  // 2. GESTIONE MODALE (Apertura/Chiusura)
-  function openModal(e) {
-    e.preventDefault(); // Ferma il submit del form standard
-    if (!dateInput.value) { alert("Seleziona una data"); return; }
-    
-    // Aggiorna dati nel modale
-    document.getElementById('modalDateDisplay').innerText = dateInput.value.split('-').reverse().join('/');
-    
-    // Calcolo Saldo (Totale - Acconto)
-    const balance = currentTotal - DEPOSIT;
-    document.getElementById('modalBalance').innerText = `€${balance}`;
+// ===============================
+// 2. GESTIONE MODALE (Apertura/Chiusura)
+// ===============================
 
-    // Mostra Overlay
-    const overlay = document.getElementById('checkoutModalOverlay');
-    overlay.style.display = 'block';
-    setTimeout(() => overlay.classList.add('open'), 10); // Trigger animazione CSS
-    document.body.style.overflow = 'hidden'; // Blocca scroll pagina sotto
+function openModal(e) {
+  e.preventDefault(); // Ferma il submit del form standard
+
+  if (!dateInput.value) {
+    alert("Seleziona una data");
+    return;
   }
 
-  function closeModal() {
-    const overlay = document.getElementById('checkoutModalOverlay');
-    overlay.classList.remove('open');
-    setTimeout(() => {
-        overlay.style.display = 'none';
-        document.body.style.overflow = ''; // Riabilita scroll
-    }, 300);
-  }
+  // Aggiorna data nel modale
+  document.getElementById('modalDateDisplay').innerText =
+    dateInput.value.split('-').reverse().join('/');
 
-  // 3. GESTIONE TABS MODALE
-  function switchTab(tabName) {
-    const contents = document.getElementsByClassName("tab-content");
-    const buttons = document.getElementsByClassName("tab-btn");
-    
-    for (let c of contents) c.classList.remove("active");
-    for (let b of buttons) b.classList.remove("active");
-    
-    document.getElementById('tab-' + tabName).classList.add("active");
-    // Trova il bottone cliccato basandosi sull'onclick attribute o event target sarebbe meglio, 
-    // ma qui semplifichiamo selezionando per indice o testo se necessario. 
-    // Per semplicità, aggiungo active al bottone cliccato tramite event handling inline o loop:
-    event.currentTarget.classList.add("active");
-  }
+  // Calcolo Saldo (Totale - Acconto)
+  const balance = currentTotal - DEPOSIT;
+  document.getElementById('modalBalance').innerText = `€${balance}`;
+
+  // Mostra Overlay
+  const overlay = document.getElementById('checkoutModalOverlay');
+  overlay.style.display = 'block';
+  setTimeout(() => overlay.classList.add('open'), 10); // Trigger animazione CSS
+
+  // Blocca scroll + nasconde logo/svg
+  document.body.style.overflow = 'hidden';
+  document.body.classList.add('modal-open');
+}
+
+function closeModal() {
+  const overlay = document.getElementById('checkoutModalOverlay');
+  overlay.classList.remove('open');
+
+  setTimeout(() => {
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open'); // Riappaiono logo + svg
+  }, 300);
+}
+
+// ===============================
+// 3. GESTIONE TABS MODALE
+// ===============================
+
+function switchTab(tabName, event) {
+  const contents = document.getElementsByClassName("tab-content");
+  const buttons = document.getElementsByClassName("tab-btn");
+
+  // Reset
+  for (let c of contents) c.classList.remove("active");
+  for (let b of buttons) b.classList.remove("active");
+
+  // Attiva tab selezionata
+  document.getElementById('tab-' + tabName).classList.add("active");
+  event.currentTarget.classList.add("active");
+}
 
   // 4. CHECKBOX TERMINI E PAGAMENTO
   function togglePayBtn() {

@@ -64,7 +64,7 @@ a {
 
 .flag {
   width: 32px;
-  height: 18px;
+  height: 20px;
   border-radius: 2px;
   display: block;
 }
@@ -73,12 +73,14 @@ a {
   position: absolute;
   top: 180%;
   right: -10px;
+  width: auto;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.123);
   display: none;
   padding: 6px 0;
 }
-
+.lang-dropdown button {
+  border:1px solid transparent;
+}
 .lang-switcher.open .lang-dropdown {
   display: block;
 }

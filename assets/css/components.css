@@ -80,7 +80,16 @@
 .hero-title span {
   display: block;
   font-size: 0.85em;
-  color: var(--accent);
+  background: linear-gradient(
+    243deg,
+    rgba(7, 76, 133, 0.747) 0%,    /* primaria quasi piena */
+    rgba(14, 163, 177, 0.8) 70%, /* accent sfumato */
+    rgba(232, 238, 244, 0.05) 100% /* tocco di luce finale molto leggero */
+  );
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0px 0px 18px rgba(1, 15, 24, 0.384)); /* Ombra alla sagoma dell'immagine */        
+    color: transparent;
   z-index: 999;
 }
 
