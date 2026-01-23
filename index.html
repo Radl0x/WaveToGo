@@ -74,45 +74,116 @@
               title="Seleziona lingua"
             >
               <!-- ITALIAN FLAG (SVG) -->
-              <svg viewBox="0 0 3 2" class="flag" aria-hidden="true" width="20" height="14">
+              <svg
+                viewBox="0 0 3 2"
+                class="flag"
+                aria-hidden="true"
+                width="20"
+                height="14"
+              >
                 <rect width="1" height="2" x="0" fill="#009246" />
                 <rect width="1" height="2" x="1" fill="#ffffff" />
                 <rect width="1" height="2" x="2" fill="#ce2b37" />
               </svg>
             </button>
 
-            <div class="lang-dropdown" id="langDropdown" role="menu" aria-hidden="true">
-              <button data-lang="it" role="menuitem" type="button" aria-label="Italiano">
-                <svg viewBox="0 0 3 2" class="flag" width="20" height="14" aria-hidden="true">
+            <div
+              class="lang-dropdown"
+              id="langDropdown"
+              role="menu"
+              aria-hidden="true"
+            >
+              <button
+                data-lang="it"
+                role="menuitem"
+                type="button"
+                aria-label="Italiano"
+              >
+                <svg
+                  viewBox="0 0 3 2"
+                  class="flag"
+                  width="20"
+                  height="14"
+                  aria-hidden="true"
+                >
                   <rect width="1" height="2" x="0" fill="#009246" />
                   <rect width="1" height="2" x="1" fill="#ffffff" />
                   <rect width="1" height="2" x="2" fill="#ce2b37" />
                 </svg>
               </button>
 
-              <button data-lang="en" role="menuitem" type="button" aria-label="English">
+              <button
+                data-lang="en"
+                role="menuitem"
+                type="button"
+                aria-label="English"
+              >
                 <!-- UK -->
-                <svg viewBox="0 0 60 30" class="flag" width="24" height="14" aria-hidden="true">
+                <svg
+                  viewBox="0 0 60 30"
+                  class="flag"
+                  width="24"
+                  height="14"
+                  aria-hidden="true"
+                >
                   <rect width="60" height="30" fill="#012169" />
-                  <path d="M0 0L60 30M60 0L0 30" stroke="#ffffff" stroke-width="6" />
-                  <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="4" />
-                  <path d="M30 0V30M0 15H60" stroke="#ffffff" stroke-width="10" />
-                  <path d="M30 0V30M0 15H60" stroke="#C8102E" stroke-width="6" />
+                  <path
+                    d="M0 0L60 30M60 0L0 30"
+                    stroke="#ffffff"
+                    stroke-width="6"
+                  />
+                  <path
+                    d="M0 0L60 30M60 0L0 30"
+                    stroke="#C8102E"
+                    stroke-width="4"
+                  />
+                  <path
+                    d="M30 0V30M0 15H60"
+                    stroke="#ffffff"
+                    stroke-width="10"
+                  />
+                  <path
+                    d="M30 0V30M0 15H60"
+                    stroke="#C8102E"
+                    stroke-width="6"
+                  />
                 </svg>
               </button>
 
-              <button data-lang="fr" role="menuitem" type="button" aria-label="Français">
+              <button
+                data-lang="fr"
+                role="menuitem"
+                type="button"
+                aria-label="Français"
+              >
                 <!-- FRANCE -->
-                <svg viewBox="0 0 3 2" class="flag" width="20" height="14" aria-hidden="true">
+                <svg
+                  viewBox="0 0 3 2"
+                  class="flag"
+                  width="20"
+                  height="14"
+                  aria-hidden="true"
+                >
                   <rect width="1" height="2" x="0" fill="#0055A4" />
                   <rect width="1" height="2" x="1" fill="#ffffff" />
                   <rect width="1" height="2" x="2" fill="#EF4135" />
                 </svg>
               </button>
 
-              <button data-lang="de" role="menuitem" type="button" aria-label="Deutsch">
+              <button
+                data-lang="de"
+                role="menuitem"
+                type="button"
+                aria-label="Deutsch"
+              >
                 <!-- GERMANY -->
-                <svg viewBox="0 0 3 2" class="flag" width="20" height="14" aria-hidden="true">
+                <svg
+                  viewBox="0 0 3 2"
+                  class="flag"
+                  width="20"
+                  height="14"
+                  aria-hidden="true"
+                >
                   <rect width="3" height="2" fill="#FFCE00" />
                   <rect width="3" height="1.33" fill="#DD0000" />
                   <rect width="3" height="0.66" fill="#000000" />
@@ -127,7 +198,12 @@
     <!-- MAIN -->
     <main>
       <!-- HERO HOME -->
-      <section data-page="home" class="hero" id="section1" style="position: relative">
+      <section
+        data-page="home"
+        class="hero"
+        id="section1"
+        style="position: relative"
+      >
         <!-- ONDE BACKGROUND -->
         <svg
           viewBox="0 0 1200 200"
@@ -179,229 +255,496 @@
         <div class="bubbles" aria-hidden="true"></div>
 
         <!-- CONTENUTO HERO -->
-        <div class="container hero-content" style="position: relative; z-index: 2">
-
-
-          
-
+        <div
+          class="container hero-content"
+          style="position: relative; z-index: 2"
+        >
           <!-- SECTION 2 HERO -->
-          
-            <div class="booking-section section2">
-              <div class="two-content" id="page1">
-                <div class="carousel-viewport" id="boat-carousel">
-                  <div class="carousel-item">
-                    <div class="boat-card" data-index="0">
-                      <div class="boat-image-placeholder">
-                        <img src="./image.png" alt="Gommone" />
+
+          <div class="booking-section section2">
+            <div class="close-box">
+
+
+<!-- Cartoonish animated double-left arrow — color #0fa3b1
+     - Playful, bouncy animation and "draw" stroke effect.
+     - Single color: #0fa3b1
+     - Accessible: includes <title> and role.
+     - Paste inline into HTML where needed.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="160" height="72" viewBox="0 0 160 72"
+     role="img" aria-labelledby="cartoonBackTitle"
+     class="icon-interactive">
+  <title id="cartoonBackTitle">Freccia indietro animata</title>
+
+  <defs>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0fa3b1" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Group scaled down slightly for a more compact look -->
+  <g class="group" transform="translate(12,6) scale(0.85)">
+
+    <!-- Right (rear) arrow shape (behind) -->
+    <g class="arrow-right" transform="translate(44,0)">
+      <path class="arrow-fill" d="M72 12 L44 36 L72 60 C76 56 76 16 72 12 Z" />
+      <path class="arrow-stroke stroke-draw" d="M72 12 L44 36 L72 60" />
+      <ellipse class="shine" cx="56" cy="36" rx="8" ry="3" />
+    </g>
+
+    <!-- Front arrow shape (in front) -->
+    <g class="arrow-left" transform="translate(0,0)">
+      <path class="arrow-fill" d="M52 12 L24 36 L52 60 C55.2 57 55.2 15 52 12 Z" />
+      <path class="arrow-stroke stroke-draw" d="M52 12 L24 36 L52 60" />
+      <ellipse class="shine" cx="36" cy="36" rx="6" ry="2.5" />
+    </g>
+
+    <!-- playful sparkles near arrow tips -->
+    <g transform="translate(4,4)">
+      <circle class="spark s1" cx="6" cy="8" r="3" />
+      <circle class="spark s2" cx="12" cy="24" r="2.4" />
+      <circle class="spark s3" cx="10" cy="44" r="2.8" />
+    </g>
+  </g>
+</svg>
+
+
+            </div>
+            <div class="booking-container">
+              <div class="booking-widget-column">
+                <div class="booking-card">
+                  <div class="price-header">
+                    <h3>Prezzo giornaliero stimato</h3>
+                    <div class="dynamic-price" id="widgetPriceDisplay">
+                      €150 <small>/ giorno</small>
+                    </div>
+                  </div>
+
+                  <form id="bookingForm" onsubmit="openModal(event)">
+                    <div class="form-group">
+                      <label for="checkin">Data Escursione</label>
+                      <input
+                        type="date"
+                        id="checkin"
+                        class="form-control"
+                        required
+                      />
+                    </div>
+
+                    <div class="booking-summary" id="widgetSummaryBox">
+                      <div class="summary-row">
+                        <span>Tariffa Stagionale:</span>
+                        <span id="widgetRateDisplay">€0</span>
                       </div>
-                      <div class="boat-info-row">
-                        <div class="boat-details">
-                          <h3>2Bar 62 Luxury</h3>
-                          <p class="boat-price">
-                            <span class="txt-from">Da</span>
-                            <strong class="price-display">€150</strong>
-                            <span class="txt-perday">/gg</span>
-                          </p>
-                        </div>
-                        <div class="boat-icons-row" style="display: flex; gap: 8px">
-                          <div class="icon-box icon-refresh" onclick="resetExtrasOnly(0)">
-                            <i class="fas fa-sync-alt"></i>
-                          </div>
-                          <div
-                            class="icon-box icon-marker"
-                            onclick="toggleDetailsAndReset(0)"
-                          >
-                            <span><i class="fa-solid fa-list"></i></span>
-                            <i class="fas fa-arrow-down arrow-toggle"></i>
-                          </div>
-                        </div>
+                      <div class="summary-row total">
+                        <span>Totale:</span>
+                        <span id="widgetTotalDisplay">€0</span>
                       </div>
+                    </div>
 
-                      <div class="boat-details-extended">
-                        <div class="details-grid">
-                          <div class="detail-item">
-                            <i class="fas fa-tachometer-alt"></i
-                            ><span class="det-txt">Motore: 40cv</span>
-                          </div>
-                          <div class="detail-item">
-                            <i class="fas fa-users"></i
-                            ><span class="det-txt">Portata: 8</span>
-                          </div>
-                          <div class="detail-item">
-                            <i class="fas fa-music"></i
-                            ><span class="det-txt">Stereo </span>
-                          </div>
-                          <div class="detail-item">
-                            <i class="fas fa-shower"></i
-                            ><span class="det-txt">Doccetta</span>
-                          </div>
-                          <div class="detail-item">
-                            <i class="fas fa-umbrella-beach"></i
-                            ><span class="det-txt">Tendalino</span>
-                          </div>
-                          <div class="detail-item">
-                            <i class="fas fa-charging-station"></i
-                            ><span class="det-txt">Prese USB</span>
-                          </div>
-                        </div>
-
-                        <div class="extras-container">
-                          <div class="extras-title">Personalizza il tuo viaggio</div>
-
-                          <div class="extra-row">
-                            <div class="extra-label">
-                              <i class="fas fa-gas-pump"></i>
-                              <span class="extra-txt">Benzina extra ( Tanica* )</span>
-                            </div>
-                            <div style="display: flex; align-items: center">
-                              <span class="extra-price-tag">+€30</span>
-                              <input
-                                type="checkbox"
-                                class="extra-checkbox"
-                                data-price="30"
-                                data-name="Benzina"
-                                onchange="calculateTotalWithExtras(0)"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="extra-row">
-                            <div class="extra-label">
-                              <i class="fas fa-box"></i>
-                              <span class="extra-txt">Ghiacciaia *</span>
-                            </div>
-                            <div style="display: flex; align-items: center">
-                              <span class="extra-price-tag">+€15</span>
-                              <input
-                                type="checkbox"
-                                class="extra-checkbox"
-                                data-price="15"
-                                data-name="Ghiacciaia"
-                                onchange="calculateTotalWithExtras(0)"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="extra-row disabled">
-                            <div class="extra-label">
-                              <i class="fas fa-sun"></i>
-                              <span class="extra-txt">Telo e crema solare</span>
-                            </div>
-                            <div style="display: flex; align-items: center">
-                              <span class="extra-price-tag">+€20</span>
-                              <input
-                                type="checkbox"
-                                class="extra-checkbox"
-                                data-price="20"
-                                data-name="Telo e crema solare"
-                                onchange="calculateTotalWithExtras(0)"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="extra-row">
-                            <div class="extra-label">
-                              <i class="fas fa-mask"></i>
-                              <span class="extra-txt">Kit snorkeling *</span>
-                            </div>
-                            <div style="display: flex; align-items: center">
-                              <span class="extra-price-tag">+€10</span>
-                              <input
-                                type="checkbox"
-                                class="extra-checkbox"
-                                data-price="10"
-                                data-name="Kit snorkeling"
-                                onchange="calculateTotalWithExtras(0)"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="extra-row">
-                            <div class="extra-label">
-                              <i class="fa-solid fa-life-ring"></i>
-                              <span class="extra-txt">Giochi gonfiabili *</span>
-                            </div>
-                            <div style="display: flex; align-items: center">
-                              <span class="extra-price-tag">+€25</span>
-                              <input
-                                type="checkbox"
-                                class="extra-checkbox"
-                                data-price="25"
-                                data-name="Giochi gonfiabili"
-                                onchange="calculateTotalWithExtras(0)"
-                              />
-                            </div>
-                          </div>
-
-                          <div class="extra-row">
-                            <div class="extra-label">
-                              <i class="fas fa-camera-retro"></i>
-                              <span class="extra-txt">Set GoPro *</span>
-                            </div>
-                            <div style="display: flex; align-items: center">
-                              <span class="extra-price-tag">+€100</span>
-                              <input
-                                type="checkbox"
-                                class="extra-checkbox"
-                                data-price="100"
-                                data-name="Set GoPro"
-                                onchange="calculateTotalWithExtras(0)"
-                              />
-                            </div>
-                          </div>
-
-                          <br />
-                          <p class="note">
-                            <strong>NOTA BENE (*):</strong> Gli accessori contrassegnati
-                            sono forniti a noleggio. Ti preghiamo di averne cura e
-                            riconsegnarli integri a fine giornata: eventuali danni o
-                            smarrimenti verranno detratti dal deposito cauzionale.
-                          </p>
-                        </div>
+                    <div class="deposit-alert">
+                      <i class="fas fa-lock"></i>
+                      <div>
+                        Acconto richiesto per bloccare: <strong>50€</strong>
                       </div>
+                    </div>
 
-                      <br />
+                    <button type="submit" class="book-btn">Prenota Ora</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                      <div class="booking-widget" id="booking-widget">
-                        <div class="widget-header">
-                          <div class="arrow-btn" onclick="changeMonth(-1, 0)">
-                            <i class="fas fa-chevron-left"></i>
-                          </div>
-                          <h4 class="month-year-display">Maggio 2027</h4>
-                          <div class="arrow-btn" onclick="changeMonth(1, 0)">
-                            <i class="fas fa-chevron-right"></i>
-                          </div>
-                        </div>
-                        <div class="weekdays-grid">
-                          <div>Lun</div>
-                          <div>Mar</div>
-                          <div>Mer</div>
-                          <div>Gio</div>
-                          <div>Ven</div>
-                          <div>Sab</div>
-                          <div>Dom</div>
-                        </div>
-                        <div class="calendar-grid"></div>
-                        <div class="widget-footer">
-                          <p class="selected-date-msg">
-                            Seleziona una data per vedere disponibilità
-                          </p>
-                        </div>
+          <div id="checkoutModalOverlay" class="modal-overlay">
+            <div class="checkout-container">
+              <div class="sticky-header">
+                <div class="header-top">
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.6rem;
+                        text-transform: uppercase;
+                        opacity: 0.8;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Stai prenotando
+                    </div>
+                    <div
+                      style="
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        margin-top: 5px;
+                      "
+                    >
+                      Yacht "Mediterraneo Blu"
+                    </div>
+                  </div>
+                  <button
+                    onclick="closeModal()"
+                    style="
+                      background: rgba(255, 255, 255, 0.15);
+                      border: none;
+                      border-radius: 50%;
+                      width: 36px;
+                      height: 36px;
+                      color: white;
+                      cursor: pointer;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                  >
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+
+                <div class="tabs-nav">
+                  <button class="tab-btn active" onclick="switchTab('summary')">
+                    Riepilogo
+                  </button>
+                  <button class="tab-btn" onclick="switchTab('itinerary')">
+                    Itinerari
+                    <i
+                      class="fas fa-map-marked-alt"
+                      style="font-size: 0.7em; margin-left: 3px"
+                    ></i>
+                  </button>
+                  <button class="tab-btn" onclick="switchTab('info')">
+                    Info & Consigli
+                  </button>
+                </div>
+              </div>
+
+              <div id="tab-summary" class="tab-content active">
+                <div class="free-cancel-badge">
+                  <i class="fas fa-shield-alt" style="font-size: 1.2rem"></i>
+                  <div>
+                    <div>Cancellazione GRATUITA</div>
+                    <div
+                      style="font-weight: 400; font-size: 0.65rem; opacity: 0.8"
+                    >
+                      Fino a 48h prima della partenza
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-title">
+                    <i class="far fa-calendar-alt"></i> La tua giornata
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      border-bottom: 1px solid #f0f0f0;
+                      padding-bottom: 12px;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    <div>
+                      <div
+                        style="
+                          font-size: 0.65rem;
+                          color: #636e72;
+                          text-transform: uppercase;
+                        "
+                      >
+                        Data
                       </div>
-                      <p id="alert">
-                        <i class="fa-solid fa-triangle-exclamation"></i> seleziona una
-                        data per procedere.
-                      </p>
-                      <button class="btn-prenota-large" onclick="prenota(0)">
-                        PRENOTA ORA
-                      </button>
+                      <div
+                        style="font-weight: 700; color: var(--primary-color)"
+                        id="modalDateDisplay"
+                      >
+                        --/--/----
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        style="
+                          font-size: 0.65rem;
+                          color: #636e72;
+                          text-transform: uppercase;
+                        "
+                      >
+                        Check-in
+                      </div>
+                      <div
+                        style="font-weight: 700; color: var(--primary-color)"
+                      >
+                        09:00
+                      </div>
+                    </div>
+                    <div style="text-align: right">
+                      <div
+                        style="
+                          font-size: 0.65rem;
+                          color: #636e72;
+                          text-transform: uppercase;
+                        "
+                      >
+                        Check-out
+                      </div>
+                      <div
+                        style="font-weight: 700; color: var(--primary-color)"
+                      >
+                        18:00
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="font-size: 0.75rem; color: #1a1c20">
+                    <div
+                      style="
+                        font-weight: 700;
+                        margin-bottom: 8px;
+                        color: var(--primary-color);
+                      "
+                    >
+                      Pacchetto incluso:
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap">
+                      <span class="tag-extra">⚓ Noleggio Esclusivo</span>
+                      <span class="tag-extra">🍹 Aperitivo Welcome</span>
+                      <span class="tag-extra">🤿 Kit Snorkeling</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" style="border: 1px solid #3498db">
+                  <h3 class="card-title" style="color: #2980b9">
+                    Dati Conducente
+                  </h3>
+                  <div class="input-group">
+                    <i class="far fa-user input-icon"></i>
+                    <input
+                      type="text"
+                      id="nome"
+                      placeholder="Nome e Cognome completo"
+                      class="custom-input"
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="fab fa-whatsapp input-icon"></i>
+                    <input
+                      type="tel"
+                      id="telefono"
+                      placeholder="Numero cellulare / WhatsApp"
+                      class="custom-input"
+                    />
+                  </div>
+                </div>
+
+                <div class="card">
+                  <h3 class="card-title" style="color: #e74c3c">
+                    Regole Fondamentali
+                  </h3>
+                  <ul
+                    style="
+                      margin: 0;
+                      padding: 0 0 0 18px;
+                      font-size: 0.75rem;
+                      color: #4a4d55;
+                      line-height: 1.6;
+                    "
+                  >
+                    <li><b>Carburante:</b> Non incluso (pieno-pieno).</li>
+                    <li><b>Età minima:</b> 21 anni con documento valido.</li>
+                    <li><b>Meteo:</b> Rimborso 100% in caso di maltempo.</li>
+                  </ul>
+                  <div
+                    style="
+                      margin-top: 15px;
+                      display: flex;
+                      align-items: flex-start;
+                      gap: 10px;
+                      background: #f8f9fa;
+                      padding: 12px;
+                      border-radius: 10px;
+                      border: 1px solid #eee;
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      id="termsCheck"
+                      style="margin-top: 3px; transform: scale(1.3)"
+                      onchange="togglePayBtn()"
+                    />
+                    <label
+                      for="termsCheck"
+                      style="
+                        font-size: 0.7rem;
+                        color: #636e72;
+                        font-weight: 500;
+                      "
+                    >
+                      Dichiaro di aver letto le regole e procedo al pagamento
+                      dell'acconto di <b>€50</b>.
+                    </label>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    text-align: center;
+                    font-size: 0.7rem;
+                    color: #b2bec3;
+                    margin-top: 10px;
+                  "
+                >
+                  <i class="fas fa-lock"></i> I tuoi dati sono protetti da
+                  crittografia SSL
+                </div>
+                <br /><br />
+              </div>
+
+              <div id="tab-itinerary" class="tab-content">
+                <div class="card">
+                  <div class="card-title" style="color: #0984e3">
+                    <i class="fas fa-route"></i> Tour Classico: Tavolara
+                  </div>
+                  <div class="timeline">
+                    <div class="timeline-item">
+                      <div class="timeline-dot"></div>
+                      <div class="timeline-title">Isola di Tavolara</div>
+                      <div class="timeline-time">25 min dal porto</div>
+                      <div class="timeline-desc">
+                        Acqua turchese e maestose scogliere.
+                      </div>
+                    </div>
+                    <div class="timeline-item">
+                      <div
+                        class="timeline-dot"
+                        style="background: #fab1a0; border-color: #fab1a0"
+                      ></div>
+                      <div class="timeline-title">Piscine di Molara</div>
+                      <div class="timeline-time">+15 min navigazione</div>
+                      <div class="timeline-desc">
+                        Il paradiso dello snorkeling. Fondale bassissimo e pesci
+                        ovunque.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card" style="background: #2d3436; color: white">
+                  <div style="display: flex; gap: 15px; align-items: center">
+                    <i
+                      class="fas fa-gas-pump"
+                      style="font-size: 1.5rem; color: #ffeaa7"
+                    ></i>
+                    <div>
+                      <div style="font-weight: 700; font-size: 0.9rem">
+                        Nota Carburante
+                      </div>
+                      <div style="font-size: 0.7rem; opacity: 0.8">
+                        Consumo medio stimato €40-€60.
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-          </div>          
 
-        
+              <div id="tab-info" class="tab-content">
+                <div class="card">
+                  <div class="card-title">Cosa portare a bordo</div>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: 10px;
+                    "
+                  >
+                    <div
+                      style="
+                        background: #f8f9fa;
+                        padding: 10px;
+                        border-radius: 8px;
+                        text-align: center;
+                      "
+                    >
+                      <div style="font-size: 1.2rem">💧</div>
+                      <div style="font-size: 0.7rem; font-weight: 600">
+                        Acqua
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        background: #f8f9fa;
+                        padding: 10px;
+                        border-radius: 8px;
+                        text-align: center;
+                      "
+                    >
+                      <div style="font-size: 1.2rem">☀️</div>
+                      <div style="font-size: 0.7rem; font-weight: 600">
+                        Crema
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sticky-footer">
+                <div class="price-row">
+                  <div>
+                    <div
+                      style="
+                        font-size: 0.65rem;
+                        color: #636e72;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                      "
+                    >
+                      Saldo al molo:
+                    </div>
+                    <div
+                      style="
+                        font-size: 1.1rem;
+                        font-weight: 800;
+                        color: #003580;
+                      "
+                      id="modalBalance"
+                    >
+                      €0
+                    </div>
+                  </div>
+                  <div style="text-align: right">
+                    <div
+                      style="
+                        font-size: 0.65rem;
+                        color: var(--success);
+                        font-weight: 700;
+                        text-transform: uppercase;
+                      "
+                    >
+                      Acconto ora:
+                    </div>
+                    <div
+                      style="
+                        font-size: 1.1rem;
+                        font-weight: 800;
+                        color: var(--success);
+                      "
+                    >
+                      €50,00
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  id="confirm-booking-btn"
+                  disabled
+                  class="main-btn"
+                  style="background: #dfe6e9; color: #b2bec3"
+                >
+                  Conferma e Paga €50
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- BADGE -->
           <span class="hero-badge">
             <i class="fas fa-anchor" aria-hidden="true"></i>
@@ -410,10 +753,22 @@
 
           <!-- TITOLO -->
           <h1 class="hero-title">
-            <span data-i18n="hero.title.line1" style="color: #f3f3f3">Scopri la</span>
-            <span style="font-size: 3.4rem" data-i18n="hero.title.line2">SARDEGNA</span>
-            <span style="font-size: 1.5rem; display: inline; color: #f3f3f3" data-i18n="hero.title.line4">in libertà</span>
-            <span style="font-size: 1.5rem; display: inline" data-i18n="hero.title.line3">dal mare</span>
+            <span data-i18n="hero.title.line1" style="color: #f3f3f3"
+              >Scopri la</span
+            >
+            <span style="font-size: 3.4rem" data-i18n="hero.title.line2"
+              >SARDEGNA</span
+            >
+            <span
+              style="font-size: 1.5rem; display: inline; color: #f3f3f3"
+              data-i18n="hero.title.line4"
+              >in libertà</span
+            >
+            <span
+              style="font-size: 1.5rem; display: inline"
+              data-i18n="hero.title.line3"
+              >dal mare</span
+            >
           </h1>
 
           <!-- SOTTOTITOLO -->
@@ -441,22 +796,41 @@
                 preserveAspectRatio="none"
                 aria-hidden="true"
               >
-                <rect x="2.2" y="2.2" width="95" height="35" rx="10" ry="10" pathLength="1" />
+                <rect
+                  x="2.2"
+                  y="2.2"
+                  width="95"
+                  height="35"
+                  rx="10"
+                  ry="10"
+                  pathLength="1"
+                />
               </svg>
             </div>
 
             <!-- CTA SECONDARIA -->
-            <button class="cta secondary" data-tab-open="itinerari" id="heroItinerari" type="button">
+            <button
+              class="cta secondary"
+              data-tab-open="itinerari"
+              id="heroItinerari"
+              type="button"
+            >
               <i class="fas fa-route" aria-hidden="true"></i>
               <span data-i18n="hero.cta.secondary">Itinerari</span>
             </button>
           </div>
 
           <!-- TRUST BAR -->
-          <section class="trust-showcase showcase" id="trustShowcase" style="position: relative; z-index: 3">
+          <section
+            class="trust-showcase showcase"
+            id="trustShowcase"
+            style="position: relative; z-index: 3"
+          >
             <div class="showcase-grid">
               <div class="showcase-item reveal from-left">
-                <div class="icon-circle"><i class="fas fa-users" aria-hidden="true"></i></div>
+                <div class="icon-circle">
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                </div>
                 <div class="text-group">
                   <h4>Senza Patente</h4>
                   <p>Adatto a tutti</p>
@@ -464,7 +838,9 @@
               </div>
 
               <div class="showcase-item reveal from-right">
-                <div class="icon-circle"><i class="fas fa-water" aria-hidden="true"></i></div>
+                <div class="icon-circle">
+                  <i class="fas fa-water" aria-hidden="true"></i>
+                </div>
                 <div class="text-group">
                   <h4>Fun Pack</h4>
                   <p>Giochi gonfiabili</p>
@@ -472,7 +848,9 @@
               </div>
 
               <div class="showcase-item reveal from-left">
-                <div class="icon-circle"><i class="fas fa-mask" aria-hidden="true"></i></div>
+                <div class="icon-circle">
+                  <i class="fas fa-mask" aria-hidden="true"></i>
+                </div>
                 <div class="text-group">
                   <h4>Full immersion</h4>
                   <p>Set snorkeling</p>
@@ -480,7 +858,9 @@
               </div>
 
               <div class="showcase-item reveal from-left">
-                <div class="icon-circle"><i class="fas fa-video" aria-hidden="true"></i></div>
+                <div class="icon-circle">
+                  <i class="fas fa-video" aria-hidden="true"></i>
+                </div>
                 <div class="text-group">
                   <h4>Social Ready</h4>
                   <p>Noleggio GoPro</p>
@@ -488,7 +868,9 @@
               </div>
 
               <div class="showcase-item reveal from-right">
-                <div class="icon-circle"><i class="fas fa-life-ring" aria-hidden="true"></i></div>
+                <div class="icon-circle">
+                  <i class="fas fa-life-ring" aria-hidden="true"></i>
+                </div>
                 <div class="text-group">
                   <h4>Safe Sea</h4>
                   <p>GPS satellitare</p>
@@ -496,7 +878,9 @@
               </div>
 
               <div class="showcase-item reveal from-right">
-                <div class="icon-circle"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
+                <div class="icon-circle">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                </div>
                 <div class="text-group">
                   <h4>Cancellazione</h4>
                   <p>entro le 48h</p>
@@ -516,15 +900,45 @@
 
       <!-- ONDE FOOTER -->
       <div class="footer-waves">
-        <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" class="wave wave-back" style="z-index: 1" aria-hidden="true">
-          <path fill="#0fa3b175" d="M0,135 C100,165 200,175 300,150 C400,125 500,115 600,140 C700,165 800,175 900,150 C1000,125 1100,115 1200,140 C1300,165 1400,175 1500,150 C1600,125 1700,115 1800,140 C1900,165 2000,175 2100,150 C2200,125 2300,115 2400,140 L2400,220 L0,220 Z">
-            <animateTransform attributeName="transform" type="translate" dur="10s" repeatCount="indefinite" values="-1200 0; 0 0"/>
+        <svg
+          viewBox="0 0 1200 220"
+          xmlns="http://www.w3.org/2000/svg"
+          class="wave wave-back"
+          style="z-index: 1"
+          aria-hidden="true"
+        >
+          <path
+            fill="#0fa3b175"
+            d="M0,135 C100,165 200,175 300,150 C400,125 500,115 600,140 C700,165 800,175 900,150 C1000,125 1100,115 1200,140 C1300,165 1400,175 1500,150 C1600,125 1700,115 1800,140 C1900,165 2000,175 2100,150 C2200,125 2300,115 2400,140 L2400,220 L0,220 Z"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              dur="10s"
+              repeatCount="indefinite"
+              values="-1200 0; 0 0"
+            />
           </path>
         </svg>
 
-        <svg viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" class="wave wave-front" style="z-index: 2" aria-hidden="true">
-          <path fill="#041b2e" d="M0,150 C90,185 180,195 270,165 C360,135 450,125 540,150 C630,175 720,185 810,165 C900,145 990,130 1080,150 C1170,175 1260,185 1350,165 C1440,145 1530,130 1620,150 C1710,175 1800,185 1890,165 C1980,145 2070,130 2160,150 C2250,175 2340,185 2430,165 L2430,220 L0,220 Z">
-            <animateTransform attributeName="transform" type="translate" dur="14s" repeatCount="indefinite" values="0 0; -1200 0"/>
+        <svg
+          viewBox="0 0 1200 220"
+          xmlns="http://www.w3.org/2000/svg"
+          class="wave wave-front"
+          style="z-index: 2"
+          aria-hidden="true"
+        >
+          <path
+            fill="#041b2e"
+            d="M0,150 C90,185 180,195 270,165 C360,135 450,125 540,150 C630,175 720,185 810,165 C900,145 990,130 1080,150 C1170,175 1260,185 1350,165 C1440,145 1530,130 1620,150 C1710,175 1800,185 1890,165 C1980,145 2070,130 2160,150 C2250,175 2340,185 2430,165 L2430,220 L0,220 Z"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="translate"
+              dur="14s"
+              repeatCount="indefinite"
+              values="0 0; -1200 0"
+            />
           </path>
         </svg>
       </div>
@@ -536,14 +950,23 @@
           <div class="footer-label" data-i18n="footer.location">Noleggio</div>
           <h1 class="logo"><a href="">Wave<span>To</span>Go</a></h1>
           <p data-i18n="footer.brand.text">
-            Esperienze nautiche premium, prenotazioni rapide e assistenza dedicata.
+            Esperienze nautiche premium, prenotazioni rapide e assistenza
+            dedicata.
           </p>
 
           <div class="footer-social">
-            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+            <a href="#" aria-label="YouTube"
+              ><i class="fa-brands fa-youtube" aria-hidden="true"></i
+            ></a>
           </div>
         </div>
 
@@ -551,37 +974,98 @@
 
         <!-- COLONNA SEZIONI -->
         <div class="footer-column tabs">
-          <div class="footer-label" data-i18n="footer.sections.label">Sezioni</div>
+          <div class="footer-label" data-i18n="footer.sections.label">
+            Sezioni
+          </div>
 
           <div class="tab-buttons">
-            <button class="tab-btn active" data-tab="tab-servizi" data-i18n="footer.tabs.services">Servizi</button>
-            <button class="tab-btn" data-tab="tab-supporto" data-i18n="footer.tabs.support">Supporto</button>
-            <button class="tab-btn" data-tab="tab-contatti" data-i18n="footer.tabs.contacts">Contatti</button>
+            <button
+              class="tab-btn active"
+              data-tab="tab-servizi"
+              data-i18n="footer.tabs.services"
+            >
+              Servizi
+            </button>
+            <button
+              class="tab-btn"
+              data-tab="tab-supporto"
+              data-i18n="footer.tabs.support"
+            >
+              Supporto
+            </button>
+            <button
+              class="tab-btn"
+              data-tab="tab-contatti"
+              data-i18n="footer.tabs.contacts"
+            >
+              Contatti
+            </button>
           </div>
 
           <div class="tab-panel active" id="tab-servizi">
             <ul>
-              <li><i class="fa-solid fa-ship" aria-hidden="true"></i> <span data-i18n="footer.services.item1">Noleggio barche</span></li>
-              <li><i class="fa-solid fa-water" aria-hidden="true"></i> <span data-i18n="footer.services.item2">Tour privati</span></li>
-              <li><i class="fa-solid fa-gift" aria-hidden="true"></i> <span data-i18n="footer.services.item4">Gift card</span></li>
+              <li>
+                <i class="fa-solid fa-ship" aria-hidden="true"></i>
+                <span data-i18n="footer.services.item1">Noleggio barche</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-water" aria-hidden="true"></i>
+                <span data-i18n="footer.services.item2">Tour privati</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                <span data-i18n="footer.services.item4">Gift card</span>
+              </li>
             </ul>
           </div>
 
           <div class="tab-panel" id="tab-supporto">
             <ul>
-              <li><i class="fa-solid fa-circle-question" aria-hidden="true"></i> <span data-i18n="footer.support.item1">FAQ</span></li>
-              <li><i class="fa-solid fa-headset" aria-hidden="true"></i> <span data-i18n="footer.support.item2">Assistenza clienti</span></li>
-              <li><i class="fa-solid fa-file-contract" aria-hidden="true"></i> <span data-i18n="footer.support.item3">Termini & condizioni</span></li>
-              <li><i class="fa-solid fa-user-shield" aria-hidden="true"></i> <span data-i18n="footer.support.item4">Privacy policy</span></li>
+              <li>
+                <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+                <span data-i18n="footer.support.item1">FAQ</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                <span data-i18n="footer.support.item2">Assistenza clienti</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-file-contract" aria-hidden="true"></i>
+                <span data-i18n="footer.support.item3"
+                  >Termini & condizioni</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+                <span data-i18n="footer.support.item4">Privacy policy</span>
+              </li>
             </ul>
           </div>
 
           <div class="tab-panel" id="tab-contatti">
             <ul>
-              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span data-i18n="footer.contacts.item1">Via del Porto 24, Napoli</span></li>
-              <li><i class="fa-solid fa-phone" aria-hidden="true"></i> <span data-i18n="footer.contacts.item2">+39 081 123 4567</span></li>
-              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span data-i18n="footer.contacts.item3">support@wavetogo.it</span></li>
-              <li><i class="fa-solid fa-clock" aria-hidden="true"></i> <span data-i18n="footer.contacts.item4">Lun–Dom 09:00–19:00</span></li>
+              <li>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span data-i18n="footer.contacts.item1"
+                  >Via del Porto 24, Napoli</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span data-i18n="footer.contacts.item2">+39 081 123 4567</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <span data-i18n="footer.contacts.item3"
+                  >support@wavetogo.it</span
+                >
+              </li>
+              <li>
+                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                <span data-i18n="footer.contacts.item4"
+                  >Lun–Dom 09:00–19:00</span
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -590,23 +1074,40 @@
 
         <!-- COLONNA NEWSLETTER -->
         <div class="footer-column newsletter">
-          <div class="footer-label" data-i18n="footer.newsletter.label">Newsletter</div>
+          <div class="footer-label" data-i18n="footer.newsletter.label">
+            Newsletter
+          </div>
           <h4 data-i18n="footer.newsletter.title">Resta aggiornato</h4>
-          <p data-i18n="footer.newsletter.text">Offerte esclusive, nuove rotte e promozioni private.</p>
+          <p data-i18n="footer.newsletter.text">
+            Offerte esclusive, nuove rotte e promozioni private.
+          </p>
           <form class="newsletter-form" action="#" method="post">
             <div class="input-wrap">
               <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <input type="email" name="email" placeholder="La tua email" data-i18n-placeholder="footer.newsletter.placeholder" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="La tua email"
+                data-i18n-placeholder="footer.newsletter.placeholder"
+                required
+              />
             </div>
-            <button type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> <span data-i18n="footer.newsletter.button">Iscriviti</span></button>
+            <button type="submit">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              <span data-i18n="footer.newsletter.button">Iscriviti</span>
+            </button>
           </form>
-          <small data-i18n="footer.newsletter.note">Puoi disiscriverti quando vuoi.</small>
+          <small data-i18n="footer.newsletter.note"
+            >Puoi disiscriverti quando vuoi.</small
+          >
         </div>
       </div>
 
       <!-- FOOTER BOTTOM -->
       <div class="footer-bottom">
-        <span data-i18n="footer.bottom.copy">© 2026 WaveToGo. Tutti i diritti riservati.</span>
+        <span data-i18n="footer.bottom.copy"
+          >© 2026 WaveToGo. Tutti i diritti riservati.</span
+        >
         <div class="footer-bottom-links">
           <a href="#" data-i18n="footer.bottom.cookie">Cookie</a>
           <a href="#" data-i18n="footer.bottom.security">Sicurezza</a>
@@ -626,6 +1127,5 @@
     <script src="./assets/js/effect.js" defer></script>
     <script src="./assets/js/app.js" defer></script>
     <script src="./assets/js/booking.js" defer></script>
-
   </body>
 </html>

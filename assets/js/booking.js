@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // PRENDE TUTTI I POSSIBILI TRIGGER (ID DUPLICATO SAFE)
   const heroPrenotaBtns = document.querySelectorAll("#heroPrenota");
 
-  // ELEMENTI DA NASCONDERE
+  // ELEMENTI HERO
   const heroBadges = document.querySelectorAll(".hero-badge");
   const heroActions = document.querySelectorAll(".hero-actions");
   const heroTitle = document.querySelector(".hero-title");
@@ -11,8 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const ctaWrap = document.querySelector(".cta-wrap");
   const showcase = document.querySelector(".showcase");
 
-  // SEZIONE BOOKING (INIZIALMENTE display:none)
+  // BOOKING
   const bookingCont = document.querySelector(".section2");
+
+  // CLOSE BTN (può non esistere subito)
+  const closeBox = document.querySelector(".close-box");
 
   // SICUREZZA
   if (!heroPrenotaBtns.length) {
@@ -20,26 +23,59 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  /* =========================
+     FUNZIONI RIUTILIZZABILI
+  ========================== */
+
+  function hideHero() {
+    heroBadges.forEach(el => el.style.display = "none");
+    heroActions.forEach(el => el.style.display = "none");
+    if (heroTitle) heroTitle.style.display = "none";
+    if (heroSubtitle) heroSubtitle.style.display = "none";
+    if (ctaWrap) ctaWrap.style.display = "none";
+    if (showcase) showcase.style.display = "none";
+  }
+
+  function showHero() {
+    heroBadges.forEach(el => el.style.display = "");
+    heroActions.forEach(el => el.style.display = "");
+    if (heroTitle) heroTitle.style.display = "";
+    if (heroSubtitle) heroSubtitle.style.display = "";
+    if (ctaWrap) ctaWrap.style.display = "";
+    if (showcase) showcase.style.display = "";
+  }
+
+  function showBooking() {
+    if (bookingCont) bookingCont.style.display = "block";
+  }
+
+  function hideBooking() {
+    if (bookingCont) bookingCont.style.display = "none";
+  }
+
+  /* =========================
+     CLICK SU PRENOTA
+  ========================== */
+
   heroPrenotaBtns.forEach(btn => {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
-
-      // NASCONDE HERO
-      heroBadges.forEach(el => el.style.display = "none");
-      heroActions.forEach(el => el.style.display = "none");
-
-      if (heroTitle) heroTitle.style.display = "none";
-      if (heroSubtitle) heroSubtitle.style.display = "none";
-      if (ctaWrap) ctaWrap.style.display = "none";
-      if (showcase) showcase.style.display = "none";
-
-      // MOSTRA BOOKING
-      if (bookingCont) {
-        bookingCont.style.display = "block";
-      }
-
+      hideHero();
+      showBooking();
     });
   });
+
+  /* =========================
+     CLICK SU CHIUDI
+  ========================== */
+
+  if (closeBox) {
+    closeBox.addEventListener("click", function (e) {
+      e.preventDefault();
+      hideBooking();
+      showHero();
+    });
+  }
 
 });
 
@@ -47,204 +83,100 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-/**
- * 3. LOGICA TAB INTERNI (DOTAZIONI / EXTRA)
- */
-window.toggleBoatTab = function(event, tabId) {
-    const container = event.currentTarget.closest('.elite-edition');
+// --- CONFIGURAZIONE LOGICA ---
+  const PRICING = { standard: 120, mid: 180, high: 250 };
+  const DEPOSIT = 50;
+  let currentTotal = 0;
+
+  // 1. Calcolo Prezzi Widget (Uguale alla tua richiesta precedente)
+  const dateInput = document.getElementById('checkin');
+  const widgetPriceDisplay = document.getElementById('widgetPriceDisplay');
+  const widgetSummaryBox = document.getElementById('widgetSummaryBox');
+  const widgetRateDisplay = document.getElementById('widgetRateDisplay');
+  const widgetTotalDisplay = document.getElementById('widgetTotalDisplay');
+
+  // Imposta data minima a oggi
+  dateInput.min = new Date().toISOString().split("T")[0];
+  dateInput.addEventListener('change', calculatePrice);
+
+  function calculatePrice() {
+    if (!dateInput.value) return;
+    const selectedDate = new Date(dateInput.value);
+    const month = selectedDate.getMonth(); // 0 = Gennaio
     
-    // Switch Bottoni
-    container.querySelectorAll('.p-tab').forEach(b => b.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    let price = PRICING.standard;
+    if (month === 4 || month === 8) price = PRICING.mid; // Maggio/Sett
+    else if (month >= 5 && month <= 7) price = PRICING.high; // Giugno-Agosto
+
+    currentTotal = price;
     
-    // Switch Pannelli
-    container.querySelectorAll('.p-tab-panel').forEach(p => {
-        p.classList.remove('active');
-        p.style.display = 'none';
-    });
-    
-    const activePanel = document.getElementById(tabId);
-    if (activePanel) {
-        activePanel.classList.add('active');
-        activePanel.style.display = 'block';
-    }
-};
-
-/**
- * 4. CALCOLO DINAMICO PREZZI EXTRA
- */
-window.calculateTotalWithExtras = function(index) {
-    const boatCards = document.querySelectorAll('.boat-card');
-    const card = boatCards[index];
-    if (!card) return;
-
-    const basePrice = parseFloat(card.querySelector('.base-price-value')?.innerText) || 0;
-    let extrasTotal = 0;
-
-    card.querySelectorAll(".extra-checkbox:checked").forEach(cb => {
-        extrasTotal += parseInt(cb.dataset.price || 0);
-    });
-
-    const totalDisplay = card.querySelector('.total-price-display');
-    if (totalDisplay) {
-        totalDisplay.innerText = basePrice + extrasTotal;
-    }
-};
-
-/**
- * 5. LOGICA PRENOTAZIONE E MODALE
- */
-function prenota(idx) {
-    // Controllo se il giorno è selezionato
-    if (!STATE.selectedDays[idx]) {
-        const alertbtn = document.getElementById("alert");
-        const alertWidget = document.getElementById("booking-widget");
-        if(alertbtn) alertbtn.style.display = "block";
-        if(alertWidget) alertWidget.style.boxShadow = "0 0 10px rgba(207, 25, 25, 0.4)";
-        return;
-    }
-
-    const card = document.querySelectorAll('.boat-card')[idx];
-    const monthIndex = STATE.dates[idx].getMonth();
-    
-    // Calcolo Totale per il Riepilogo
-    const basePrice = Math.round(CONFIG.basePrices[idx] * (CONFIG.multipliers[monthIndex] || 1));
-    const selectedExtrasNames = [];
-    let extrasTotal = 0;
-
-    card.querySelectorAll(".extra-checkbox:checked").forEach(cb => {
-        extrasTotal += parseInt(cb.dataset.price || 0);
-        selectedExtrasNames.push(cb.dataset.name || "Extra");
-    });
-
-    // Salvataggio dati nello Stato
-    STATE.currentBookingData = {
-        boatName: card.querySelector("h3")?.innerText || "Barca",
-        dateStr: `${STATE.selectedDays[idx]} ${CONFIG.months[monthIndex]} 2024`,
-        finalPrice: basePrice + extrasTotal,
-        selectedExtras: selectedExtrasNames
-    };
-
-    // Rendering template checkout
-    const summaryContainer = document.getElementById("modal-summary");
-    if (summaryContainer && typeof getCheckoutTemplate === "function") {
-        summaryContainer.innerHTML = getCheckoutTemplate({
-            ...STATE.currentBookingData,
-            missingExtras: CONFIG.allExtras.filter(ex => !selectedExtrasNames.includes(ex))
-        });
-    }
-}
-
-
-
-function toggleDetailsAndReset(idx) {
-  const card = getCard(idx);
-  if (!card) return;
-
-  card.querySelector(".boat-details-extended")?.classList.toggle("open");
-  card.querySelector(".arrow-toggle")?.classList.toggle("rotate-icon");
-}
-
-function resetExtrasOnly(idx) {
-  const card = getCard(idx);
-  if (!card) return;
-
-  card
-    .querySelectorAll(".extra-checkbox")
-    .forEach((cb) => (cb.checked = false));
-  calculateTotalWithExtras(idx);
-}
-
-// Helper per recuperare la card
-const getCard = (idx) => document.querySelectorAll(".boat-card")[idx];
-
-/**
- * 4. LOGICA CALENDARIO E PREZZI
- */
-function calculateTotalWithExtras(idx) {
-  const card = getCard(idx);
-  const msgEl = card?.querySelector(".selected-date-msg");
-  if (!card || !msgEl) return;
-
-  if (STATE.selectedDays[idx] === null) {
-    msgEl.innerText = "Seleziona una data per vedere disponibilità";
-    return;
+    // Update Widget UI
+    widgetPriceDisplay.innerHTML = `€${price} <small>/ giorno</small>`;
+    widgetSummaryBox.style.display = 'block';
+    widgetRateDisplay.innerText = `€${price}`;
+    widgetTotalDisplay.innerText = `€${price}`;
   }
 
-  const monthIndex = STATE.dates[idx].getMonth();
-  const base = CONFIG.basePrices[idx];
-  const mult = CONFIG.multipliers[monthIndex] || 1;
-  const dailyPrice = Math.round(base * mult);
+  // 2. GESTIONE MODALE (Apertura/Chiusura)
+  function openModal(e) {
+    e.preventDefault(); // Ferma il submit del form standard
+    if (!dateInput.value) { alert("Seleziona una data"); return; }
+    
+    // Aggiorna dati nel modale
+    document.getElementById('modalDateDisplay').innerText = dateInput.value.split('-').reverse().join('/');
+    
+    // Calcolo Saldo (Totale - Acconto)
+    const balance = currentTotal - DEPOSIT;
+    document.getElementById('modalBalance').innerText = `€${balance}`;
 
-  const extrasTotal = Array.from(
-    card.querySelectorAll(".extra-checkbox:checked"),
-  ).reduce((sum, cb) => sum + parseInt(cb.getAttribute("data-price") || 0), 0);
-
-  msgEl.innerHTML = `Scelto: ${STATE.selectedDays[idx]} ${CONFIG.months[monthIndex]} - Prezzo totale: <b>€${dailyPrice + extrasTotal}</b>`;
-}
-
-function renderCalendar(idx) {
-  const card = getCard(idx);
-  if (!card) return;
-
-  const date = STATE.dates[idx];
-  const month = date.getMonth();
-  const year = date.getFullYear();
-  const container = card.querySelector(".calendar-grid");
-
-  // Update Header
-  card.querySelector(".month-year-display").innerText =
-    `${CONFIG.months[month]} ${year}`;
-
-  const isSelectable = month >= 4 && month <= 8; // Maggio - Settembre
-  const currentPrice = isSelectable
-    ? Math.round(CONFIG.basePrices[idx] * (CONFIG.multipliers[month] || 0))
-    : "---";
-  card.querySelector(".price-display").innerText = isSelectable
-    ? `€${currentPrice}`
-    : "---";
-
-  // Build Grid
-  container.innerHTML = "";
-  const firstDay = new Date(year, month, 1).getDay();
-  const emptySlots = firstDay === 0 ? 6 : firstDay - 1;
-
-  // Empty slots
-  for (let i = 0; i < emptySlots; i++) {
-    const div = document.createElement("div");
-    div.className = "day-item empty";
-    container.appendChild(div);
+    // Mostra Overlay
+    const overlay = document.getElementById('checkoutModalOverlay');
+    overlay.style.display = 'block';
+    setTimeout(() => overlay.classList.add('open'), 10); // Trigger animazione CSS
+    document.body.style.overflow = 'hidden'; // Blocca scroll pagina sotto
   }
 
-  // Days
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dayDiv = document.createElement("div");
-    dayDiv.className = "day-item";
-    dayDiv.innerText = day;
+  function closeModal() {
+    const overlay = document.getElementById('checkoutModalOverlay');
+    overlay.classList.remove('open');
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Riabilita scroll
+    }, 300);
+  }
 
-    if (STATE.selectedDays[idx] === day) dayDiv.classList.add("selected");
+  // 3. GESTIONE TABS MODALE
+  function switchTab(tabName) {
+    const contents = document.getElementsByClassName("tab-content");
+    const buttons = document.getElementsByClassName("tab-btn");
+    
+    for (let c of contents) c.classList.remove("active");
+    for (let b of buttons) b.classList.remove("active");
+    
+    document.getElementById('tab-' + tabName).classList.add("active");
+    // Trova il bottone cliccato basandosi sull'onclick attribute o event target sarebbe meglio, 
+    // ma qui semplifichiamo selezionando per indice o testo se necessario. 
+    // Per semplicità, aggiungo active al bottone cliccato tramite event handling inline o loop:
+    event.currentTarget.classList.add("active");
+  }
 
-    if (isSelectable) {
-      dayDiv.onclick = () => {
-        if (STATE.selectedDayElements[idx])
-          STATE.selectedDayElements[idx].classList.remove("selected");
-        dayDiv.classList.add("selected");
-        STATE.selectedDayElements[idx] = dayDiv;
-        STATE.selectedDays[idx] = day;
-        calculateTotalWithExtras(idx);
-      };
+  // 4. CHECKBOX TERMINI E PAGAMENTO
+  function togglePayBtn() {
+    const check = document.getElementById('termsCheck');
+    const btn = document.getElementById('confirm-booking-btn');
+    
+    if(check.checked) {
+        btn.disabled = false;
+        btn.classList.add('active-btn');
+        btn.style.background = ''; // Usa stile classe
+        btn.style.color = '';
     } else {
-      dayDiv.classList.add("disabled");
+        btn.disabled = true;
+        btn.classList.remove('active-btn');
+        btn.style.background = '#dfe6e9';
+        btn.style.color = '#b2bec3';
     }
-    container.appendChild(dayDiv);
   }
-}
 
-function changeMonth(step, idx) {
-  STATE.dates[idx].setMonth(STATE.dates[idx].getMonth() + step);
-  STATE.selectedDayElements[idx] = null;
-  STATE.selectedDays[idx] = null;
-  renderCalendar(idx);
-  calculateTotalWithExtras(idx);
-}
+  // Inizializzazione
+  calculatePrice();
