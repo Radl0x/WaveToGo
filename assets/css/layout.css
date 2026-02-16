@@ -139,6 +139,72 @@
   align-items: start;
 }
 
+/* =====================================================
+   page2.css — cleaned (duplicate rules removed)
+   ===================================================== */
+
+/* --- 1. CONFIGURAZIONE GENERALE & WIDGET --- */
+:root {
+  --primary-color: #0f2e46;
+  --accent-color: #5ec9cd;
+  --bg-light: #f8f9fa;
+  --text-dark: #333333;
+  --radius: 8px;
+  --success: #276749;
+}
+
+
+.tabs-nav {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 0px;
+}
+
+/* Stile tab (consolidato, duplicati rimossi) */
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.tab-btn.active,
+.tab-btn:hover {
+  color: white;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+/* Contenuto Tabs */
+.tab-content,
+.tab-panel {
+  display: none;
+  padding: 15px;
+  animation: fadeIn 0.3s ease;
+}
+.tab-content.active,
+.tab-panel.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
 /* Etichetta categoria footer */
 .footer-label {
   display: inline-block;
@@ -195,7 +261,6 @@
   transform: scale(1.08);
   background: #ffffff;
 }
-
 
 /* Form newsletter */
 .newsletter-form {
@@ -338,3 +403,47 @@
 @media (prefers-reduced-motion: reduce) {
   .bubble { animation: none; }
 }
+
+/* =====================================================
+   AGGIUNTE: CSS INLINE ESTRATTO DAL TUO HTML (HERO/LAYER)
+   ===================================================== */
+
+#section1 {
+  position: relative;
+}
+
+/* SVG onde background della hero (prima inline) */
+.hero-waves-bg {
+  background: transparent;
+  position: absolute;
+  transform: rotate(180deg);
+  opacity: 0.6;
+  top: 0px;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* overlay sopra onde (prima inline) */
+.hero-overlay-z1 {
+  z-index: 1;
+}
+
+/* contenuto hero sopra overlay (prima inline) */
+.hero-content-z2 {
+  position: relative;
+  z-index: 2;
+}
+
+/* trust showcase sopra (prima inline) */
+.trust-showcase-z3 {
+  position: relative;
+  z-index: 3;
+}
+
+/* titoli hero (prima inline) */
+.hero-title-line1 { color: #f3f3f3; }
+.hero-title-line2 { font-size: 3.4rem; }
+.hero-title-line4 { font-size: 1.5rem; display: inline; color: #f3f3f3; }
+.hero-title-line3 { font-size: 1.5rem; display: inline; }

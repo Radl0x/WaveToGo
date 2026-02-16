@@ -25,6 +25,7 @@ body {
   line-height: 1.6;
 }
 
+
 button {
   border: none;
   background: none;
@@ -45,48 +46,3 @@ a {
 
 
 
-/* TRADUZIONE DROPDOWN */
-.lang-switcher {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  left: 0;
-}
-
-.lang-current,
-.lang-dropdown button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  cursor: pointer;
-}
-
-.flag {
-  width: 32px;
-  height: 20px;
-  border-radius: 2px;
-  display: block;
-}
-
-.lang-dropdown {
-  position: absolute;
-  top: 180%;
-  right: -10px;
-  width: auto;
-  border-radius: 8px;
-  display: none;
-  padding: 6px 0;
-}
-.lang-dropdown button {
-  border:1px solid transparent;
-}
-.lang-switcher.open .lang-dropdown {
-  display: block;
-}
-
-.lang-dropdown button {
-  padding: 10px;
-
-  width: 100%;
-}
