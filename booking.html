@@ -36,8 +36,6 @@
     <!-- CSS: TEMPLATE CHECKOUT -->
     <link rel="stylesheet" href="./assets/css/checkout-template.css" />
     
-    <!-- CSS: ITINERARI -->
-    <link rel="stylesheet" href="./assets/css/itinerary.css" />
     
     <!-- CSS: BOOKING -->
     <link rel="stylesheet" href="./assets/css/booking.css" />
@@ -113,6 +111,220 @@
         
             <!-- HERO > BOLLE: STRATO EFFETTO BUBBLES -->
             <div class="bubbles" aria-hidden="true"></div>
+
+
+              <!-- HERO > CONTENUTO: TESTI E CTA -->
+               <section class="pm-book" id="pm-book">
+  <div class="pm-layout container">
+
+    <!-- LEFT: slim stepper -->
+    <aside class="pm-rail" aria-label="Avanzamento prenotazione">
+      <div class="pm-railBrand">
+        <a href="./index.html">
+          <div class="pm-railLogo" aria-hidden="true"><i class="fa-solid fa-angles-left"></i></div>
+        </a>
+        <div>
+          <b class="pm-railTitle">Checkout</b>
+          <small class="pm-railSub">Noleggio gommone</small>
+        </div>
+      </div>
+
+      <nav class="pm-railSteps" aria-label="Step">
+        <button class="pm-rStep pm-on" type="button" data-step="1" id="pm-tab-1" aria-current="step">
+          <span class="pm-dot"></span><span>Data & orari</span>
+        </button>
+        <button class="pm-rStep" type="button" data-step="2" id="pm-tab-2" disabled>
+          <span class="pm-dot"></span><span>Extra</span>
+        </button>
+        <button class="pm-rStep" type="button" data-step="3" id="pm-tab-3" disabled>
+          <span class="pm-dot"></span><span>Dati</span>
+        </button>
+        <button class="pm-rStep" type="button" data-step="4" id="pm-tab-4" disabled>
+          <span class="pm-dot"></span><span>Regole</span>
+        </button>
+        <button class="pm-rStep" type="button" data-step="5" id="pm-tab-5" disabled>
+          <span class="pm-dot"></span><span>Invio</span>
+        </button>
+
+        <div class="pm-railProg" aria-hidden="true"><span id="pm-progress"></span></div>
+      </nav>
+    </aside>
+
+    <!-- CENTER: widget -->
+    <main class="pm-widget" aria-label="Prenotazione">
+
+      <header class="pm-widgetHead">
+        <div>
+          <h2 class="pm-h1" id="pm-headTitle">Prenota il tuo gommone</h2>
+          <p class="pm-sub" id="pm-headSub">Completa i passaggi in modo rapido. Totale sempre visibile.</p>
+        </div>
+        <div class="pm-statusPill">
+          <span class="pm-spin" aria-hidden="true"></span>
+          <span id="pm-status">Step 1</span>
+        </div>
+      </header>
+
+      <!-- STEP 1 -->
+      <section class="pm-panel pm-show" id="pm-step-1" aria-labelledby="pm-tab-1">
+        <div class="pm-blockTitle">
+          <b>Data & orari</b>
+          <small>Seleziona fascia e orario</small>
+        </div>
+
+        <div class="pm-grid">
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-date">Data</label>
+            <input class="pm-in" id="pm-date" type="date" />
+          </div>
+
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-slot">Fascia</label>
+            <select class="pm-in" id="pm-slot">
+              <option value="day">Giornata intera (09:00–18:00)</option>
+              <option value="am">Mezza giornata mattina (09:00–13:30)</option>
+              <option value="pm">Mezza giornata pomeriggio (14:00–18:30)</option>
+            </select>
+            <div class="pm-hint" id="pm-baseHint"></div>
+          </div>
+
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-start">Arrivo</label>
+            <input class="pm-in" id="pm-start" type="time" value="09:00" />
+          </div>
+
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-end">Ritorno</label>
+            <input class="pm-in" id="pm-end" type="time" value="18:00" />
+          </div>
+        </div>
+
+        <div class="pm-err" id="pm-err-1"></div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="pm-panel" id="pm-step-2" aria-labelledby="pm-tab-2">
+        <div class="pm-blockTitle">
+          <b>Extra</b>
+          <small>Tocca per aggiungere</small>
+        </div>
+        <div class="pm-extras" id="pm-extras"></div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="pm-panel" id="pm-step-3" aria-labelledby="pm-tab-3">
+        <div class="pm-blockTitle">
+          <b>Dati cliente</b>
+          <small>Per conferma e contatto</small>
+        </div>
+
+        <div class="pm-grid">
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-name">Nome e cognome</label>
+            <input class="pm-in" id="pm-name" type="text" placeholder="Es. Luca Bassu" />
+          </div>
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-phone">Telefono</label>
+            <input class="pm-in" id="pm-phone" type="tel" placeholder="+39 3xx xxx xxxx" />
+          </div>
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-email">Email</label>
+            <input class="pm-in" id="pm-email" type="email" placeholder="nome@email.com" />
+          </div>
+          <div class="pm-field">
+            <label class="pm-lbl" for="pm-notes">Note (opzionale)</label>
+            <input class="pm-in" id="pm-notes" type="text" placeholder="Preferenze / richiesta…" />
+          </div>
+        </div>
+
+        <div class="pm-err" id="pm-err-3"></div>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="pm-panel" id="pm-step-4" aria-labelledby="pm-tab-4">
+        <div class="pm-blockTitle">
+          <b>Regole</b>
+          <small>Caparra & cauzione</small>
+        </div>
+
+        <div class="pm-ruleBox">
+          <div class="pm-ruleRow">
+            <b><i class="fa-solid fa-receipt"></i> Caparra 50€</b>
+            <span>Scalata dal totale al saldo</span>
+          </div>
+          <div class="pm-ruleRow">
+            <b><i class="fa-solid fa-shield-halved"></i> Cauzione 400€</b>
+            <span>Blocco carta o contanti in loco</span>
+          </div>
+        </div>
+
+        <details class="pm-faq" open>
+          <summary>Arrivo e documenti</summary>
+          <div class="pm-faqBody">
+            <ul>
+              <li>Arrivo consigliato 15 minuti prima.</li>
+              <li>Documento d’identità valido.</li>
+              <li>Briefing sicurezza incluso.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- STEP 5 -->
+      <section class="pm-panel" id="pm-step-5" aria-labelledby="pm-tab-5">
+        <div class="pm-blockTitle">
+          <b>Riepilogo</b>
+          <small>Controlla e invia</small>
+        </div>
+
+        <div class="pm-review">
+          <div class="pm-row"><span>Data</span><b id="pm-r-date">—</b></div>
+          <div class="pm-row"><span>Orario</span><b id="pm-r-time">—</b></div>
+          <div class="pm-row"><span>Fascia</span><b id="pm-r-slot">—</b></div>
+          <div class="pm-row"><span>Extra</span><b id="pm-r-extras">—</b></div>
+        </div>
+      </section>
+
+      <!-- actions -->
+      <footer class="pm-actions" aria-label="Azioni">
+        <button class="pm-btn pm-ghost" id="pm-back" type="button" disabled>
+          <i class="fa-solid fa-arrow-left"></i> Indietro
+        </button>
+        <button class="pm-btn pm-main" id="pm-next" type="button">
+          Continua <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </footer>
+
+    </main>
+
+    <!-- RIGHT: price summary -->
+    <aside class="pm-summary" aria-label="Riepilogo">
+      <section class="pm-sCard">
+        <div class="pm-sHead">
+          <b>Totale</b>
+          <span class="pm-sSub">Aggiornato in tempo reale</span>
+        </div>
+
+        <div class="pm-lines">
+          <div class="pm-line"><span>Base</span><b id="pm-miniBase">—</b></div>
+          <div class="pm-line"><span>Extra</span><b id="pm-miniExtra">0€</b></div>
+          <div class="pm-total"><span>Totale</span><b id="pm-miniTotal">—</b></div>
+        </div>
+
+        <div class="pm-sFine">
+      <!-- compact tips (chips) -->
+      <div class="pm-chips" aria-label="Consigli rapidi">
+        <span class="pm-chip"><i class="fa-solid fa-shield-halved"></i> Cauzione in loco</span>
+        <span class="pm-chip"><i class="fa-solid fa-receipt"></i> Caparra scalata al saldo</span>
+      </div>
+        </div>
+      </section>
+
+    </aside>
+
+  </div>
+</section>
+
+            
         </section>
     </main>
 
