@@ -60,3 +60,4 @@ function spawnBubble() {
   const next = Math.random() * 650 + 50; // intervallo tra le bolle in ms (modifica qui)
   setTimeout(loop, next);
 })();
+
