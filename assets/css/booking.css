@@ -350,7 +350,7 @@
   border: 1px solid rgba(255,255,255,.22);
 
   /* ✅ richiesto: sfondo input acqua */
-  background: linear-gradient(180deg, var(--pm-accent), var(--pm-accent2));
+  background: linear-gradient(180deg, #0fa3b165, #39c5d250);
 
   color: #ffffff;
   outline:none;
@@ -369,10 +369,6 @@
 /* select arrow */
 #pm-book select.pm-in{
   appearance: none;
-  background-image:
-    linear-gradient(180deg, var(--pm-accent), var(--pm-accent2)),
-    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.9) 50%),
-    linear-gradient(135deg, rgba(255,255,255,.9) 50%, transparent 50%);
   background-repeat: no-repeat;
   background-position:
     0 0,
@@ -436,8 +432,8 @@
   border-bottom:2px solid transparent;
   transform: rotate(-45deg);
   position:absolute;
-  left: 4px;
-  top: 5px;
+  left: 3px;
+  top: 3px;
 }
 
 /* icona */

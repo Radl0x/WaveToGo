@@ -180,10 +180,10 @@
 
   function setHeader(){
     const map = {
-      1: ["Seleziona data e fascia", "Scegli durata e orario. Prezzo base aggiornato automaticamente."],
-      2: ["Scegli gli extra", "Aggiungi servizi opzionali. Totale aggiornato live."],
-      3: ["Inserisci i tuoi dati", "Servono per confermare la richiesta e contattarti."],
-      4: ["Regole e condizioni", "Caparra 50€ scalata dal totale. Cauzione 400€ in loco."],
+      1: ["Seleziona data e fascia oraria", "Mezza giornata o giornata intera"],
+      2: ["Scegli gli extra", "Aggiungi servizi opzionali."],
+      3: ["Inserisci i tuoi dati", "Servono per confermare la richiesta."],
+      4: ["Termini e condizioni", "."],
       5: ["Riepilogo e invio", "Controlla tutto e invia la richiesta."],
     };
     headTitle.textContent = map[step][0];
