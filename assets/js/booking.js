@@ -4,17 +4,16 @@
   const CAUTION = 400;
 
   const EXTRAS = [
-  { id:"skipper", label:"Skipper professionista", desc:"Ideale per prime esperienze", price:120, icon:"fa-solid fa-user-tie", type:"toggle" },
-  { id:"snorkel", label:"Set snorkeling", desc:"Maschera + boccaglio", price:10, icon:"fa-solid fa-mask", type:"qty", min:0, max:8, step:1 },
-  { id:"social", label:"Social Ready", desc:"GoPro + accessori", price:10, icon:"fa-solid fa-camera", type:"toggle" },
-  { id:"cooler", label:"Borsa frigo + ghiaccio", desc:"Bibite fresche", price:15, icon:"fa-solid fa-snowflake", type:"toggle" },
-  { id:"insurance", label:"Assicurazione estesa", desc:"Copertura extra", price:35, icon:"fa-solid fa-shield-halved", type:"toggle" },
-];
+    { id:"skipper", label:"Skipper professionista", desc:"Ideale per prime esperienze", price:120, icon:"fa-solid fa-user-tie", type:"toggle" },
+    { id:"snorkel", label:"Set snorkeling", desc:"Maschera + boccaglio", price:10, icon:"fa-solid fa-mask", type:"qty", min:0, max:8, step:1 },
+    { id:"social", label:"Social Ready", desc:"GoPro + accessori", price:10, icon:"fa-solid fa-camera", type:"toggle" },
+    { id:"cooler", label:"Borsa frigo + ghiaccio", desc:"Bibite fresche", price:15, icon:"fa-solid fa-snowflake", type:"toggle" },
+    { id:"insurance", label:"Assicurazione estesa", desc:"Copertura extra", price:35, icon:"fa-solid fa-shield-halved", type:"toggle" },
+  ];
 
-
-  // tabs/panels
-  const tabs = Object.fromEntries([1,2,3,4,5].map(n => [n, document.getElementById(`pm-tab-${n}`)]));
-  const panels = Object.fromEntries([1,2,3,4,5].map(n => [n, document.getElementById(`pm-step-${n}`)]));
+  // tabs/panels (✅ solo 1..4)
+  const tabs = Object.fromEntries([1,2,3,4].map(n => [n, document.getElementById(`pm-tab-${n}`)]));
+  const panels = Object.fromEntries([1,2,3,4].map(n => [n, document.getElementById(`pm-step-${n}`)]));
   const progress = document.getElementById("pm-progress");
   const status = document.getElementById("pm-status");
 
@@ -25,8 +24,6 @@
   // step1
   const dateInp = document.getElementById("pm-date");
   const slotSel = document.getElementById("pm-slot");
-  const startInp = document.getElementById("pm-start");
-  const endInp = document.getElementById("pm-end");
   const baseHint = document.getElementById("pm-baseHint");
   const err1 = document.getElementById("pm-err-1");
 
@@ -44,21 +41,7 @@
   // extras
   const extrasWrap = document.getElementById("pm-extras");
 
-  // mini summary (rail)
-  const miniTotal = document.getElementById("pm-miniTotal");
-  const miniBase = document.getElementById("pm-miniBase");
-  const miniExtra = document.getElementById("pm-miniExtra");
-
-  // review step5
-  const rDate = document.getElementById("pm-r-date");
-  const rTime = document.getElementById("pm-r-time");
-  const rSlot = document.getElementById("pm-r-slot");
-  const rExtras = document.getElementById("pm-r-extras");
-  const rBase = document.getElementById("pm-r-base");
-  const rExtraTotal = document.getElementById("pm-r-extraTotal");
-  const rTotal = document.getElementById("pm-r-total");
-
-  // accordion
+  // accordion (ok se esiste)
   document.getElementById("pm-acc")?.addEventListener("click", (e) => {
     const btn = e.target.closest(".pm-accBtn");
     if (!btn) return;
@@ -66,9 +49,7 @@
     const panel = document.getElementById(`pm-acc-${key}`);
     if (!panel) return;
     const isOpen = panel.classList.contains("pm-accOpen");
-    // close all
     document.querySelectorAll("#pm-acc .pm-accPanel").forEach(p => p.classList.remove("pm-accOpen"));
-    // open selected
     if (!isOpen) panel.classList.add("pm-accOpen");
   });
 
@@ -79,14 +60,10 @@
   EXTRAS.forEach(x => extraState[x.id] = (x.type === "qty") ? 0 : false);
 
   const euro = (n) => `${Math.round(n)}€`;
-  const basePrice = () => PRICES[slotSel.value] ?? 0;
-  const slotLabel = (v) => ({day:"Giornata intera",am:"Mezza giornata (mattina)",pm:"Mezza giornata (pomeriggio)"}[v] || "—");
+  const slotValue = () => (document.getElementById("pm-slot")?.value || "day");
+  const basePrice = () => PRICES[slotValue()] ?? 0;
 
   function setDefaults(){
-    const v = slotSel.value;
-    if (v==="day"){ startInp.value="09:00"; endInp.value="18:00"; }
-    if (v==="am"){ startInp.value="09:00"; endInp.value="13:30"; }
-    if (v==="pm"){ startInp.value="14:00"; endInp.value="18:30"; }
     baseHint.textContent = `Prezzo base: ${euro(basePrice())}`;
   }
 
@@ -101,16 +78,6 @@
   }
 
   function total(){ return basePrice() + extraTotal(); }
-
-  function extrasText(){
-    const arr = [];
-    for (const x of EXTRAS){
-      const v = extraState[x.id];
-      if (x.type==="toggle" && v) arr.push(x.label);
-      if (x.type==="qty" && v>0) arr.push(`${x.label} ×${v}`);
-    }
-    return arr.length ? arr.join(", ") : "—";
-  }
 
   function renderExtras(){
     extrasWrap.innerHTML = "";
@@ -155,37 +122,33 @@
     });
   }
 
-  function updateSummary(){
+  function updateMini(){
+    // se hai il mini rail, qui puoi aggiornarlo; altrimenti non fa nulla
+    const miniTotal = document.getElementById("pm-miniTotal");
+    const miniBase  = document.getElementById("pm-miniBase");
+    const miniExtra = document.getElementById("pm-miniExtra");
+    if (!miniTotal || !miniBase || !miniExtra) return;
+
     const b = basePrice();
     const e = extraTotal();
     const t = total();
-
     miniBase.textContent = euro(b);
     miniExtra.textContent = euro(e);
     miniTotal.textContent = euro(t);
-
-    // step 5
-    rDate.textContent = dateInp.value || "—";
-    rTime.textContent = (startInp.value && endInp.value) ? `${startInp.value} → ${endInp.value}` : "—";
-    rSlot.textContent = slotLabel(slotSel.value);
-    rExtras.textContent = extrasText();
-    rBase.textContent = euro(b);
-    rExtraTotal.textContent = euro(e);
-    rTotal.textContent = euro(t);
   }
 
   function setProgress(){
-    progress.style.width = `${((step-1)/4)*100}%`;
+    // ✅ 4 step → (step-1)/3
+    progress.style.width = `${((step-1)/3)*100}%`;
     status.textContent = `Step ${step}`;
   }
 
   function setHeader(){
     const map = {
-      1: ["Seleziona data e fascia oraria", "Mezza giornata o giornata intera"],
+      1: ["Seleziona data e fascia", "Mezza giornata o giornata intera"],
       2: ["Scegli gli extra", "Aggiungi servizi opzionali."],
       3: ["Inserisci i tuoi dati", "Servono per confermare la richiesta."],
-      4: ["Termini e condizioni", "."],
-      5: ["Riepilogo e invio", "Controlla tutto e invia la richiesta."],
+      4: ["Termini e condizioni", "Conferma per inviare la richiesta."],
     };
     headTitle.textContent = map[step][0];
     headSub.textContent = map[step][1];
@@ -208,12 +171,12 @@
     tabs[n].classList.add("pm-on");
 
     btnBack.disabled = (step === 1);
-    btnNext.textContent = (step === 5) ? "Invia richiesta" : "Continua";
+    btnNext.textContent = (step === 4) ? "Invia richiesta" : "Continua";
 
     setHeader();
     setProgress();
-    updateSummary();
-    document.getElementById("pm-book").scrollIntoView({ behavior:"smooth", block:"start" });
+    updateMini();
+    document.getElementById("pm-book")?.scrollIntoView({ behavior:"smooth", block:"start" });
   }
 
   function showErr(el, msg){ el.textContent = msg; el.classList.add("pm-show"); }
@@ -221,9 +184,7 @@
 
   function validStep1(){
     clearErr(err1);
-    if (!dateInp.value) return showErr(err1, "Seleziona una data."), false;
-    if (!startInp.value || !endInp.value) return showErr(err1, "Seleziona arrivo e ritorno."), false;
-    if (endInp.value <= startInp.value) return showErr(err1, "Il ritorno deve essere dopo l’arrivo."), false;
+    if (!dateInp.value) return showErr(err1, "⚠️ Seleziona una data."), false;
     return true;
   }
 
@@ -235,61 +196,10 @@
     return true;
   }
 
-  // tabs click (solo unlocked)
-  Object.values(tabs).forEach(btn => {
-    btn.addEventListener("click", () => go(Number(btn.dataset.step)));
-  });
-
-  // extras click
-  extrasWrap.addEventListener("click", (e) => {
-    const row = e.target.closest(".pm-extra");
-    if (!row) return;
-
-    const id = row.dataset.id;
-    const type = row.dataset.type;
-
-    const qBtn = e.target.closest('button[data-q]');
-    if (qBtn){
-      const action = qBtn.dataset.q;
-      const cfg = EXTRAS.find(x => x.id === id);
-      const cur = extraState[id];
-      if (action === "inc") extraState[id] = Math.min((cfg.max ?? 99), cur + (cfg.step ?? 1));
-      if (action === "dec") extraState[id] = Math.max((cfg.min ?? 0), cur - (cfg.step ?? 1));
-      syncExtrasUI();
-      updateSummary();
-      return;
-    }
-
-    if (type === "toggle") extraState[id] = !extraState[id];
-    else extraState[id] = (extraState[id] > 0) ? 0 : 1;
-
-    syncExtrasUI();
-    updateSummary();
-  });
-
-  // step1 changes
-  slotSel.addEventListener("change", () => { setDefaults(); updateSummary(); });
-  [dateInp, startInp, endInp].forEach(el => el.addEventListener("change", updateSummary));
-
-  // footer nav
-  btnBack.addEventListener("click", () => go(Math.max(1, step-1)));
-  btnNext.addEventListener("click", () => {
-    // validation gates
-    if (step === 1 && !validStep1()) return;
-    if (step === 3 && !validStep3()) return;
-
-    if (step < 5){
-      unlock(step + 1);
-      go(step + 1);
-      return;
-    }
-
-    // send (step5)
+  function sendRequest(){
     const payload = {
       date: dateInp.value,
-      slot: slotSel.value,
-      start: startInp.value,
-      end: endInp.value,
+      slot: slotValue(),
       extras: EXTRAS.map(x => ({...x, value: extraState[x.id]}))
         .filter(x => (x.type==="toggle" ? x.value : x.value>0)),
       pricing: {
@@ -309,6 +219,58 @@
 
     alert("✅ Richiesta inviata! (guarda la Console)");
     console.log("PM BOOKING REQUEST:", payload);
+  }
+
+  // tabs click (solo unlocked)
+  Object.values(tabs).forEach(btn => {
+    btn?.addEventListener("click", () => go(Number(btn.dataset.step)));
+  });
+
+  // extras click
+  extrasWrap.addEventListener("click", (e) => {
+    const row = e.target.closest(".pm-extra");
+    if (!row) return;
+
+    const id = row.dataset.id;
+    const type = row.dataset.type;
+
+    const qBtn = e.target.closest('button[data-q]');
+    if (qBtn){
+      const action = qBtn.dataset.q;
+      const cfg = EXTRAS.find(x => x.id === id);
+      const cur = extraState[id];
+      if (action === "inc") extraState[id] = Math.min((cfg.max ?? 99), cur + (cfg.step ?? 1));
+      if (action === "dec") extraState[id] = Math.max((cfg.min ?? 0), cur - (cfg.step ?? 1));
+      syncExtrasUI();
+      updateMini();
+      return;
+    }
+
+    if (type === "toggle") extraState[id] = !extraState[id];
+    else extraState[id] = (extraState[id] > 0) ? 0 : 1;
+
+    syncExtrasUI();
+    updateMini();
+  });
+
+  // step1 changes
+  slotSel?.addEventListener("change", () => { setDefaults(); updateMini(); });
+  dateInp?.addEventListener("change", updateMini);
+
+  // footer nav
+  btnBack.addEventListener("click", () => go(Math.max(1, step-1)));
+  btnNext.addEventListener("click", () => {
+    if (step === 1 && !validStep1()) return;
+    if (step === 3 && !validStep3()) return;
+
+    if (step < 4){
+      unlock(step + 1);
+      go(step + 1);
+      return;
+    }
+
+    // ✅ step 4 = invio
+    sendRequest();
   });
 
   // init
@@ -316,6 +278,6 @@
   setDefaults();
   setHeader();
   setProgress();
-  updateSummary();
+  updateMini();
   go(1);
 })();

@@ -281,15 +281,33 @@
    (risalta sul background scuro dei container)
    ========================= */
 #pm-book .pm-panel:last-of-type{
-  background: var(--pm-surface);           /* ✅ più chiaro */
+  background: #00f5fd27;           /* ✅ più chiaro */
   border: 1px solid var(--pm-line);
   border-radius: var(--pm-r);
   padding: 12px;
-  color: var(--pm-text);
+  color: var(--pm-bg);
 }
 #pm-book .pm-panel:last-of-type .pm-blockTitle{
   border-top: none;
   padding-top: 4px;
+}
+
+.pm-review {
+  margin-top: 10px;
+  text-align: start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 21px;
+}
+.pm-review .pm-row {
+  border:1px solid red;
+  padding: 10px;
+  width: 43%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* =========================
@@ -333,6 +351,7 @@
   color: rgba(255,255,255,.78);
   font-weight: 850;
   font-size: .82rem;
+  text-align: start;
   letter-spacing: .01em;
 }
 #pm-book .pm-hint{
@@ -358,7 +377,9 @@
   outline:none;
   font-weight: 800;
 }
-
+#pm-book .pm-in option{
+  background-color: #0c4c52bd;
+}
 /* placeholder */
 #pm-book .pm-in::placeholder{ color: rgba(255,255,255,.82); }
 
@@ -392,8 +413,8 @@
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(220,38,38,.25);
-  background: rgba(255,245,245,.92);
-  color: #9b1c1c;
+  background: #9b1c1c8e;
+  color: #d8d8d8;
   font-weight: 900;
   font-size: .9rem;
 }
@@ -495,6 +516,7 @@
   font-weight: 950;
   color: #fff;
 }
+
 
 /* selected extra */
 #pm-book .pm-extra[data-checked="true"]{

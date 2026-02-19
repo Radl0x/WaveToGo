@@ -138,10 +138,7 @@
         <button class="pm-rStep" type="button" data-step="4" id="pm-tab-4" disabled>
           <span class="pm-dot"></span><span>Regole</span>
         </button>
-        <button class="pm-rStep" type="button" data-step="5" id="pm-tab-5" disabled>
-          <span class="pm-dot"></span><span>Invio</span>
-        </button>
-
+        
         <div class="pm-railProg" aria-hidden="true"><span id="pm-progress"></span></div>
       </nav>
     </aside>
@@ -183,15 +180,6 @@
             <div class="pm-hint" id="pm-baseHint"></div>
           </div>
 
-          <div class="pm-field">
-            <label class="pm-lbl" for="pm-start">Arrivo</label>
-            <input class="pm-in" id="pm-start" type="time" value="09:00" />
-          </div>
-
-          <div class="pm-field">
-            <label class="pm-lbl" for="pm-end">Ritorno</label>
-            <input class="pm-in" id="pm-end" type="time" value="18:00" />
-          </div>
         </div>
 
         <div class="pm-err" id="pm-err-1"></div>
@@ -216,7 +204,7 @@
         <div class="pm-grid">
           <div class="pm-field">
             <label class="pm-lbl" for="pm-name">Nome e cognome</label>
-            <input class="pm-in" id="pm-name" type="text" placeholder="Es. Luca Bassu" />
+            <input class="pm-in" id="pm-name" type="text" placeholder="Es. Mario Rossi" />
           </div>
           <div class="pm-field">
             <label class="pm-lbl" for="pm-phone">Telefono</label>
@@ -225,10 +213,6 @@
           <div class="pm-field">
             <label class="pm-lbl" for="pm-email">Email</label>
             <input class="pm-in" id="pm-email" type="email" placeholder="nome@email.com" />
-          </div>
-          <div class="pm-field">
-            <label class="pm-lbl" for="pm-notes">Note (opzionale)</label>
-            <input class="pm-in" id="pm-notes" type="text" placeholder="Preferenze / richiesta…" />
           </div>
         </div>
 
@@ -263,21 +247,6 @@
             </ul>
           </div>
         </details>
-      </section>
-
-      <!-- STEP 5 -->
-      <section class="pm-panel" id="pm-step-5" aria-labelledby="pm-tab-5">
-        <div class="pm-blockTitle">
-          <b>Riepilogo</b>
-          <small>Controlla e invia</small>
-        </div>
-
-        <div class="pm-review">
-          <div class="pm-row"><span>Data</span><b id="pm-r-date">—</b></div>
-          <div class="pm-row"><span>Orario</span><b id="pm-r-time">—</b></div>
-          <div class="pm-row"><span>Fascia</span><b id="pm-r-slot">—</b></div>
-          <div class="pm-row"><span>Extra</span><b id="pm-r-extras">—</b></div>
-        </div>
       </section>
 
       <!-- actions -->
