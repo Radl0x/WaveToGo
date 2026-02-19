@@ -3,13 +3,14 @@
   const DEPOSIT = 50;
   const CAUTION = 400;
 
-  // Sostituisci qui con i tuoi extra reali (dal tuo HTML)
   const EXTRAS = [
-    { id:"skipper", label:"Skipper professionista", desc:"Ideale per prime esperienze", price:120, icon:"👤", type:"toggle" },
-    { id:"snorkel", label:"Set snorkeling", desc:"Maschera + boccaglio", price:10, icon:"🤿", type:"qty", min:0, max:8, step:1 },
-    { id:"cooler", label:"Borsa frigo + ghiaccio", desc:"Bibite fresche", price:15, icon:"🧊", type:"toggle" },
-    { id:"insurance", label:"Assicurazione estesa", desc:"Copertura extra", price:35, icon:"🛡️", type:"toggle" },
-  ];
+  { id:"skipper", label:"Skipper professionista", desc:"Ideale per prime esperienze", price:120, icon:"fa-solid fa-user-tie", type:"toggle" },
+  { id:"snorkel", label:"Set snorkeling", desc:"Maschera + boccaglio", price:10, icon:"fa-solid fa-mask", type:"qty", min:0, max:8, step:1 },
+  { id:"social", label:"Social Ready", desc:"GoPro + accessori", price:10, icon:"fa-solid fa-camera", type:"toggle" },
+  { id:"cooler", label:"Borsa frigo + ghiaccio", desc:"Bibite fresche", price:15, icon:"fa-solid fa-snowflake", type:"toggle" },
+  { id:"insurance", label:"Assicurazione estesa", desc:"Copertura extra", price:35, icon:"fa-solid fa-shield-halved", type:"toggle" },
+];
+
 
   // tabs/panels
   const tabs = Object.fromEntries([1,2,3,4,5].map(n => [n, document.getElementById(`pm-tab-${n}`)]));
@@ -125,7 +126,7 @@
 
       row.innerHTML = `
         <span class="pm-cb" aria-hidden="true"></span>
-        <span class="pm-ico" aria-hidden="true">${x.icon}</span>
+        <span class="pm-ico" aria-hidden="true"><i class="${x.icon}"></i></span>
         <span class="pm-extraTxt"><b>${x.label}</b><small>${x.desc}</small></span>
         ${x.type==="qty" ? `
           <span class="pm-qty" aria-label="Quantità">
