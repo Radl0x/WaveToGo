@@ -145,7 +145,7 @@
 
   function setHeader(){
     const map = {
-      1: ["Seleziona data e fascia", "Mezza giornata o giornata intera"],
+      1: ["Seleziona data ", "Mezza giornata o giornata intera"],
       2: ["Scegli gli extra", "Aggiungi servizi opzionali."],
       3: ["Inserisci i tuoi dati", "Servono per confermare la richiesta."],
       4: ["Termini e condizioni", "Conferma per inviare la richiesta."],
@@ -176,7 +176,9 @@
     setHeader();
     setProgress();
     updateMini();
-    document.getElementById("pm-book")?.scrollIntoView({ behavior:"smooth", block:"start" });
+
+    // ✅ NIENTE scrollIntoView sul form: ad ogni cambio step vai in alto
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }
 
   function showErr(el, msg){ el.textContent = msg; el.classList.add("pm-show"); }
