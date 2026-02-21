@@ -1,8 +1,9 @@
 /* =====================================================
-   PM ITINERARY — WATER / MARINE (PM-tight / uniforme)
+   PM ITINERARY — WATER / MARINE (PM-tight / uniforme + PRO DETAILS)
    - Card più compatte, meno vuoti
    - KPI in 1 riga (4 pill)
    - Dettagli: pannello diverso (più chiaro + cornice acqua)
+   - Dettagli PRO: roadmap tappe + callout vento/consigli/rischi con icone
    - Animazioni leggere e sobrie
    ===================================================== */
 
@@ -26,7 +27,7 @@
   /* misure (più tight) */
   --pm-r: 10px;
   --pm-r2: 8px;
-  --pm-pad: 12px;      /* ↓ */
+  --pm-pad: 12px;
   --pm-gap: 10px;
 
   --pm-shadow: 0 8px 22px rgba(4,27,46,.10);
@@ -45,7 +46,7 @@
 #pm-it *{ box-sizing:border-box; }
 
 /* =========================
-   0.1) KEYFRAMES (micro-float)
+   0.1) KEYFRAMES (micro-float / sheen)
    ========================= */
 @keyframes pm-float-soft{
   0%,100%{ transform: translateY(0); }
@@ -77,7 +78,7 @@
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
 
-/* NB: nel tuo HTML usi .pm-it-title (non .pm-it-h1) */
+/* NB: nel tuo HTML usi .pm-it-title */
 #pm-it .pm-it-title,
 #pm-it .pm-it-h1{
   margin: 0;
@@ -88,9 +89,8 @@
   line-height: 1.15;
   color: #fff;
 }
-
 #pm-it .pm-it-sub{
-  margin: 6px 0 0; /* ↓ */
+  margin: 6px 0 0;
   color: rgba(255,255,255,.78);
   font-weight: 650;
   font-size: .92rem;
@@ -100,30 +100,28 @@
 }
 
 /* =========================
-   3) TOOLBAR (FILTRI) — più compatta
+   3) TOOLBAR (FILTRI) — compatta
    ========================= */
 #pm-it .pm-it-toolbar{
   padding: var(--pm-pad);
   display:grid;
   grid-template-columns: 1.6fr .9fr .9fr 1.0fr;
-  gap: 10px; /* ↓ */
+  gap: 10px;
   align-items:end;
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
-
 #pm-it .pm-it-lbl{
   display:block;
   margin: 0 0 6px;
   color: rgba(255,255,255,.78);
   font-weight: 850;
-  font-size: .80rem; /* ↓ */
+  font-size: .80rem;
   text-align: start;
   letter-spacing: .01em;
 }
-
 #pm-it .pm-it-in{
   width: 100%;
-  padding: 10px 11px; /* ↓ */
+  padding: 10px 11px;
   border-radius: var(--pm-r2);
   border: 1px solid rgba(255,255,255,.20);
   background: linear-gradient(180deg, #0fa3b165, #39c5d250);
@@ -138,9 +136,9 @@
   box-shadow: 0 0 0 4px rgba(15,163,177,.16);
 }
 
-/* hint pill (più piccolo) */
+/* hint pill */
 #pm-it .pm-it-hint{
-  height: 40px; /* ↓ */
+  height: 40px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -163,21 +161,19 @@
 #pm-it .pm-it-grid{
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px; /* ↓ */
+  gap: 10px;
 }
 
 /* =========================
-   5) CARD (più compatta / uniforme)
+   5) CARD (compatta / uniforme)
    ========================= */
 #pm-it .it-card{
   border: 1px solid rgba(255,255,255,.16);
   border-radius: 10px;
   background: rgba(255,255,255,.06);
-  box-shadow: 0 8px 18px rgba(4,27,46,.10); /* più soft */
+  box-shadow: 0 8px 18px rgba(4,27,46,.10);
   overflow:hidden;
   position: relative;
-
-  /* micro hover (desktop) */
   transition: transform .14s ease, border-color .14s ease, background .14s ease;
 }
 @media (hover:hover){
@@ -188,9 +184,9 @@
   }
 }
 
-/* media più bassa */
+/* media */
 #pm-it .it-media{
-  height: 108px; /* ↓ */
+  height: 108px;
   position: relative;
   overflow:hidden;
   background:
@@ -199,8 +195,6 @@
     linear-gradient(135deg, rgba(4,27,46,.92), rgba(4,27,46,.55));
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
-
-/* sheen meno invadente */
 #pm-it .it-media::after{
   content:"";
   position:absolute;
@@ -213,65 +207,64 @@
   pointer-events:none;
 }
 
-/* tagline più piccola */
+/* tagline */
 #pm-it .it-tagline{
   position:absolute;
   left: 10px;
   bottom: 10px;
-  padding: 6px 9px; /* ↓ */
+  padding: 6px 9px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
   color: rgba(255,255,255,.92);
   font-weight: 850;
-  font-size: .82rem; /* ↓ */
+  font-size: .82rem;
   backdrop-filter: blur(6px);
   animation: pm-float-soft 5.0s ease-in-out infinite;
 }
 
-#pm-it .it-body{ padding: 12px; } /* tight */
+#pm-it .it-body{ padding: 12px; }
 
-/* title row */
+/* top row */
 #pm-it .it-top{
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
   gap: 10px;
 }
-
 #pm-it .it-title{
   margin: 0;
   font-weight: 950;
   letter-spacing: -0.01em;
   color: #fff;
-  font-size: 1.0rem; /* uniform */
+  font-size: 1.0rem;
   line-height: 1.2;
 }
 
-/* badges (più piccole) */
+/* badges */
 #pm-it .it-badges{
   display:flex;
   flex-wrap:wrap;
-  gap: 6px; /* ↓ */
+  gap: 6px;
   justify-content:flex-end;
 }
 #pm-it .it-badge{
   display:inline-flex;
   align-items:center;
   gap: 6px;
-  padding: 6px 9px; /* ↓ */
+  padding: 6px 9px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
   color: rgba(255,255,255,.82);
   font-weight: 850;
-  font-size: .78rem; /* ↓ */
+  font-size: .78rem;
 }
 #pm-it .it-badge.ok{ border-color: rgba(30,169,124,.40); background: rgba(30,169,124,.12); }
 #pm-it .it-badge.warn{ border-color: rgba(242,184,75,.40); background: rgba(242,184,75,.12); }
 #pm-it .it-badge.risk{ border-color: rgba(255,92,92,.40); background: rgba(255,92,92,.12); }
 
-/* descrizione più stretta */
+/* description */
 #pm-it .it-desc{
   margin: 8px 0 0;
   color: rgba(255,255,255,.78);
@@ -279,10 +272,8 @@
   font-size: .90rem;
   line-height: 1.38;
 }
-
-/* divider più compatto */
 #pm-it .it-divider{
-  margin: 10px 0; /* ↓ */
+  margin: 10px 0;
   height: 1px;
   background: rgba(255,255,255,.14);
 }
@@ -292,13 +283,12 @@
    ========================= */
 #pm-it .it-meta{
   display:grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* ✅ */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin-top: 8px;
 }
-
 #pm-it .it-pill{
-  padding: 9px 9px; /* ↓ */
+  padding: 9px 9px;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
@@ -307,7 +297,7 @@
   font-size: .90rem;
   line-height: 1.05;
   text-align: left;
-  min-height: 46px; /* uniform */
+  min-height: 46px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -317,21 +307,21 @@
   margin-top: 4px;
   color: rgba(255,255,255,.72);
   font-weight: 650;
-  font-size: .78rem; /* ↓ */
+  font-size: .78rem;
   line-height: 1.15;
 }
 
 /* =========================
-   5.2) ACTIONS — più basse e uniformi
+   5.2) ACTIONS
    ========================= */
 #pm-it .it-actions{
-  margin-top: 10px; /* ↓ */
+  margin-top: 10px;
   display:flex;
   gap: 10px;
 }
 #pm-it .pm-it-btn{
   flex:1;
-  padding: 10px 12px; /* ↓ */
+  padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,.18);
   background: rgba(255,255,255,.06);
@@ -358,34 +348,31 @@
   #pm-it .pm-it-main:hover{ filter: brightness(1.05); }
 }
 
-/* =========================
-   6) DETAILS — pannello diverso dalla card
-   (più chiaro + cornice acqua + inset)
-   ========================= */
+/* =====================================================
+   6) DETAILS — PRO PANEL (diverso dalla card)
+   - più chiaro + cornice acqua + header notch
+   - roadmap tappe + callout icone
+   ===================================================== */
 #pm-it .it-details{
   display:none;
-  padding: 12px; /* tight */
+  padding: 12px;
   border-top: 1px solid rgba(255,255,255,.12);
-
-  /* ✅ differenziazione netta */
   background:
     radial-gradient(circle at 18% 0%, rgba(57,198,210,.16), transparent 55%),
     radial-gradient(circle at 92% 12%, rgba(15,163,177,.12), transparent 60%),
     rgba(0,0,0,.16);
   position: relative;
 }
-
-/* cornice acqua */
 #pm-it .it-details::before{
   content:"";
   position:absolute;
   inset: 0;
   border-top: 1px solid rgba(15,163,177,.35);
-  box-shadow: inset 0 0 0 1px rgba(57,198,210,.14);
+  box-shadow:
+    inset 0 0 0 1px rgba(57,198,210,.14),
+    inset 0 10px 30px rgba(4,27,46,.18);
   pointer-events:none;
 }
-
-/* notch (micro) */
 #pm-it .it-details::after{
   content:"";
   position:absolute;
@@ -398,25 +385,38 @@
   opacity: .85;
   pointer-events:none;
 }
-
 #pm-it .it-card.is-open .it-details{ display:block; }
 
-/* titoli blocco più stretti */
+/* =========================
+   6.1) BLOCK TITLES — più pro
+   ========================= */
 #pm-it .it-blockTitle{
   display:flex;
   align-items:baseline;
   justify-content:space-between;
   gap: 10px;
-  padding: 10px 0 8px; /* ↓ */
+  padding: 10px 0 8px;
   border-top: 1px solid rgba(255,255,255,.14);
 }
 #pm-it .it-blockTitle:first-child{ border-top: none; padding-top: 0; }
 
 #pm-it .it-blockTitle b{
   font-weight: 950;
-  font-size: .98rem; /* leggermente più piccolo */
+  font-size: .98rem;
   letter-spacing: -0.01em;
   color: #fff;
+  display:inline-flex;
+  align-items:center;
+  gap: 10px;
+}
+#pm-it .it-blockTitle b i{
+  width: 20px; height: 20px;
+  display:inline-grid;
+  place-items:center;
+  border-radius: 6px;
+  background: rgba(15,163,177,.16);
+  border: 1px solid rgba(15,163,177,.26);
+  color: var(--pm-accent2);
 }
 #pm-it .it-blockTitle small{
   color: rgba(255,255,255,.70);
@@ -424,7 +424,9 @@
   font-size: .84rem;
 }
 
-/* box dentro details: più "panel" */
+/* =========================
+   6.2) BOX (panel pulito)
+   ========================= */
 #pm-it .it-box{
   border: 1px solid rgba(255,255,255,.14);
   border-radius: 10px;
@@ -433,54 +435,185 @@
   box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
 }
 
-/* righe più compatte */
+/* =====================================================
+   ROADMAP — TAPPE (timeline pro)
+   ===================================================== */
+#pm-it .it-timeline{
+  list-style:none;
+  margin:0;
+  padding: 10px 10px 10px 44px;
+  position: relative;
+}
+#pm-it .it-timeline::before{
+  content:"";
+  position:absolute;
+  left: 22px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(15,163,177,.55), rgba(57,198,210,.20));
+  border-radius: 999px;
+  opacity: .9;
+}
+#pm-it .it-timeline li{
+  padding: 10px 10px 10px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  position: relative;
+}
+#pm-it .it-timeline li:first-child{ border-top:none; }
+
+/* nodo tappa (icona default) */
+#pm-it .it-timeline li::before{
+  content:"\f3c5"; /* fa-location-dot */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position:absolute;
+  left: -34px;
+  top: 12px;
+  width: 28px; height: 28px;
+  display:grid;
+  place-items:center;
+  border-radius: 10px;
+  background: rgba(15,163,177,.16);
+  border: 1px solid rgba(15,163,177,.28);
+  color: var(--pm-accent2);
+  box-shadow: 0 8px 16px rgba(4,27,46,.12);
+}
+
+/* badge orario con icona */
+#pm-it .it-time{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  color:#fff;
+  font-weight: 950;
+  font-size: .80rem;
+  white-space:nowrap;
+}
+#pm-it .it-time::before{
+  content:"\f017"; /* fa-clock */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: var(--pm-accent2);
+  opacity: .95;
+}
+#pm-it .it-place{
+  font-weight: 900;
+  color: rgba(255,255,255,.92);
+  font-size: .92rem;
+}
+#pm-it .it-line{
+  margin-top: 6px;
+  color: rgba(255,255,255,.74);
+  font-weight: 650;
+  font-size: .88rem;
+  line-height: 1.32;
+  text-align: end;
+}
+
+/* =====================================================
+   CALLOUT ROWS — VENTO/RISCHI con icone (no emoji)
+   ===================================================== */
 #pm-it .it-row{
-  padding: 10px 11px; /* ↓ */
+  padding: 10px 11px;
   display:flex;
   justify-content:space-between;
-  gap: 10px;
+  gap: 12px;
   border-top: 1px solid rgba(255,255,255,.12);
   color: rgba(255,255,255,.78);
   font-weight: 700;
-  font-size: .88rem; /* ↓ */
+  font-size: .88rem;
+  align-items:flex-start;
 }
 #pm-it .it-row:first-child{ border-top:none; }
+
 #pm-it .it-row b{
+  flex: 0 0 120px;
   color:#fff;
   font-weight: 950;
   display:inline-flex;
   align-items:center;
   gap: 8px;
 }
+
+/* icona default per label a sinistra */
+#pm-it .it-row b::before{
+  content:"\f05a"; /* fa-circle-info */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  width: 20px; height: 20px;
+  display:inline-grid;
+  place-items:center;
+  border-radius: 6px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.80);
+}
+
 #pm-it .it-row .it-note{
   color: rgba(255,255,255,.74);
   font-weight: 650;
-  text-align: right;
+  text-align: left;
+  flex: 1;
 }
 
-/* timeline tappe più compatta */
-#pm-it .it-timeline{
-  list-style:none;
-  margin:0;
-  padding:0;
+/* --- VENTO: OK / EVITA / CONSIGLIO (riga 1/2/3) --- */
+#pm-it .it-blockTitle:has(i.fa-wind) + .it-box .it-row:nth-child(1){
+  background: rgba(30,169,124,.10);
 }
-#pm-it .it-timeline li{
-  padding: 10px 11px; /* ↓ */
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-#pm-it .it-timeline li:first-child{ border-top:none; }
-
-#pm-it .it-time{ font-weight: 950; color:#fff; }
-#pm-it .it-place{ font-weight: 850; color: rgba(255,255,255,.88); }
-#pm-it .it-line{
-  margin-top: 5px;
-  color: rgba(255,255,255,.74);
-  font-weight: 650;
-  font-size: .88rem;
-  line-height: 1.32;
+#pm-it .it-blockTitle:has(i.fa-wind) + .it-box .it-row:nth-child(1) b::before{
+  content:"\f058"; /* fa-circle-check */
+  background: rgba(30,169,124,.16);
+  border-color: rgba(30,169,124,.30);
+  color: rgba(255,255,255,.92);
 }
 
-/* chips più compatte */
+#pm-it .it-blockTitle:has(i.fa-wind) + .it-box .it-row:nth-child(2){
+  background: rgba(255,92,92,.10);
+}
+#pm-it .it-blockTitle:has(i.fa-wind) + .it-box .it-row:nth-child(2) b::before{
+  content:"\f06a"; /* fa-triangle-exclamation */
+  background: rgba(255,92,92,.16);
+  border-color: rgba(255,92,92,.30);
+  color: rgba(255,255,255,.92);
+}
+
+#pm-it .it-blockTitle:has(i.fa-wind) + .it-box .it-row:nth-child(3){
+  background: rgba(242,184,75,.10);
+}
+#pm-it .it-blockTitle:has(i.fa-wind) + .it-box .it-row:nth-child(3) b::before{
+  content:"\f0eb"; /* fa-lightbulb */
+  background: rgba(242,184,75,.16);
+  border-color: rgba(242,184,75,.30);
+  color: rgba(255,255,255,.92);
+}
+
+/* --- RISCHI: stile alert + dashed separators --- */
+#pm-it .it-blockTitle:has(i.fa-triangle-exclamation) + .it-box{
+  background: rgba(255,92,92,.06);
+  border-color: rgba(255,92,92,.18);
+}
+#pm-it .it-blockTitle:has(i.fa-triangle-exclamation) + .it-box .it-row{
+  border-top: 1px dashed rgba(255,255,255,.14);
+}
+#pm-it .it-blockTitle:has(i.fa-triangle-exclamation) + .it-box .it-row b{
+  flex: 0 0 32px;
+  justify-content:center;
+}
+#pm-it .it-blockTitle:has(i.fa-triangle-exclamation) + .it-box .it-row b::before{
+  content:"\f071"; /* fa-triangle-exclamation */
+  background: rgba(255,92,92,.16);
+  border-color: rgba(255,92,92,.28);
+  color: rgba(255,255,255,.92);
+}
+
+/* =========================
+   SPOT CHIPS — compatte
+   ========================= */
 #pm-it .it-chips{
   margin-top: 8px;
   display:flex;
@@ -521,7 +654,7 @@
 @media (max-width: 980px){
   #pm-it .pm-it-toolbar{ grid-template-columns: 1fr 1fr; }
   #pm-it .pm-it-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  #pm-it .it-meta{ grid-template-columns: repeat(2, minmax(0,1fr)); } /* su tablet 2x2 */
+  #pm-it .it-meta{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 640px){
   #pm-it .pm-it-grid{ grid-template-columns: 1fr; }

@@ -120,451 +120,451 @@
         <!-- =====================================================
      ITINERARI — FIXED PANEL (sempre visibile dentro #section1)
      ===================================================== -->
-<section id="pm-it" aria-label="Itinerari">
+    <section id="pm-it" aria-label="Itinerari">
 
-  <div class="pm-it-wrap">
+    <div class="pm-it-wrap">
 
-    <!-- HEADER -->
-    <header class="pm-it-head">
-      <div>
-        <h2 class="pm-it-title">Itinerari da Golfo Aranci</h2>
-        <p class="pm-it-sub">
-          Schede con tappe/orari, vento, snorkeling, selfie spot, rischi e stime indicative (40cv).
-        </p>
-      </div>
-    </header>
+        <!-- HEADER -->
+        <header class="pm-it-head">
+        <div>
+            <h2 class="pm-it-title">Itinerari da Golfo Aranci</h2>
+            <p class="pm-it-sub">
+            Schede con tappe/orari, vento, snorkeling, selfie spot, rischi e stime indicative (40cv).
+            </p>
+        </div>
+        </header>
 
-    <!-- TOOLBAR (FILTRI) -->
-    <div class="pm-it-toolbar">
-      <div class="pm-it-field">
-        <label class="pm-it-lbl" for="itQ">Cerca</label>
-        <input id="itQ" class="pm-it-in" type="search" placeholder="Es: Tavolara, Molara, Figari..." />
-      </div>
+        <!-- TOOLBAR (FILTRI) -->
+        <div class="pm-it-toolbar">
+        <div class="pm-it-field">
+            <label class="pm-it-lbl" for="itQ">Cerca</label>
+            <input id="itQ" class="pm-it-in" type="search" placeholder="Es: Tavolara, Molara, Figari..." />
+        </div>
 
-      <div class="pm-it-field">
-        <label class="pm-it-lbl" for="itHours">Durata</label>
-        <select id="itHours" class="pm-it-in">
-          <option value="all">Tutte</option>
-          <option value="half">Mezza giornata</option>
-          <option value="full">Giornata intera</option>
-        </select>
-      </div>
+        <div class="pm-it-field">
+            <label class="pm-it-lbl" for="itHours">Durata</label>
+            <select id="itHours" class="pm-it-in">
+            <option value="all">Tutte</option>
+            <option value="half">Mezza giornata</option>
+            <option value="full">Giornata intera</option>
+            </select>
+        </div>
 
-      <div class="pm-it-field">
-        <label class="pm-it-lbl" for="itDifficulty">Difficoltà</label>
-        <select id="itDifficulty" class="pm-it-in">
-          <option value="all">Tutte</option>
-          <option value="easy">Facile</option>
-          <option value="medium">Media</option>
-          <option value="hard">Impegnativa</option>
-        </select>
-      </div>
+        <div class="pm-it-field">
+            <label class="pm-it-lbl" for="itDifficulty">Difficoltà</label>
+            <select id="itDifficulty" class="pm-it-in">
+            <option value="all">Tutte</option>
+            <option value="easy">Facile</option>
+            <option value="medium">Media</option>
+            <option value="hard">Impegnativa</option>
+            </select>
+        </div>
 
-      <div class="pm-it-hint">
-        <span><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> 40cv • 18 kn • 14 L/h </span>
-      </div>
+        <div class="pm-it-hint">
+            <span><i class="fa-solid fa-gas-pump" aria-hidden="true"></i> 40cv • 18 kn • 14 L/h </span>
+        </div>
+        </div>
+
+        <!-- GRID (STATICO: NO innerHTML) -->
+        <div class="pm-it-body">
+        <div class="pm-it-grid" id="itCardsGrid" aria-live="polite">
+
+            <!-- =========================
+                CARD 1 — Tavolara & Molara
+                ========================= -->
+            <article class="it-card"
+                    data-id="tavolara-molara"
+                    data-duration="full"
+                    data-difficulty="medium"
+                    data-title="Tavolara & Molara"
+                    data-tagline="Acqua turchese • snorkeling top"
+                    data-distance-nm="18"
+                    data-wind-ok="N,NE,E moderato"
+                    data-wind-avoid="S/SE forte,W/NW teso"
+                    data-wind-tips="Se il vento rinforza nel pomeriggio: accorcia le tratte esposte, stai sottocosta e rientra con margine."
+                    data-snorkel="Fondali rocciosi e sabbia|Acqua trasparente nelle ore centrali"
+                    data-selfie="Vista Tavolara|Rada turchese"
+                    data-nearby="Capo Ceraso|Punta Ruja"
+                    data-hazards="Area protetta (rispetta regole)|Traffico barche alta stagione">
+
+            <div class="it-media" role="img" aria-label="Tavolara & Molara">
+                <div class="it-tagline">Acqua turchese • snorkeling top</div>
+            </div>
+
+            <div class="it-body">
+                <div class="it-top">
+                <h3 class="it-title">Tavolara & Molara</h3>
+                </div>
+
+                <p class="it-desc">Cale iconiche • Fondali chiari • Scorci wow</p>
+
+                <div class="it-divider"></div>
+
+                <!-- KPI: il JS li calcola/aggiorna (no innerHTML: aggiorna solo il testo) -->
+                <div class="it-meta">
+                <div class="it-pill"><span class="kpi-distance">18</span> NM<span>Distanza stimata</span></div>
+                <div class="it-pill"><span class="kpi-hours">1.0</span> h<span>Navigazione stimata</span></div>
+                <div class="it-pill"><span class="kpi-liters">18</span> L<span>Carburante stimato</span></div>
+                <div class="it-pill">€ <span class="kpi-cost">38</span><span>Costo stimato</span></div>
+                </div>
+
+                <div class="it-actions">
+                <button class="pm-it-btn pm-it-main" type="button" data-toggle="tavolara-molara">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Dettagli
+                </button>
+                <button class="pm-it-btn" type="button" data-copy="tavolara-molara">
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i> Copia
+                </button>
+                </div>
+            </div>
+
+            <div class="it-details">
+                <!-- TAPPE -->
+                <div class="it-blockTitle">
+                <b><i class="fa-regular fa-clock" aria-hidden="true"></i> Tappe & orari</b>
+                <small>line-up consigliata</small>
+                </div>
+                <div class="it-box">
+                <ol class="it-timeline">
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">09:30</span><span class="it-place">Partenza Golfo Aranci</span>
+                    </div>
+                    <div class="it-line">Controlla meteo reale, traffico e distanza di sicurezza.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">10:15</span><span class="it-place">Prima cala (bagno)</span>
+                    </div>
+                    <div class="it-line">Ormeggio/ancora con calma: occhio alle zone basse.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">11:15</span><span class="it-place">Snorkeling spot</span>
+                    </div>
+                    <div class="it-line">Acqua chiara = spesso fondale basso: attenzione a secche/scogli.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">13:00</span><span class="it-place">Pausa relax</span>
+                    </div>
+                    <div class="it-line">Idratazione + crema: in barca il sole “spinge” di più.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">15:30</span><span class="it-place">Seconda cala / punto foto</span>
+                    </div>
+                    <div class="it-line">Traffico alto: manovre lente e prevedibili.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">17:00</span><span class="it-place">Rientro</span>
+                    </div>
+                    <div class="it-line">Rientra prima che il vento salga e con riserva carburante.</div>
+                    </li>
+                </ol>
+                </div>
+
+                <!-- VENTO -->
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-wind" aria-hidden="true"></i> Vento</b>
+                <small>scelta rotta</small>
+                </div>
+                <div class="it-box">
+                <div class="it-row"><b>✅ OK</b><span class="it-note">N, NE, E moderato</span></div>
+                <div class="it-row"><b>⛔ Evita</b><span class="it-note">S/SE forte, W/NW teso</span></div>
+                <div class="it-row"><b>💡 Consiglio</b><span class="it-note">Se il vento rinforza nel pomeriggio: accorcia le tratte esposte, stai sottocosta e rientra con margine.</span></div>
+                </div>
+
+                <!-- SPOT -->
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> Spot</b>
+                <small>snorkel • foto • coste</small>
+                </div>
+                <div class="it-chips">
+                <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Fondali rocciosi e sabbia</span>
+                <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Acqua trasparente nelle ore centrali</span>
+                <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Vista Tavolara</span>
+                <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Rada turchese</span>
+                <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Capo Ceraso</span>
+                <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Punta Ruja</span>
+                </div>
+
+                <!-- RISCHI -->
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Rischi & attenzione</b>
+                <small>secche • traffico</small>
+                </div>
+                <div class="it-box">
+                <div class="it-row" style="border-top:none"><b>⚠️</b><span class="it-note">Area protetta (rispetta regole)</span></div>
+                <div class="it-row"><b>⚠️</b><span class="it-note">Traffico barche alta stagione</span></div>
+                </div>
+            </div>
+            </article>
+
+
+            <!-- =========================
+                CARD 2 — Capo Figari & Cala Moresca
+                ========================= -->
+            <article class="it-card"
+                    data-id="capo-figari-moresca"
+                    data-duration="half"
+                    data-difficulty="easy"
+                    data-title="Capo Figari & Cala Moresca"
+                    data-tagline="Mezza giornata • giro easy"
+                    data-distance-nm="7"
+                    data-wind-ok="W/NW moderato,N moderato"
+                    data-wind-avoid="E/NE forte"
+                    data-wind-tips="Ottimo quando fuori è mosso: spesso trovi mare più gestibile rimanendo sotto costa."
+                    data-snorkel="Pareti rocciose con pesci|Zone sabbiose poco profonde"
+                    data-selfie="Falesie|Baia smeraldo"
+                    data-nearby="Cale di Golfo Aranci|Capo Figari"
+                    data-hazards="Scogli affioranti in alcuni tratti|Rade affollate">
+
+            <div class="it-media" role="img" aria-label="Capo Figari & Cala Moresca">
+                <div class="it-tagline">Mezza giornata • giro easy</div>
+            </div>
+
+            <div class="it-body">
+                <div class="it-top">
+                <h3 class="it-title">Capo Figari & Cala Moresca</h3>
+                </div>
+
+                <p class="it-desc">Vicino • Riparato • Panorama sotto costa</p>
+
+                <div class="it-divider"></div>
+
+                <div class="it-meta">
+                <div class="it-pill"><span class="kpi-distance">7</span> NM<span>Distanza stimata</span></div>
+                <div class="it-pill"><span class="kpi-hours">0.4</span> h<span>Navigazione stimata</span></div>
+                <div class="it-pill"><span class="kpi-liters">8</span> L<span>Carburante stimato</span></div>
+                <div class="it-pill">€ <span class="kpi-cost">17</span><span>Costo stimato</span></div>
+                </div>
+
+                <div class="it-actions">
+                <button class="pm-it-btn pm-it-main" type="button" data-toggle="capo-figari-moresca">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Dettagli
+                </button>
+                <button class="pm-it-btn" type="button" data-copy="capo-figari-moresca">
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i> Copia
+                </button>
+                </div>
+            </div>
+
+            <div class="it-details">
+                <div class="it-blockTitle">
+                <b><i class="fa-regular fa-clock" aria-hidden="true"></i> Tappe & orari</b>
+                <small>line-up consigliata</small>
+                </div>
+                <div class="it-box">
+                <ol class="it-timeline">
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">10:00</span><span class="it-place">Partenza Golfo Aranci</span>
+                    </div>
+                    <div class="it-line">Giro corto: ideale con meteo incerto.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">10:30</span><span class="it-place">Cala Moresca (bagno)</span>
+                    </div>
+                    <div class="it-line">Sosta tranquilla: rispetta bagnanti/SUP.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">11:30</span><span class="it-place">Tratto panoramico sotto Capo Figari</span>
+                    </div>
+                    <div class="it-line">Se c’è risacca, resta più al largo dai frangenti.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">12:30</span><span class="it-place">Snorkeling breve</span>
+                    </div>
+                    <div class="it-line">Rimani in zona visibile e poco trafficata.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">13:30</span><span class="it-place">Rientro</span>
+                    </div>
+                    <div class="it-line">Consumi contenuti, rientro semplice.</div>
+                    </li>
+                </ol>
+                </div>
+
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-wind" aria-hidden="true"></i> Vento</b>
+                <small>scelta rotta</small>
+                </div>
+                <div class="it-box">
+                <div class="it-row"><b>✅ OK</b><span class="it-note">W/NW moderato, N moderato</span></div>
+                <div class="it-row"><b>⛔ Evita</b><span class="it-note">E/NE forte</span></div>
+                <div class="it-row"><b>💡 Consiglio</b><span class="it-note">Ottimo quando fuori è mosso: spesso trovi mare più gestibile rimanendo sotto costa.</span></div>
+                </div>
+
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> Spot</b>
+                <small>snorkel • foto • coste</small>
+                </div>
+                <div class="it-chips">
+                <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Pareti rocciose con pesci</span>
+                <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Zone sabbiose poco profonde</span>
+                <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Falesie</span>
+                <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Baia smeraldo</span>
+                <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cale di Golfo Aranci</span>
+                <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Capo Figari</span>
+                </div>
+
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Rischi & attenzione</b>
+                <small>secche • traffico</small>
+                </div>
+                <div class="it-box">
+                <div class="it-row" style="border-top:none"><b>⚠️</b><span class="it-note">Scogli affioranti in alcuni tratti</span></div>
+                <div class="it-row"><b>⚠️</b><span class="it-note">Rade affollate</span></div>
+                </div>
+            </div>
+            </article>
+
+
+            <!-- =========================
+                CARD 3 — Capo Ceraso
+                ========================= -->
+            <article class="it-card"
+                    data-id="capo-ceraso-loop"
+                    data-duration="full"
+                    data-difficulty="medium"
+                    data-title="Capo Ceraso (loop panoramico)"
+                    data-tagline="Giornata intera • tante calette"
+                    data-distance-nm="14"
+                    data-wind-ok="N/NE moderato"
+                    data-wind-avoid="S/SE forte,W/NW teso"
+                    data-wind-tips="Con vento da S/SE scegli cale riparate e rientra prima: su tratti esposti l’onda cresce veloce."
+                    data-snorkel="Fondo misto roccia/sabbia|Insenature protette"
+                    data-selfie="Costa frastagliata|Acqua brillante"
+                    data-nearby="Capo Ceraso"
+                    data-hazards="Secche e scogli isolati|Onda di ritorno su tratti esposti">
+
+            <div class="it-media" role="img" aria-label="Capo Ceraso (loop panoramico)">
+                <div class="it-tagline">Giornata intera • tante calette</div>
+            </div>
+
+            <div class="it-body">
+                <div class="it-top">
+                <h3 class="it-title">Capo Ceraso (loop panoramico)</h3>
+                </div>
+
+                <p class="it-desc">Molte soste • Snorkeling semplice • Costa scenografica</p>
+
+                <div class="it-divider"></div>
+
+                <div class="it-meta">
+                <div class="it-pill"><span class="kpi-distance">14</span> NM<span>Distanza stimata</span></div>
+                <div class="it-pill"><span class="kpi-hours">0.8</span> h<span>Navigazione stimata</span></div>
+                <div class="it-pill"><span class="kpi-liters">15</span> L<span>Carburante stimato</span></div>
+                <div class="it-pill">€ <span class="kpi-cost">32</span><span>Costo stimato</span></div>
+                </div>
+
+                <div class="it-actions">
+                <button class="pm-it-btn pm-it-main" type="button" data-toggle="capo-ceraso-loop">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Dettagli
+                </button>
+                <button class="pm-it-btn" type="button" data-copy="capo-ceraso-loop">
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i> Copia
+                </button>
+                </div>
+            </div>
+
+            <div class="it-details">
+                <div class="it-blockTitle">
+                <b><i class="fa-regular fa-clock" aria-hidden="true"></i> Tappe & orari</b>
+                <small>line-up consigliata</small>
+                </div>
+                <div class="it-box">
+                <ol class="it-timeline">
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">09:30</span><span class="it-place">Partenza Golfo Aranci</span>
+                    </div>
+                    <div class="it-line">Rotta a vista: mare e traffico sotto controllo.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">10:15</span><span class="it-place">Prima caletta</span>
+                    </div>
+                    <div class="it-line">Mattino spesso più calmo: sfruttalo.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">11:30</span><span class="it-place">Snorkeling spot</span>
+                    </div>
+                    <div class="it-line">Avvicinati a velocità minima: fondale variabile.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">13:00</span><span class="it-place">Pausa pranzo</span>
+                    </div>
+                    <div class="it-line">Tieni sempre un occhio al vento.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">15:00</span><span class="it-place">Punto foto</span>
+                    </div>
+                    <div class="it-line">Scegli una rada meno affollata.</div>
+                    </li>
+                    <li>
+                    <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+                        <span class="it-time">16:30</span><span class="it-place">Rientro</span>
+                    </div>
+                    <div class="it-line">Rientro con margine e riserva carburante.</div>
+                    </li>
+                </ol>
+                </div>
+
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-wind" aria-hidden="true"></i> Vento</b>
+                <small>scelta rotta</small>
+                </div>
+                <div class="it-box">
+                <div class="it-row"><b>✅ OK</b><span class="it-note">N/NE moderato</span></div>
+                <div class="it-row"><b>⛔ Evita</b><span class="it-note">S/SE forte, W/NW teso</span></div>
+                <div class="it-row"><b>💡 Consiglio</b><span class="it-note">Con vento da S/SE scegli cale riparate e rientra prima: su tratti esposti l’onda cresce veloce.</span></div>
+                </div>
+
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> Spot</b>
+                <small>snorkel • foto • coste</small>
+                </div>
+                <div class="it-chips">
+                <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Fondo misto roccia/sabbia</span>
+                <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Insenature protette</span>
+                <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Costa frastagliata</span>
+                <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Acqua brillante</span>
+                <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Capo Ceraso</span>
+                </div>
+
+                <div class="it-blockTitle">
+                <b><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Rischi & attenzione</b>
+                <small>secche • traffico</small>
+                </div>
+                <div class="it-box">
+                <div class="it-row" style="border-top:none"><b>⚠️</b><span class="it-note">Secche e scogli isolati</span></div>
+                <div class="it-row"><b>⚠️</b><span class="it-note">Onda di ritorno su tratti esposti</span></div>
+                </div>
+            </div>
+            </article>
+
+        </div>
+        </div>
+
+        <!-- FOOT NOTE -->
+        <footer class="pm-it-foot">
+        <small class="pm-it-footNote">
+            Stime indicative: mare, carico e assetto cambiano i consumi. Se il vento rinforza rientra con margine.
+        </small>
+        </footer>
+
     </div>
-
-    <!-- GRID (STATICO: NO innerHTML) -->
-    <div class="pm-it-body">
-      <div class="pm-it-grid" id="itCardsGrid" aria-live="polite">
-
-        <!-- =========================
-             CARD 1 — Tavolara & Molara
-             ========================= -->
-        <article class="it-card"
-                 data-id="tavolara-molara"
-                 data-duration="full"
-                 data-difficulty="medium"
-                 data-title="Tavolara & Molara"
-                 data-tagline="Acqua turchese • snorkeling top"
-                 data-distance-nm="18"
-                 data-wind-ok="N,NE,E moderato"
-                 data-wind-avoid="S/SE forte,W/NW teso"
-                 data-wind-tips="Se il vento rinforza nel pomeriggio: accorcia le tratte esposte, stai sottocosta e rientra con margine."
-                 data-snorkel="Fondali rocciosi e sabbia|Acqua trasparente nelle ore centrali"
-                 data-selfie="Vista Tavolara|Rada turchese"
-                 data-nearby="Capo Ceraso|Punta Ruja"
-                 data-hazards="Area protetta (rispetta regole)|Traffico barche alta stagione">
-
-          <div class="it-media" role="img" aria-label="Tavolara & Molara">
-            <div class="it-tagline">Acqua turchese • snorkeling top</div>
-          </div>
-
-          <div class="it-body">
-            <div class="it-top">
-              <h3 class="it-title">Tavolara & Molara</h3>
-            </div>
-
-            <p class="it-desc">Cale iconiche • Fondali chiari • Scorci wow</p>
-
-            <div class="it-divider"></div>
-
-            <!-- KPI: il JS li calcola/aggiorna (no innerHTML: aggiorna solo il testo) -->
-            <div class="it-meta">
-              <div class="it-pill"><span class="kpi-distance">18</span> NM<span>Distanza stimata</span></div>
-              <div class="it-pill"><span class="kpi-hours">1.0</span> h<span>Navigazione stimata</span></div>
-              <div class="it-pill"><span class="kpi-liters">18</span> L<span>Carburante stimato</span></div>
-              <div class="it-pill">€ <span class="kpi-cost">38</span><span>Costo stimato</span></div>
-            </div>
-
-            <div class="it-actions">
-              <button class="pm-it-btn pm-it-main" type="button" data-toggle="tavolara-molara">
-                <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Dettagli
-              </button>
-              <button class="pm-it-btn" type="button" data-copy="tavolara-molara">
-                <i class="fa-regular fa-copy" aria-hidden="true"></i> Copia
-              </button>
-            </div>
-          </div>
-
-          <div class="it-details">
-            <!-- TAPPE -->
-            <div class="it-blockTitle">
-              <b><i class="fa-regular fa-clock" aria-hidden="true"></i> Tappe & orari</b>
-              <small>line-up consigliata</small>
-            </div>
-            <div class="it-box">
-              <ol class="it-timeline">
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">09:30</span><span class="it-place">Partenza Golfo Aranci</span>
-                  </div>
-                  <div class="it-line">Controlla meteo reale, traffico e distanza di sicurezza.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">10:15</span><span class="it-place">Prima cala (bagno)</span>
-                  </div>
-                  <div class="it-line">Ormeggio/ancora con calma: occhio alle zone basse.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">11:15</span><span class="it-place">Snorkeling spot</span>
-                  </div>
-                  <div class="it-line">Acqua chiara = spesso fondale basso: attenzione a secche/scogli.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">13:00</span><span class="it-place">Pausa relax</span>
-                  </div>
-                  <div class="it-line">Idratazione + crema: in barca il sole “spinge” di più.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">15:30</span><span class="it-place">Seconda cala / punto foto</span>
-                  </div>
-                  <div class="it-line">Traffico alto: manovre lente e prevedibili.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">17:00</span><span class="it-place">Rientro</span>
-                  </div>
-                  <div class="it-line">Rientra prima che il vento salga e con riserva carburante.</div>
-                </li>
-              </ol>
-            </div>
-
-            <!-- VENTO -->
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-wind" aria-hidden="true"></i> Vento</b>
-              <small>scelta rotta</small>
-            </div>
-            <div class="it-box">
-              <div class="it-row"><b>✅ OK</b><span class="it-note">N, NE, E moderato</span></div>
-              <div class="it-row"><b>⛔ Evita</b><span class="it-note">S/SE forte, W/NW teso</span></div>
-              <div class="it-row"><b>💡 Consiglio</b><span class="it-note">Se il vento rinforza nel pomeriggio: accorcia le tratte esposte, stai sottocosta e rientra con margine.</span></div>
-            </div>
-
-            <!-- SPOT -->
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> Spot</b>
-              <small>snorkel • foto • coste</small>
-            </div>
-            <div class="it-chips">
-              <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Fondali rocciosi e sabbia</span>
-              <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Acqua trasparente nelle ore centrali</span>
-              <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Vista Tavolara</span>
-              <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Rada turchese</span>
-              <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Capo Ceraso</span>
-              <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Punta Ruja</span>
-            </div>
-
-            <!-- RISCHI -->
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Rischi & attenzione</b>
-              <small>secche • traffico</small>
-            </div>
-            <div class="it-box">
-              <div class="it-row" style="border-top:none"><b>⚠️</b><span class="it-note">Area protetta (rispetta regole)</span></div>
-              <div class="it-row"><b>⚠️</b><span class="it-note">Traffico barche alta stagione</span></div>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- =========================
-             CARD 2 — Capo Figari & Cala Moresca
-             ========================= -->
-        <article class="it-card"
-                 data-id="capo-figari-moresca"
-                 data-duration="half"
-                 data-difficulty="easy"
-                 data-title="Capo Figari & Cala Moresca"
-                 data-tagline="Mezza giornata • giro easy"
-                 data-distance-nm="7"
-                 data-wind-ok="W/NW moderato,N moderato"
-                 data-wind-avoid="E/NE forte"
-                 data-wind-tips="Ottimo quando fuori è mosso: spesso trovi mare più gestibile rimanendo sotto costa."
-                 data-snorkel="Pareti rocciose con pesci|Zone sabbiose poco profonde"
-                 data-selfie="Falesie|Baia smeraldo"
-                 data-nearby="Cale di Golfo Aranci|Capo Figari"
-                 data-hazards="Scogli affioranti in alcuni tratti|Rade affollate">
-
-          <div class="it-media" role="img" aria-label="Capo Figari & Cala Moresca">
-            <div class="it-tagline">Mezza giornata • giro easy</div>
-          </div>
-
-          <div class="it-body">
-            <div class="it-top">
-              <h3 class="it-title">Capo Figari & Cala Moresca</h3>
-            </div>
-
-            <p class="it-desc">Vicino • Riparato • Panorama sotto costa</p>
-
-            <div class="it-divider"></div>
-
-            <div class="it-meta">
-              <div class="it-pill"><span class="kpi-distance">7</span> NM<span>Distanza stimata</span></div>
-              <div class="it-pill"><span class="kpi-hours">0.4</span> h<span>Navigazione stimata</span></div>
-              <div class="it-pill"><span class="kpi-liters">8</span> L<span>Carburante stimato</span></div>
-              <div class="it-pill">€ <span class="kpi-cost">17</span><span>Costo stimato</span></div>
-            </div>
-
-            <div class="it-actions">
-              <button class="pm-it-btn pm-it-main" type="button" data-toggle="capo-figari-moresca">
-                <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Dettagli
-              </button>
-              <button class="pm-it-btn" type="button" data-copy="capo-figari-moresca">
-                <i class="fa-regular fa-copy" aria-hidden="true"></i> Copia
-              </button>
-            </div>
-          </div>
-
-          <div class="it-details">
-            <div class="it-blockTitle">
-              <b><i class="fa-regular fa-clock" aria-hidden="true"></i> Tappe & orari</b>
-              <small>line-up consigliata</small>
-            </div>
-            <div class="it-box">
-              <ol class="it-timeline">
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">10:00</span><span class="it-place">Partenza Golfo Aranci</span>
-                  </div>
-                  <div class="it-line">Giro corto: ideale con meteo incerto.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">10:30</span><span class="it-place">Cala Moresca (bagno)</span>
-                  </div>
-                  <div class="it-line">Sosta tranquilla: rispetta bagnanti/SUP.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">11:30</span><span class="it-place">Tratto panoramico sotto Capo Figari</span>
-                  </div>
-                  <div class="it-line">Se c’è risacca, resta più al largo dai frangenti.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">12:30</span><span class="it-place">Snorkeling breve</span>
-                  </div>
-                  <div class="it-line">Rimani in zona visibile e poco trafficata.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">13:30</span><span class="it-place">Rientro</span>
-                  </div>
-                  <div class="it-line">Consumi contenuti, rientro semplice.</div>
-                </li>
-              </ol>
-            </div>
-
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-wind" aria-hidden="true"></i> Vento</b>
-              <small>scelta rotta</small>
-            </div>
-            <div class="it-box">
-              <div class="it-row"><b>✅ OK</b><span class="it-note">W/NW moderato, N moderato</span></div>
-              <div class="it-row"><b>⛔ Evita</b><span class="it-note">E/NE forte</span></div>
-              <div class="it-row"><b>💡 Consiglio</b><span class="it-note">Ottimo quando fuori è mosso: spesso trovi mare più gestibile rimanendo sotto costa.</span></div>
-            </div>
-
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> Spot</b>
-              <small>snorkel • foto • coste</small>
-            </div>
-            <div class="it-chips">
-              <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Pareti rocciose con pesci</span>
-              <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Zone sabbiose poco profonde</span>
-              <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Falesie</span>
-              <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Baia smeraldo</span>
-              <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Cale di Golfo Aranci</span>
-              <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Capo Figari</span>
-            </div>
-
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Rischi & attenzione</b>
-              <small>secche • traffico</small>
-            </div>
-            <div class="it-box">
-              <div class="it-row" style="border-top:none"><b>⚠️</b><span class="it-note">Scogli affioranti in alcuni tratti</span></div>
-              <div class="it-row"><b>⚠️</b><span class="it-note">Rade affollate</span></div>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- =========================
-             CARD 3 — Capo Ceraso
-             ========================= -->
-        <article class="it-card"
-                 data-id="capo-ceraso-loop"
-                 data-duration="full"
-                 data-difficulty="medium"
-                 data-title="Capo Ceraso (loop panoramico)"
-                 data-tagline="Giornata intera • tante calette"
-                 data-distance-nm="14"
-                 data-wind-ok="N/NE moderato"
-                 data-wind-avoid="S/SE forte,W/NW teso"
-                 data-wind-tips="Con vento da S/SE scegli cale riparate e rientra prima: su tratti esposti l’onda cresce veloce."
-                 data-snorkel="Fondo misto roccia/sabbia|Insenature protette"
-                 data-selfie="Costa frastagliata|Acqua brillante"
-                 data-nearby="Capo Ceraso"
-                 data-hazards="Secche e scogli isolati|Onda di ritorno su tratti esposti">
-
-          <div class="it-media" role="img" aria-label="Capo Ceraso (loop panoramico)">
-            <div class="it-tagline">Giornata intera • tante calette</div>
-          </div>
-
-          <div class="it-body">
-            <div class="it-top">
-              <h3 class="it-title">Capo Ceraso (loop panoramico)</h3>
-            </div>
-
-            <p class="it-desc">Molte soste • Snorkeling semplice • Costa scenografica</p>
-
-            <div class="it-divider"></div>
-
-            <div class="it-meta">
-              <div class="it-pill"><span class="kpi-distance">14</span> NM<span>Distanza stimata</span></div>
-              <div class="it-pill"><span class="kpi-hours">0.8</span> h<span>Navigazione stimata</span></div>
-              <div class="it-pill"><span class="kpi-liters">15</span> L<span>Carburante stimato</span></div>
-              <div class="it-pill">€ <span class="kpi-cost">32</span><span>Costo stimato</span></div>
-            </div>
-
-            <div class="it-actions">
-              <button class="pm-it-btn pm-it-main" type="button" data-toggle="capo-ceraso-loop">
-                <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Dettagli
-              </button>
-              <button class="pm-it-btn" type="button" data-copy="capo-ceraso-loop">
-                <i class="fa-regular fa-copy" aria-hidden="true"></i> Copia
-              </button>
-            </div>
-          </div>
-
-          <div class="it-details">
-            <div class="it-blockTitle">
-              <b><i class="fa-regular fa-clock" aria-hidden="true"></i> Tappe & orari</b>
-              <small>line-up consigliata</small>
-            </div>
-            <div class="it-box">
-              <ol class="it-timeline">
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">09:30</span><span class="it-place">Partenza Golfo Aranci</span>
-                  </div>
-                  <div class="it-line">Rotta a vista: mare e traffico sotto controllo.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">10:15</span><span class="it-place">Prima caletta</span>
-                  </div>
-                  <div class="it-line">Mattino spesso più calmo: sfruttalo.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">11:30</span><span class="it-place">Snorkeling spot</span>
-                  </div>
-                  <div class="it-line">Avvicinati a velocità minima: fondale variabile.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">13:00</span><span class="it-place">Pausa pranzo</span>
-                  </div>
-                  <div class="it-line">Tieni sempre un occhio al vento.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">15:00</span><span class="it-place">Punto foto</span>
-                  </div>
-                  <div class="it-line">Scegli una rada meno affollata.</div>
-                </li>
-                <li>
-                  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-                    <span class="it-time">16:30</span><span class="it-place">Rientro</span>
-                  </div>
-                  <div class="it-line">Rientro con margine e riserva carburante.</div>
-                </li>
-              </ol>
-            </div>
-
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-wind" aria-hidden="true"></i> Vento</b>
-              <small>scelta rotta</small>
-            </div>
-            <div class="it-box">
-              <div class="it-row"><b>✅ OK</b><span class="it-note">N/NE moderato</span></div>
-              <div class="it-row"><b>⛔ Evita</b><span class="it-note">S/SE forte, W/NW teso</span></div>
-              <div class="it-row"><b>💡 Consiglio</b><span class="it-note">Con vento da S/SE scegli cale riparate e rientra prima: su tratti esposti l’onda cresce veloce.</span></div>
-            </div>
-
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-person-swimming" aria-hidden="true"></i> Spot</b>
-              <small>snorkel • foto • coste</small>
-            </div>
-            <div class="it-chips">
-              <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Fondo misto roccia/sabbia</span>
-              <span class="it-chip"><i class="fa-solid fa-mask-snorkel" aria-hidden="true"></i> Insenature protette</span>
-              <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Costa frastagliata</span>
-              <span class="it-chip"><i class="fa-solid fa-camera" aria-hidden="true"></i> Acqua brillante</span>
-              <span class="it-chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Capo Ceraso</span>
-            </div>
-
-            <div class="it-blockTitle">
-              <b><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Rischi & attenzione</b>
-              <small>secche • traffico</small>
-            </div>
-            <div class="it-box">
-              <div class="it-row" style="border-top:none"><b>⚠️</b><span class="it-note">Secche e scogli isolati</span></div>
-              <div class="it-row"><b>⚠️</b><span class="it-note">Onda di ritorno su tratti esposti</span></div>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- FOOT NOTE -->
-    <footer class="pm-it-foot">
-      <small class="pm-it-footNote">
-        Stime indicative: mare, carico e assetto cambiano i consumi. Se il vento rinforza rientra con margine.
-      </small>
-    </footer>
-
-  </div>
-</section>
+    </section>
         
     </div>
 </section>
