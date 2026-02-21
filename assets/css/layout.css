@@ -40,17 +40,6 @@
   color: var(--accent);
 }
 
-/* Spaziatura tra i bottoni della navigazione */
-.nav button {
-  margin-left: 16px;
-  font-weight: 600;
-}
-
-/* Stato attivo per i bottoni */
-.nav button.active {
-  color: var(--accent);
-}
-
 /* Padding generale delle sezioni */
 .section {
   padding: 64px 0;
@@ -384,7 +373,7 @@
   z-index: 1;
   background: radial-gradient(
     circle at 30% 30%,
-    rgba(0, 0, 0, 0.267),
+    rgba(197, 197, 197, 0.267),
     rgba(56, 169, 204, 0.541)
   );
   opacity: var(--opacity);
