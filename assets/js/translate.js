@@ -3,6 +3,8 @@
   const languages = [
     { code: "it", label: "Italiano", flagUrl: "https://flagcdn.com/w40/it.png" },
     { code: "en", label: "English",  flagUrl: "https://flagcdn.com/w40/gb.png" },
+    { code: "es", label: "Spanish",  flagUrl: "https://flagcdn.com/w40/es.png" },
+    { code: "ru", label: "Russian",  flagUrl: "https://flagcdn.com/w40/ru.png" },
     { code: "pl", label: "Polski",   flagUrl: "https://flagcdn.com/w40/pl.png" },
   ];
 
@@ -77,7 +79,6 @@
     if (savedLang) {
       current = savedLang;
       currentFlagImg.src = current.flagUrl;
-      currentFlagImg.alt = current.label;
       renderMenu();
     }
   }

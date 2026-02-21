@@ -13,7 +13,8 @@
 }
 
 .lang-flag-img{
-  width:32px; height:17px;
+  width:32px; 
+  height:20px;
   border-radius:3px;
   display:block;
   object-fit:cover;
