@@ -114,8 +114,8 @@
 #pm-it .pm-it-sub{
   margin: 6px 6px 0;
   color: rgba(255,255,255,.78);
-  font-weight: 650;
-  font-size: .92rem;
+  font-weight: 450;
+  font-size: .72rem;
   line-height: 1.42;
   max-width: 72ch;
   text-align: start;
@@ -149,6 +149,12 @@
   background: linear-gradient(180deg, #0fa3b165, #39c5d250);
   color: #ffffff;
   outline:none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 42px; /* spazio per freccia custom */
+  cursor: pointer;
   font-weight: 800;
 }
 #pm-it .pm-it-in option{ background-color: #0c4c52bd; }
@@ -156,6 +162,34 @@
 #pm-it .pm-it-in:focus{
   border-color: rgba(255,255,255,.36);
   box-shadow: 0 0 0 4px rgba(15,163,177,.16);
+}
+
+.pm-it-field {
+  position: relative;
+}
+
+.pm-it-field::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 68%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+
+  pointer-events: none;
+  opacity: 0.8;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.pm-it-field:nth-child(1)::after {
+  display: none;
+}
+.pm-it-field:hover::after {
+  opacity: 1;
+  transform: rotate(180deg) translateY(10px);
 }
 
 /* hint pill */
@@ -361,6 +395,26 @@
 #pm-it .it-pill span:nth-child(1){
   color: #0fa3b1;
   font-size: 1.78rem;
+}
+
+.kpi-box {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: baseline;
+
+}
+
+.kpi-unit {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.kpi-label {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 4px;
 }
 
 /* =========================
