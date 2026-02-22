@@ -220,12 +220,12 @@
   background-position: 0%;
 }
 #img2-card{
-  background-image: url(/capofigati.jpg);
+  background-image: url(../../capofigati.jpg);
   background-size:cover;
   background-position: 0% 20%;
 }
 #img3-card{
-  background-image: url(/Capo_Ceraso_luglio_2016-218_4.jpg);
+  background-image: url(../../Capo_Ceraso_luglio_2016-218_4.jpg);
   background-size:cover;
   background-position: 0%;
 }
@@ -339,7 +339,7 @@
   min-height: 46px;
   display:flex;
   flex-wrap: wrap;
-  gap: 0 15px;
+  gap: 5px 15px;
   justify-content:center;
 }
 #pm-it .it-pill span{
