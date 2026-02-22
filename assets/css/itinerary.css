@@ -76,12 +76,34 @@
 #pm-it .pm-it-head{
   padding: var(--pm-pad);
   border-bottom: 1px solid rgba(255,255,255,.14);
+  display: flex;
+  gap: 10px;
 }
+
+.pm-railBrand{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  padding-bottom: 12px;
+
+}
+.pm-railLogo{
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  display:grid;
+  place-items:center;
+  background: rgba(15,163,177,.14);
+  border: 1px solid var(--pm-line2);
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: .4px;
+}
+
 
 /* NB: nel tuo HTML usi .pm-it-title */
 #pm-it .pm-it-title,
 #pm-it .pm-it-h1{
-  margin: 0;
+  margin: 0 6px;
   text-align: start;
   font-size: clamp(1.12rem, 2.1vw, 1.45rem);
   font-weight: 950;
@@ -90,7 +112,7 @@
   color: #fff;
 }
 #pm-it .pm-it-sub{
-  margin: 6px 0 0;
+  margin: 6px 6px 0;
   color: rgba(255,255,255,.78);
   font-weight: 650;
   font-size: .92rem;
@@ -190,12 +212,26 @@
   height: 108px;
   position: relative;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 22% 28%, rgba(57,198,210,.45), transparent 55%),
-    radial-gradient(circle at 82% 40%, rgba(15,163,177,.35), transparent 55%),
-    linear-gradient(135deg, rgba(4,27,46,.92), rgba(4,27,46,.55));
   border-bottom: 1px solid rgba(255,255,255,.14);
 }
+#img1-card{
+  background-image: url(/tavolara.jpg);
+  background-size:cover;
+  background-position: 0%;
+}
+#img2-card{
+  background-image: url(/capofigati.jpg);
+  background-size:cover;
+  background-position: 0% 20%;
+}
+#img3-card{
+  background-image: url(/Capo_Ceraso_luglio_2016-218_4.jpg);
+  background-size:cover;
+  background-position: 0%;
+}
+
+
+
 #pm-it .it-media::after{
   content:"";
   position:absolute;
@@ -239,6 +275,7 @@
   letter-spacing: -0.01em;
   color: #fff;
   font-size: 1.0rem;
+  text-align: start;
   line-height: 1.2;
 }
 
@@ -287,6 +324,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin-top: 8px;
+  flex: 0 0 calc(50% - 5px);
 }
 #pm-it .it-pill{
   padding: 9px 9px;
@@ -295,12 +333,13 @@
   background: rgba(255,255,255,.06);
   color: #fff;
   font-weight: 950;
-  font-size: .90rem;
+  font-size: .70rem;
   line-height: 1.05;
   text-align: left;
   min-height: 46px;
   display:flex;
-  flex-direction:column;
+  flex-wrap: wrap;
+  gap: 0 15px;
   justify-content:center;
 }
 #pm-it .it-pill span{
@@ -310,6 +349,10 @@
   font-weight: 650;
   font-size: .78rem;
   line-height: 1.15;
+}
+#pm-it .it-pill span:nth-child(1){
+  color: #0fa3b1;
+  font-size: 1.78rem;
 }
 
 /* =========================
@@ -395,7 +438,9 @@
   display:flex;
   align-items:baseline;
   justify-content:space-between;
+  margin: 5px 0;
   gap: 10px;
+  margin: 15px 0;
   padding: 10px 0 8px;
   border-top: 1px solid rgba(255,255,255,.14);
 }
@@ -411,7 +456,7 @@
   gap: 10px;
 }
 #pm-it .it-blockTitle b i{
-  width: 20px; height: 20px;
+  width: 30px; height: 30px;
   display:inline-grid;
   place-items:center;
   border-radius: 6px;
@@ -448,7 +493,7 @@
 #pm-it .it-timeline::before{
   content:"";
   position:absolute;
-  left: 22px;
+  left: 24px;
   top: 14px;
   bottom: 14px;
   width: 2px;
@@ -470,14 +515,14 @@
   font-weight: 900;
   position:absolute;
   left: -34px;
-  top: 12px;
+  top: 10px;
   width: 28px; height: 28px;
   display:grid;
   place-items:center;
-  border-radius: 10px;
-  background: rgba(15,163,177,.16);
+  border-radius: 10px 0 0 10px;
+  background: rgb(15, 163, 177);
   border: 1px solid rgba(15,163,177,.28);
-  color: var(--pm-accent2);
+  color: #fff;
   box-shadow: 0 8px 16px rgba(4,27,46,.12);
 }
 
@@ -486,8 +531,9 @@
   display:inline-flex;
   align-items:center;
   gap: 8px;
-  padding: 6px 9px;
-  border-radius: 999px;
+  margin-left: -10px;
+  padding: 5.5px 15px;
+  border-radius: 0 9px 9px 0;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
   color:#fff;
