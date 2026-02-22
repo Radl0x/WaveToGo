@@ -307,7 +307,7 @@
 }
 #pm-it .it-badge.ok{ border-color: rgba(0, 255, 174, 0.5); background: rgb(30, 169, 125); }
 #pm-it .it-badge.warn{ border-color: rgb(253, 164, 0); background: rgba(242, 184, 75, 0.897); }
-#pm-it .it-badge.risk{ border-color: rgba(255,92,92,.40); background: rgba(255, 92, 92, 0.61); }
+#pm-it .it-badge.risk{ border-color: rgba(255, 92, 92, 0.918); background: rgba(255, 92, 92, 0.897); }
 
 /* description */
 #pm-it .it-desc{
