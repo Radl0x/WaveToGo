@@ -3,8 +3,12 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
   // Stime standard interne (non mostri slider / scelte)
-  const DEFAULTS = { fuelPrice: 2.10, consumption: 14, speedKn: 18, reservePct: 30 };
-
+const DEFAULTS = {
+  fuelPrice:   2.10,  // €/litro (aggiorna se cambia il prezzo)
+  consumption: 9.5,   // L/h ≈ consumo medio realistico in crociera
+  speedKn:     12,    // Velocità media in nodi reali
+  reservePct:  35     // % di riserva carburante consigliata
+};
   const grid = $("#itCardsGrid");
   const qEl = $("#itQ");
   const hoursEl = $("#itHours");

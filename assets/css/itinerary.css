@@ -229,7 +229,11 @@
   background-size:cover;
   background-position: 0%;
 }
-
+#img4-card{
+  background-image: url("../../figari3.jpg"); 
+  background-size: cover;
+  background-position: 0% 20%;
+}
 
 
 #pm-it .it-media::after{
@@ -293,14 +297,17 @@
   padding: 6px 9px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.06);
+  background: #0fa3b1;
   color: rgba(255,255,255,.82);
-  font-weight: 850;
-  font-size: .78rem;
+  font-weight: 550;
+  font-size: .8rem;
+  margin: 5px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.664);
+  margin-bottom: 10px;
 }
-#pm-it .it-badge.ok{ border-color: rgba(30,169,124,.40); background: rgba(30,169,124,.12); }
-#pm-it .it-badge.warn{ border-color: rgba(242,184,75,.40); background: rgba(242,184,75,.12); }
-#pm-it .it-badge.risk{ border-color: rgba(255,92,92,.40); background: rgba(255,92,92,.12); }
+#pm-it .it-badge.ok{ border-color: rgba(0, 255, 174, 0.5); background: rgb(30, 169, 125); }
+#pm-it .it-badge.warn{ border-color: rgb(253, 164, 0); background: rgba(242, 184, 75, 0.897); }
+#pm-it .it-badge.risk{ border-color: rgba(255,92,92,.40); background: rgba(255, 92, 92, 0.61); }
 
 /* description */
 #pm-it .it-desc{
@@ -309,6 +316,7 @@
   font-weight: 650;
   font-size: .90rem;
   line-height: 1.38;
+  text-align: start;
 }
 #pm-it .it-divider{
   margin: 10px 0;
