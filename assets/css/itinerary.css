@@ -168,30 +168,6 @@
   position: relative;
 }
 
-.pm-it-field::after {
-  content: "";
-  position: absolute;
-  right: 8px;
-  top: 68%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7l5 5 5-5' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
-  background-size: contain;
-
-  pointer-events: none;
-  opacity: 0.8;
-  transition: transform .2s ease, opacity .2s ease;
-}
-.pm-it-field:nth-child(1)::after {
-  display: none;
-}
-.pm-it-field:hover::after {
-  opacity: 1;
-  transform: rotate(180deg) translateY(10px);
-}
-
 /* hint pill */
 #pm-it .pm-it-hint{
   height: 40px;
@@ -199,7 +175,7 @@
   align-items:center;
   justify-content:center;
   gap: 8px;
-  border-radius: 999px;
+  border-radius: 99px 0 0 99px;
   border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.06);
   color: rgba(255,255,255,.82);
@@ -212,7 +188,10 @@
 /* =========================
    4) GRID
    ========================= */
-#pm-it .pm-it-body{ padding: var(--pm-pad); }
+#pm-it .pm-it-body{ padding: var(--pm-pad);
+  position: relative; 
+}
+
 
 #pm-it .pm-it-grid{
   display:grid;
@@ -266,7 +245,7 @@
 #img4-card{
   background-image: url("../../figari3.jpg"); 
   background-size: cover;
-  background-position: 0% 20%;
+  background-position: 0% 30%;
 }
 
 
@@ -484,7 +463,7 @@
   position:absolute;
   top: 0;
   left: 12px;
-  width: 54px;
+  width: 93.5%;
   height: 3px;
   border-radius: 999px;
   background: linear-gradient(90deg, var(--pm-accent), var(--pm-accent2));
@@ -614,12 +593,13 @@
   font-weight: 900;
   color: rgba(255,255,255,.92);
   font-size: .92rem;
+  text-align: end;
 }
 #pm-it .it-line{
   margin-top: 6px;
   color: rgba(255,255,255,.74);
   font-weight: 650;
-  font-size: .88rem;
+  font-size: .68rem;
   line-height: 1.32;
   text-align: end;
 }
@@ -637,6 +617,7 @@
   font-weight: 700;
   font-size: .88rem;
   align-items:flex-start;
+  align-items: center;
 }
 #pm-it .it-row:first-child{ border-top:none; }
 
