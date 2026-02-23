@@ -13,7 +13,7 @@
 
   let current = languages[0];
 
-  // 🔹 Funzione che crea il menu escludendo la lingua corrente
+  // ðŸ”¹ Funzione che crea il menu escludendo la lingua corrente
   function renderMenu() {
     const langMenu = document.getElementById("langMenu");
 
@@ -30,7 +30,7 @@
     <div class="lang-switch">
       <button class="lang-btn" id="langBtn" type="button">
         <img class="lang-flag-img" id="currentFlagImg" src="${current.flagUrl}" alt="${current.label}">
-        <span class="lang-caret">▾</span>
+        <span class="lang-caret">â–¾</span>
       </button>
 
       <div class="lang-menu" id="langMenu"></div>
@@ -41,7 +41,7 @@
   const langMenu = document.getElementById("langMenu");
   const currentFlagImg = document.getElementById("currentFlagImg");
 
-  renderMenu(); // 🔹 inizializza menu
+  renderMenu(); // ðŸ”¹ inizializza menu
 
   const openMenu = () => langMenu.classList.add("open");
   const closeMenu = () => langMenu.classList.remove("open");
@@ -66,13 +66,13 @@
 
     localStorage.setItem("site_lang", current.code);
 
-    renderMenu(); // 🔹 rigenera menu senza la lingua selezionata
+    renderMenu(); // ðŸ”¹ rigenera menu senza la lingua selezionata
     closeMenu();
   });
 
   document.addEventListener("click", closeMenu);
 
-  // 🔹 Ripristino lingua salvata
+  // ðŸ”¹ Ripristino lingua salvata
   const saved = localStorage.getItem("site_lang");
   if (saved) {
     const savedLang = languages.find(l => l.code === saved);

@@ -11,7 +11,7 @@
     { id:"insurance", label:"Assicurazione estesa", desc:"Copertura extra", price:35, icon:"fa-solid fa-shield-halved", type:"toggle" },
   ];
 
-  // tabs/panels (✅ solo 1..4)
+  // tabs/panels (âœ… solo 1..4)
   const tabs = Object.fromEntries([1,2,3,4].map(n => [n, document.getElementById(`pm-tab-${n}`)]));
   const panels = Object.fromEntries([1,2,3,4].map(n => [n, document.getElementById(`pm-step-${n}`)]));
   const progress = document.getElementById("pm-progress");
@@ -59,7 +59,7 @@
   const extraState = {};
   EXTRAS.forEach(x => extraState[x.id] = (x.type === "qty") ? 0 : false);
 
-  const euro = (n) => `${Math.round(n)}€`;
+  const euro = (n) => `${Math.round(n)}â‚¬`;
   const slotValue = () => (document.getElementById("pm-slot")?.value || "day");
   const basePrice = () => PRICES[slotValue()] ?? 0;
 
@@ -96,8 +96,8 @@
         <span class="pm-ico" aria-hidden="true"><i class="${x.icon}"></i></span>
         <span class="pm-extraTxt"><b>${x.label}</b><small>${x.desc}</small></span>
         ${x.type==="qty" ? `
-          <span class="pm-qty" aria-label="Quantità">
-            <button type="button" data-q="dec" aria-label="Diminuisci">−</button>
+          <span class="pm-qty" aria-label="QuantitÃ ">
+            <button type="button" data-q="dec" aria-label="Diminuisci">âˆ’</button>
             <span data-q="val">0</span>
             <button type="button" data-q="inc" aria-label="Aumenta">+</button>
           </span>
@@ -138,7 +138,7 @@
   }
 
   function setProgress(){
-    // ✅ 4 step → (step-1)/3
+    // âœ… 4 step â†’ (step-1)/3
     progress.style.width = `${((step-1)/3)*100}%`;
     status.textContent = `Step ${step}`;
   }
@@ -177,7 +177,7 @@
     setProgress();
     updateMini();
 
-    // ✅ NIENTE scrollIntoView sul form: ad ogni cambio step vai in alto
+    // âœ… NIENTE scrollIntoView sul form: ad ogni cambio step vai in alto
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }
 
@@ -186,7 +186,7 @@
 
   function validStep1(){
     clearErr(err1);
-    if (!dateInp.value) return showErr(err1, "⚠️ Seleziona una data."), false;
+    if (!dateInp.value) return showErr(err1, "âš ï¸ Seleziona una data."), false;
     return true;
   }
 
@@ -219,7 +219,7 @@
       }
     };
 
-    alert("✅ Richiesta inviata! (guarda la Console)");
+    alert("âœ… Richiesta inviata! (guarda la Console)");
     console.log("PM BOOKING REQUEST:", payload);
   }
 
@@ -271,7 +271,7 @@
       return;
     }
 
-    // ✅ step 4 = invio
+    // âœ… step 4 = invio
     sendRequest();
   });
 

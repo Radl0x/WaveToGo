@@ -36,7 +36,7 @@
 }
 
 /* Colore secondario per la parte span del logo */
-.logo span {  
+.logo span {
   color: var(--accent);
 }
 
@@ -124,7 +124,7 @@
 }
 
 /* =====================================================
-   page2.css — cleaned (duplicate rules removed)
+   page2.css â€” cleaned (duplicate rules removed)
    ===================================================== */
 
 /* --- 1. CONFIGURAZIONE GENERALE & WIDGET --- */
@@ -393,7 +393,7 @@
   50%     { margin-left: 25px; }
 }
 
-/* Riduce animazioni per accessibilità */
+/* Riduce animazioni per accessibilitÃ  */
 @media (prefers-reduced-motion: reduce) {
   .bubble { animation: none; }
 }

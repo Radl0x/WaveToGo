@@ -4,9 +4,9 @@
 
   // Stime standard interne (non mostri slider / scelte)
 const DEFAULTS = {
-  fuelPrice:   2.10,  // €/litro (aggiorna se cambia il prezzo)
-  consumption: 9.5,   // L/h ≈ consumo medio realistico in crociera
-  speedKn:     12,    // Velocità media in nodi reali
+  fuelPrice:   2.10,  // â‚¬/litro (aggiorna se cambia il prezzo)
+  consumption: 9.5,   // L/h â‰ˆ consumo medio realistico in crociera
+  speedKn:     12,    // VelocitÃ  media in nodi reali
   reservePct:  35     // % di riserva carburante consigliata
 };
   const grid = $("#itCardsGrid");
@@ -104,7 +104,7 @@ const DEFAULTS = {
       empty.innerHTML = `
         <div class="it-body">
           <h3 class="it-title">Nessun itinerario trovato</h3>
-          <p class="it-desc">Prova “Tavolara”, “Figari”, “Ceraso” o cambia filtro.</p>
+          <p class="it-desc">Prova â€œTavolaraâ€, â€œFigariâ€, â€œCerasoâ€ o cambia filtro.</p>
         </div>
       `;
       grid.appendChild(empty);
@@ -142,9 +142,9 @@ const DEFAULTS = {
 
       const text =
 `ITINERARIO: ${data.title}
-Durata: ${data.duration === "half" ? "Mezza giornata" : "Giornata intera"} | Difficoltà: ${String(data.difficulty).toUpperCase()}
+Durata: ${data.duration === "half" ? "Mezza giornata" : "Giornata intera"} | DifficoltÃ : ${String(data.difficulty).toUpperCase()}
 Distanza: ${fmt(data.distanceNm,0)} NM | Navigazione: ${fmt(est.hours,1)} h
-Carburante stimato: ${fmt(est.litersTotal,0)} L | Costo stimato: € ${fmt(est.cost,0)}
+Carburante stimato: ${fmt(est.litersTotal,0)} L | Costo stimato: â‚¬ ${fmt(est.cost,0)}
 
 VENTO:
 OK: ${data.windOk.join(", ")}
@@ -152,9 +152,9 @@ EVITA: ${data.windAvoid.join(", ")}
 Consiglio: ${data.windTips}
 
 SPOT:
-Snorkeling: ${data.snorkel.join(" • ")}
-Selfie: ${data.selfie.join(" • ")}
-Coste vicine: ${data.nearby.join(" • ")}
+Snorkeling: ${data.snorkel.join(" â€¢ ")}
+Selfie: ${data.selfie.join(" â€¢ ")}
+Coste vicine: ${data.nearby.join(" â€¢ ")}
 
 RISCHI:
 ${data.hazards.map(x => `- ${x}`).join("\n")}
@@ -163,7 +163,7 @@ ${data.hazards.map(x => `- ${x}`).join("\n")}
       try{
         await navigator.clipboard.writeText(text);
         const old = btn.textContent;
-        btn.textContent = "Copiato ✓";
+        btn.textContent = "Copiato âœ“";
         setTimeout(() => (btn.textContent = old), 900);
       }catch{
         prompt("Copia manualmente:", text);

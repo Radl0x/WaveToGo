@@ -34,8 +34,8 @@ function spawnBubble() {
   layer.appendChild(b);
 
   // ---------- ANIMAZIONE MANUALE ----------
-  const moveInterval = 16; // intervallo aggiornamento posizione in ms (~60fps) (modifica qui se vuoi più lento/veloce)
-  const speed = (layer.offsetHeight - stopFromTop) / (duration * 1000 / moveInterval); 
+  const moveInterval = 16; // intervallo aggiornamento posizione in ms (~60fps) (modifica qui se vuoi piÃ¹ lento/veloce)
+  const speed = (layer.offsetHeight - stopFromTop) / (duration * 1000 / moveInterval);
   // calcola di quanto spostare la bolla ad ogni frame per raggiungere "stopFromTop" in "duration" secondi
 
   let currentBottom = 0;
@@ -60,4 +60,3 @@ function spawnBubble() {
   const next = Math.random() * 650 + 50; // intervallo tra le bolle in ms (modifica qui)
   setTimeout(loop, next);
 })();
-

@@ -97,14 +97,14 @@
   line-height: 1.1;
   margin-bottom: 16px;
   z-index: 999;
-  
+
 }
 
 .hero-title span {
   display: block;
   font-size: 0.85em;
   color: var(--accent);
-  filter: drop-shadow(0px 0px 18px rgba(1, 15, 24, 0.384)); /* Ombra alla sagoma dell'immagine */        
+  filter: drop-shadow(0px 0px 18px rgba(1, 15, 24, 0.384)); /* Ombra alla sagoma dell'immagine */
   z-index: 999;
 }
 
@@ -365,7 +365,7 @@
 
 .text-group p {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--accent);
   margin: 0;
   line-height: 1.2;
 }
@@ -404,5 +404,3 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-

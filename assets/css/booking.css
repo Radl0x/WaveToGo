@@ -1,8 +1,8 @@
 /* =====================================================
-   PM CHECKOUT — WATER / MARINE (Pure Marine)
+   PM CHECKOUT â€” WATER / MARINE (Pure Marine)
    Richieste:
    1) SFONDO dei container (rail/widget/summary) = --pm-primary (#041b2e71)
-   2) ULTIMA section (ultimo .pm-panel) più chiara per risaltare
+   2) ULTIMA section (ultimo .pm-panel) piÃ¹ chiara per risaltare
    3) INPUT con sfondo in gradient acqua (accent -> accent2)
    4) Commenti su ogni blocco per trovarlo subito
    ===================================================== */
@@ -69,7 +69,7 @@
 #pm-book .pm-rail,
 #pm-book .pm-widget,
 #pm-book .pm-summary .pm-sCard{
-  background: var(--pm-primary);           /* ✅ richiesto */
+  background: var(--pm-primary);           /* âœ… richiesto */
   border: 1px solid var(--pm-line);
   border-radius: var(--pm-r);
   box-shadow: var(--pm-shadow);
@@ -277,11 +277,11 @@
 #pm-book .pm-panel.pm-show{ display:block; }
 
 /* =========================
-   5) ULTIMA SECTION (ultimo panel) PIÙ CHIARA
+   5) ULTIMA SECTION (ultimo panel) PIÃ™ CHIARA
    (risalta sul background scuro dei container)
    ========================= */
 #pm-book .pm-panel:last-of-type{
-  background: #00f5fd27;           /* ✅ più chiaro */
+  background: #00f5fd27;           /* âœ… piÃ¹ chiaro */
   border: 1px solid var(--pm-line);
   border-radius: var(--pm-r);
   padding: 12px;
@@ -370,7 +370,7 @@
   border-radius: var(--pm-r2);
   border: 1px solid rgba(255,255,255,.22);
 
-  /* ✅ richiesto: sfondo input acqua */
+  /* âœ… richiesto: sfondo input acqua */
   background: linear-gradient(180deg, #0fa3b165, #39c5d250);
 
   color: #ffffff;
@@ -632,7 +632,7 @@
    ========================= */
 #pm-book .pm-summary{ display:grid; gap: 12px; }
 
-/* card summary (già prende background primary) */
+/* card summary (giÃ  prende background primary) */
 #pm-book .pm-sCard{ padding: var(--pm-pad); }
 
 /* header summary */
