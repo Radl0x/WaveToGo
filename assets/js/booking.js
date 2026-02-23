@@ -59,7 +59,7 @@
   const extraState = {};
   EXTRAS.forEach(x => extraState[x.id] = (x.type === "qty") ? 0 : false);
 
-  const euro = (n) => `${Math.round(n)}â‚¬`;
+  const euro = (n) => `${Math.round(n)}€`;
   const slotValue = () => (document.getElementById("pm-slot")?.value || "day");
   const basePrice = () => PRICES[slotValue()] ?? 0;
 
