@@ -103,8 +103,9 @@
 
 @media (min-width: 1024px){
   .wtg-why__grid{
-    grid-template-columns: repeat(3, minmax(0,1fr));
     gap: 16px;
+    display: flex;
+    grid-template-columns: repeat(3, minmax(0,1fr));
     overflow: hidden;
   }
 }
