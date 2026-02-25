@@ -178,66 +178,102 @@ items.forEach(item => observer.observe(item));
     steps.forEach(s => obs.observe(s));
   }
 
-  // =====================================================
-  // Gallery lightbox: vanilla + prev/next + esc
-  // =====================================================
-  function initLightbox(section) {
-    const items = $$(".wtg-gItem", section);
-    const lb = $("#wtgLightbox");
-    if (!items.length || !lb) return;
+ function initLightbox(section) {
+  const items = Array.from(section.querySelectorAll(".wtg-gItem"));
+  const lb = document.getElementById("wtgLightbox");
+  if (!items.length || !lb) return;
 
-    const img = $(".wtg-lightbox__img", lb);
-    const cap = $(".wtg-lightbox__cap", lb);
-    const closeBtns = $$("[data-close]", lb);
-    const prevBtn = $("[data-prev]", lb);
-    const nextBtn = $("[data-next]", lb);
-
-    let idx = 0;
-    let lastFocus = null;
-
-    function openAt(i) {
-      idx = (i + items.length) % items.length;
-      const it = items[idx];
-      const full = it.getAttribute("data-full");
-      const title = it.getAttribute("data-title") || "";
-
-      lastFocus = document.activeElement;
-
-      lb.classList.add("is-open");
-      lb.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-
-      img.src = full;
-      img.alt = title;
-      cap.textContent = title;
-      $(".wtg-lightbox__close", lb)?.focus({ preventScroll: true });
-    }
-
-    function close() {
-      lb.classList.remove("is-open");
-      lb.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
-    }
-
-    function prev() { openAt(idx - 1); }
-    function next() { openAt(idx + 1); }
-
-    items.forEach((it, i) => {
-      it.addEventListener("click", () => openAt(i));
-    });
-
-    closeBtns.forEach(b => b.addEventListener("click", close));
-    prevBtn?.addEventListener("click", prev);
-    nextBtn?.addEventListener("click", next);
-
-    window.addEventListener("keydown", (e) => {
-      if (!lb.classList.contains("is-open")) return;
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    });
+  // ✅ IMPORTANT: sposta la lightbox direttamente sotto <body> (popup vero)
+  if (lb.parentElement !== document.body) {
+    document.body.appendChild(lb);
   }
+
+  const img = lb.querySelector(".wtg-lightbox__img");
+  const cap = lb.querySelector(".wtg-lightbox__cap");
+  const prevBtn = lb.querySelector("[data-prev]");
+  const nextBtn = lb.querySelector("[data-next]");
+  const closeBtn = lb.querySelector(".wtg-lightbox__close");
+  const box = lb.querySelector(".wtg-lightbox__box");
+
+  let idx = 0;
+  let lastFocus = null;
+
+  // scroll lock senza “muovere” lo sfondo
+  let scrollY = 0;
+  function lockScroll() {
+    scrollY = window.scrollY || 0;
+
+    // evita shift scrollbar (desktop)
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
+    if (sbw > 0) document.body.style.paddingRight = sbw + "px";
+
+    document.body.classList.add("wtg-lb-lock");
+    document.body.style.top = `-${scrollY}px`;
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove("wtg-lb-lock");
+    document.body.style.top = "";
+    document.body.style.paddingRight = "";
+    window.scrollTo(0, scrollY);
+  }
+
+  function openAt(i) {
+    idx = (i + items.length) % items.length;
+    const it = items[idx];
+    const full = it.getAttribute("data-full");
+    const title = it.getAttribute("data-title") || "";
+
+    lastFocus = document.activeElement;
+
+    lb.classList.add("is-open");
+    lb.setAttribute("aria-hidden", "false");
+
+    img.src = full || "";
+    img.alt = title;
+    cap.textContent = title;
+
+    lockScroll();
+    closeBtn?.focus({ preventScroll: true });
+  }
+
+  function close() {
+    lb.classList.remove("is-open");
+    lb.setAttribute("aria-hidden", "true");
+    unlockScroll();
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+  }
+
+  function prev() { openAt(idx - 1); }
+  function next() { openAt(idx + 1); }
+
+  // open
+  items.forEach((it, i) => it.addEventListener("click", () => openAt(i)));
+
+  // close button
+  closeBtn?.addEventListener("click", (e) => { e.stopPropagation(); close(); });
+
+  // ✅ click fuori: se non clicchi dentro il box, chiude
+  lb.addEventListener("click", (e) => {
+    if (!lb.classList.contains("is-open")) return;
+    if (box && !box.contains(e.target)) close();
+  });
+
+  // ✅ click dentro box NON chiude
+  box?.addEventListener("click", (e) => e.stopPropagation());
+
+  // nav
+  prevBtn?.addEventListener("click", (e) => { e.stopPropagation(); prev(); });
+  nextBtn?.addEventListener("click", (e) => { e.stopPropagation(); next(); });
+
+  // keyboard
+  window.addEventListener("keydown", (e) => {
+    if (!lb.classList.contains("is-open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  });
+}
 
   // =====================================================
   // Observer: in-view triggers (counts + trust animations)
