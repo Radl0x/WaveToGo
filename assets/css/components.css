@@ -201,27 +201,6 @@
 
 }
 
-/* SVG outline sopra al bottone */
-.cta-outline{
-  position: absolute;
-  top: 10px;
-  left: -12px;
-  width: calc(100% + 25px);
-  height: calc(100% + 1px);
-  z-index: 2;
-  pointer-events: none;
-}
-.cta-outline rect{
-  fill: none;
-  stroke: rgba(15, 163, 177, 0.95);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  vector-effect: non-scaling-stroke;
-  stroke-dasharray: 0.22 0.78;
-  stroke-dashoffset: 0;
-  animation: outline-run 2.4s linear infinite;
-}
-@keyframes outline-run{ to { stroke-dashoffset: -1; } }
 
 
 /* =====================================================
@@ -523,6 +502,11 @@
   background: rgba(255,255,255,.05);
   overflow: hidden;
   transform: scale(.7);
+}
+@media (min-width: 1300px) {
+  .wtg-stars {
+      padding: 0 12px 19px;
+  }
 }
 .wtg-star i{
   color: rgba(57,198,210,.95);

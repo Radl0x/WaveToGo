@@ -97,7 +97,7 @@
         <span class="pm-extraTxt"><b>${x.label}</b><small>${x.desc}</small></span>
         ${x.type==="qty" ? `
           <span class="pm-qty" aria-label="QuantitÃ ">
-            <button type="button" data-q="dec" aria-label="Diminuisci">âˆ’</button>
+            <button type="button" data-q="dec" aria-label="Diminuisci">-</button>
             <span data-q="val">0</span>
             <button type="button" data-q="inc" aria-label="Aumenta">+</button>
           </span>
