@@ -58,6 +58,17 @@
    ===================================================== */
 
 
+   #desktopsvg {
+    display: none;
+   }
+   @media screen and (min-width: 1050px) {
+    #desktopsvg {
+      display: block;
+    }
+    #mobilesvg {
+      display: none;
+    }
+   }
 /* =====================================================
    3) HERO (section.hero)
    ===================================================== */
@@ -115,7 +126,7 @@
 .hero-title{
   font-size: clamp(2.4rem, 4vw, 3.6rem);
   line-height: 1.1;
-  margin-bottom: 16px;
+  margin-bottom: -16px;
   z-index: 3;
 }
 .hero-title span{
@@ -172,24 +183,11 @@
   width: 300px;     /* patch sotto la rende min(300px,100%) */
   overflow: hidden;
   position: relative;
+  margin: 10px 0;
 }
+
 .cta.primary:hover{ background: #0773c9; }
 
-/* icona grande dentro CTA primary */
-.cta.primary i{
-  position: relative;
-  pointer-events: none;
-  font-size: 20px !important;
-}
-
-/* CTA secondary (Itinerari) */
-.cta.secondary{
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  backdrop-filter: blur(6px);
-  transform: scale(0.85);
-  margin: 0 0 0 20px; /* patch sotto la azzera su mobile */
-}
 
 /* Wrapper outline CTA */
 .cta-wrap{
@@ -199,6 +197,7 @@
 #heroPrenota{
   position: relative;
   z-index: 1;
+  min-width: 200px;
 
 }
 
@@ -404,6 +403,7 @@
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
+  height: 40px;
   gap: 10px;
   align-items: center;
   transition: transform .18s ease, border-color .18s ease, background .18s ease;
@@ -934,17 +934,23 @@
 }
 
 .wtg-gallery__hint{
-  margin: 0;
+  margin: 0 ;
   color: rgba(255,255,255,.70);
   font-weight: 650;
   font-size: .88rem;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  justify-content: center;
+  justify-content: space-between;
 }
 .wtg-gallery__hint i{ color: rgba(57,198,210,.9); }
-
+ 
+@media (max-width:900px) {
+  .wtg-gallery__hint {
+    display: block;
+  }
+}
 
 /* =========================
    LIGHTBOX — TRUE POPUP (top layer)
@@ -1317,7 +1323,7 @@ body.wtg-lb-lock{
 
 /* container interno solido */
 .wtg-why__wrap{
-  width: min(var(--wtg-max), calc(100% - (var(--wtg-gutter) * 2)));
+  width: 100%;
   margin-inline: auto;
   gap: clamp(18px, 3vw, var(--wtg-s5));
 }
@@ -1348,7 +1354,7 @@ body.wtg-lb-lock{
   padding: clamp(14px, 2.4vw, 18px);
 }
 .wtg-card__ttl{ font-size: clamp(1.02rem, 1.6vw, 1.12rem); }
-.wtg-card__desc{ font-size: clamp(.74rem, 1.2vw, .86rem); }
+.wtg-card__desc{ font-size: clamp(.74rem, 1.2vw, .6rem); }
 .wtg-card__bullets li{
   font-size: clamp(.86rem, 1.4vw, .90rem);
   overflow-wrap: anywhere;

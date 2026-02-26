@@ -441,3 +441,13 @@
 .hero-title-line2 { font-size: 3.4rem; }
 .hero-title-line4 { font-size: 1.5rem; display: inline; color: #f3f3f3; }
 .hero-title-line3 { font-size: 1.5rem; display: inline; }
+  
+
+@media (min-width:800px) {
+    .wave-front {
+      display: none;
+    }
+    .wave-back {
+      display: none;
+    }
+}

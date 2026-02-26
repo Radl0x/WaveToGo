@@ -43,6 +43,25 @@
   z-index: 4;
   position: relative;
 }
+@media (min-width:800px) {
+  #pm-it {
+    margin: 30px auto 0;
+  }
+}
+
+   #desktopsvg {
+    display: none;
+   }
+   @media screen and (min-width: 1050px) {
+    #desktopsvg {
+      display: block;
+    }
+    #mobilesvg {
+      display: none;
+    }
+   }
+
+
 #pm-it *{ box-sizing:border-box; }
 
 /* =========================
@@ -238,7 +257,7 @@
   background-position: 0% 20%;
 }
 #img3-card{
-  background-image: url(../../Capo_Ceraso_luglio_2016-218_4.jpg);
+  background-image: url(../../capoceraso.jpg);
   background-size:cover;
   background-position: 0%;
 }
