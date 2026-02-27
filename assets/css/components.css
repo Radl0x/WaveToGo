@@ -322,6 +322,7 @@
 .wtg-card__ttl{
   margin: 0;
   font-weight: 900;
+  text-align: start;
   letter-spacing: -0.01em;
   font-size: 1.12rem; /* patch sotto scala */
   line-height: 1.2;
@@ -329,6 +330,7 @@
 .wtg-card__desc{
   margin: 6px 0 0;
   color: var(--wtg-muted);
+  text-align: start;
   font-weight: 650;
   line-height: 1.45;
   font-size: .72rem; /* patch sotto scala */
